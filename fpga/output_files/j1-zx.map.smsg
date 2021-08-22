@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at ula.v(44): always construct contains both blocking and non-blocking assignments File: C:/Progs/Quartus/forth/j1eforth-samawati/fpga/src/ula.v Line: 44
+Info (10281): Verilog HDL Declaration information at ula.v(8): object "x" differs only in case from object "X" in the same scope File: C:/Progs/Quartus/forth/j1eforth-samawati/fpga/src/ula.v Line: 8
+Info (10281): Verilog HDL Declaration information at ula.v(9): object "y" differs only in case from object "Y" in the same scope File: C:/Progs/Quartus/forth/j1eforth-samawati/fpga/src/ula.v Line: 9

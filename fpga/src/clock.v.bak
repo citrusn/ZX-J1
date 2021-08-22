@@ -1,0 +1,18 @@
+  // ================================================
+  // 32-bit 1-MHz system clock
+module clock(
+	input   wire	clk,
+	
+) 
+  reg  [5:0]   clockus;
+  wire [5:0]  _clockus = (clockus == 33) ? 0 : (clockus + 1);
+  reg  [31:0]  clock;
+  wire [31:0] _clock = (clockus == 33) ? (clock + 1) : (clock);
+
+  always @(posedge sys_clk)
+  begin
+    clockus <= _clockus;
+    clock   <= _clock;
+  end
+  
+ end
