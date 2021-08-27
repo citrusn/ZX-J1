@@ -7,7 +7,7 @@
 #if defined(unix) || defined(__unix__) || defined(__unix) || (defined(__APPLE__) && defined(__MACH__))
 #include <unistd.h>
 #include <termios.h>
-int getch1(void) { /* reads from keypress, doesn't echo */
+int getch(void) { /* reads from keypress, doesn't echo */
     struct termios oldattr, newattr;
     int ch;
     tcgetattr( STDIN_FILENO, &oldattr );
@@ -21,7 +21,7 @@ int getch1(void) { /* reads from keypress, doesn't echo */
 	if(ch==0x1b) exit(0);
     return ch==127 ? 8 : ch;
 }
-int putch1(int c) { /* output character to sstdout & flush */
+int putch(int c) { /* output character to sstdout & flush */
     int res=putchar(c);
     fflush(stdout);
     return res;

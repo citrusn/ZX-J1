@@ -42,7 +42,8 @@ variable tdp
 : tc@ tflash + c@ ;
 : t! over ff and over tc! swap 8 rshift swap 1+ tc! ;
 : t@ dup tc@ swap 1+ tc@ 8 lshift or ;
-: talign there 1 and tdp +! ;
+( выравнивание на 0 адрес - четный)
+: talign there 1 and tdp +! ;  
 : tc, there tc! 1 tdp +! ;
 : t, there t! 2 tdp +! ;
 : $literal [char] " word count dup tc, 0 ?do
@@ -91,38 +92,41 @@ a: literal
     8000 or t,
    then ;
 
-variable tlast
-variable tuser
+variable tlast        ( смещение в tflash )
+                      ( последнее определенное слово)
+variable tuser        ( адрес памяти USER VAR's)
 
-\ f003 constant time 
-0001 constant =ver
-0004 constant =ext
-0040 constant =comp
-0080 constant =imed
-7f1f constant =mask
-0002 constant =cell
-0010 constant =base
-0008 constant =bksp
-000a constant =lf
-000d constant =cr
+0001 constant =ver    ( номер версии)
+0004 constant =ext    ( минорный номер версии)
+0040 constant =comp   ( признак "только компиляция")
+0080 constant =imed   ( признак немедленного исполнения)
+7f1f constant =mask   ( )
+0002 constant =cell   ( 2 байта размер ячейки)
+0010 constant =base   ( система исчисления)
+0008 constant =bksp   ( backspace)
+000a constant =lf     ( перевод строки )
+000d constant =cr     ( возврат каретки)
 
-4000 constant =em
-0000 constant =cold
+4000 constant =em     ( верхний адрес памяти)
+0000 constant =cold   ( cold start vector)
 
- 8 constant =vocs
-80 constant =us
+ 8 constant =vocs     ( число словарей)
+80 constant =us       ( user area size in cells)
 
-=em 100 - constant =tib
-=tib =us - constant =up
-=cold =us + constant =pick
-=pick 100 + constant =code
+( Memory allocation)
+(  0//code>--//--<name//up>--<sp//tib>--rp//em )
+
+=em 100 - constant =tib ( terminal input buffer)
+=tib =us - constant =up ( start of user area )
+=cold =us + constant =pick (  )
+=pick 100 + constant =code  ( code dictionary)
 
 : thead
   talign
-   tlast @ t, there tlast !
+  tlast @ t, there tlast !
 	parse-word dup tc, 0 ?do count tc, loop drop talign ;
-: twords
-   cr tlast @
+: twords ( вывод списка слов после компиляции)
+   cr tlast @ 
    begin
       dup tflash + count 1f and type space =cell - t@
    ?dup 0= until ;
@@ -150,8 +154,9 @@ variable tuser
   then ;
 : t;
   947947 <> if
-   abort" unstructured" then true if
-	exit else [a] return then ;
+    abort" unstructured" then 
+  true if
+    exit else [a] return then ;
 : u:
   >in @ thead >in !
    get-current >r target.1 set-current create
@@ -166,7 +171,8 @@ variable tuser
       0 tlast !
     =up tuser !
 
-: hex# ( u -- addr len )  0 <# base @ >r hex =lf hold # # # # r> base ! #> ;
+: hex# ( u -- addr len )
+  0 <# base @ >r hex =lf hold # # # # r> base ! #> ;
 : save-hex ( <name> -- )
   parse-word w/o create-file throw
   there 0 do i t@  over >r hex# r> write-file throw 2 +loop
@@ -366,10 +372,14 @@ t: um+ ( w w -- w cy )
 	 0< r> or >r
    or 0< r> and invert 1+
   r> swap t;
-t: dovar ( -- a ) r> t; compile-only
-t: up dovar =up t, t;
-t: douser ( -- a ) up @ r> @ + t; compile-only
 
+t: dovar ( -- a ) r> t; compile-only
+t: up ( Pointer to the user area )
+  dovar =up t, t;
+t: douser ( -- a ) 
+  up @ r> @ + t; compile-only
+
+( user variables)
 u: base
 u: temp
 u: >in
@@ -381,7 +391,7 @@ u: hld
 u: context
 	=vocs =cell * tuser +!
 u: forth-wordlist
-    =cell tuser +!
+  =cell tuser +!
 	=cell tuser +!
 u: current
 	=cell tuser +!
@@ -447,9 +457,17 @@ t;
 
 t: - ( n1 n2 -- n1-n2 ) negate + t;
 t: abs ( n -- n ) dup 0< if negate then exit t;
-t: max ( n n -- n ) 2dup > if drop exit then nip t;
+t: max ( n n -- n ) 
+    ( n1 n2 n1 n2 ) 2dup 
+    ( n1 n2 n1>n2 ) > if
+    ( n1)  drop exit then
+    ( n2) nip t;
 t: min ( n n -- n ) 2dup < if drop exit then nip t;
-t: within ( u ul uh -- t ) over - >r - r> u< t;
+t: within ( u ul uh -- t )
+    ( u ul uh-ul)  over -
+    ( u-ul ) >r -
+    ( u-ul uh-ul ) r>
+    ( u-ul < uh-ul ) u< t;
 t: um/mod ( udl udh u -- ur uq )
    2dup u< if
     negate f literal
@@ -503,8 +521,10 @@ t: cell- ( a -- a ) =cell literal - t;
 t: cells ( n -- n ) 1 literal lshift t;
 t: bl ( -- 32 ) 20 literal t;
 t: >char ( c -- c )
-   7f literal and dup 7f literal bl within if
-    drop 5f literal then exit t;
+   7f literal and ( 7 бит в 0 )
+   dup 7f literal bl within 
+   if drop 5f literal then
+   exit t;
 t: +! ( n a -- ) tuck @ + swap ! t;
 t: 2! ( d a -- ) swap over ! cell+ ! t;
 t: 2@ ( a -- d ) dup cell+ @ swap @ t;
@@ -604,7 +624,9 @@ t: <\> ( -- ) #tib @ >in ! t; immediate
 t: \ ( -- ) '\ @execute t; immediate
 t: word ( c -- a ; <string> ) parse here cell+ pack$ t;
 t: token ( -- a ; <string> ) bl word t;
-t: name> ( na -- ca ) count 1f literal and + aligned t;
+( )
+t: name> ( na -- ca )
+  count 1f literal and + aligned t;
 t: same? ( a a u -- a a f \ -0+ )
    1-
     for aft over r@ + c@
@@ -630,19 +652,25 @@ t: <name?> ( a -- ca na | a f )
     while
 	 find ?dup
     until r> drop exit then r> drop 0 literal t;
-t: name? ( a -- ca na | a f ) 'name? @execute t;
+
+t: name? ( a -- ca na | a f ) 
+  'name? @execute t;
+( processes the back-space character)
 t: ^h ( bot eot cur -- bot eot cur )
    >r over r@ < dup if
     =bksp literal dup emit space
 	emit then r> + t;
 t: tap ( bot eot cur c -- bot eot cur )
    dup emit over c! 1+ t;
+
+( processes a character c received from terminal)
 t: ktap ( bot eot cur c -- bot eot cur )
    dup =cr literal xor if
     =bksp literal xor if
      bl tap exit
     then ^h exit
    then drop nip dup t;
+
 t: accept ( b u -- b u )
    over + over
     begin
@@ -650,53 +678,83 @@ t: accept ( b u -- b u )
     while
       key dup bl - 7f literal u< if tap else ktap then
     repeat drop over - t;
-t: query ( -- ) tib @ 50 literal accept #tib ! drop 0 literal >in ! t;
+
+( accepts text input and copies the text characters to the TIB)
+t: query ( -- ) 
+  tib @ 50 literal accept #tib ! drop 0 literal >in ! t;
+
 t: abort2 do$ drop t;
-t: abort1 space .$ 3f literal emit cr 'abort @execute abort2 t;
-t: <?abort"> if do$ abort1 exit then abort2 t; compile-only
+
+t: abort1 
+  space .$ 3f literal emit cr 'abort @execute abort2 t;
+
+t: <?abort">
+  if do$ abort1 exit then abort2 t; compile-only
+
+( )
 t: forget ( -- )
    token name? ?dup if
     cell- dup dp !
      @ dup context ! last !
      drop exit
    then abort1 t;
+
 t: $interpret ( a -- )
    name? ?dup if
     @ =comp literal and
      <?abort"> $literal compile-only" execute exit
    else number? if
      exit then abort1 then t;
-t: [ ( -- ) [t] $interpret literal 'eval ! t; immediate
+
+t: [ ( -- )
+  [t] $interpret literal 'eval ! t; immediate
+
 t: .ok ( -- )
    [t] $interpret literal 'eval @ = if
     ."| $literal  ok"
    then cr t;
+
 t: eval ( -- )
     begin
      token dup c@
     while
 	 'eval @execute
     repeat drop .ok t;
+
 t: $eval ( a u -- )
    >in @ >r #tib @ >r tib @ >r
    [t] >in literal 0 literal swap !
     #tib ! tib ! eval r> tib ! r> #tib ! r> >in ! t; compile-only
+
 t: preset ( -- ) =tib literal #tib cell+ ! t;
+
 t: quit ( -- )
    [ begin
 	 query eval
    again t;
+
 t: abort drop preset .ok quit t;
+
 t: ' ( -- ca ) token name? if exit then abort1 t;
+
 t: allot ( n -- ) aligned dp +! t;
+
 t: , ( w -- ) here dup cell+ dp ! ! t;
+
 t: call, ( ca -- ) 1 literal rshift 4000 literal or , t; compile-only
+
 t: ?branch ( ca -- ) 1 literal rshift 2000 literal or , t; compile-only
+
 t: branch ( ca -- ) 1 literal rshift 0000 literal or , t; compile-only
+
 t: [compile] ( -- ; <string> ) ' call, t; immediate
+
 t: compile ( -- ) r> dup @ , cell+ >r t; compile-only
+
 t: recurse last @ name> call, t; immediate
+
 t: pick dup 2* 2* =pickbody literal + >r t;
+
 t: literal ( w -- )
    dup 8000 literal and if
     ffff literal xor [t] literal ]asm call asm[ compile invert
@@ -723,15 +781,23 @@ t: (?do)
    2dup <> if
      r> dup >r swap rot >r >r cell+ >r exit
    then 2drop exit t; compile-only
-t: ?do ( limit index -- ) compile (?do) 0 literal , here t; compile-only immediate
-t: loop ( -- ) compile (loop) dup , compile (unloop) cell- here 1 literal rshift swap ! t; compile-only immediate
+t: ?do ( limit index -- ) 
+  compile (?do) 0 literal , 
+  here t; compile-only immediate
+t: loop ( -- )
+  compile (loop) dup ,
+  compile (unloop) cell- here 1 literal 
+  rshift swap ! t; compile-only immediate
 t: (+loop)
    r> swap r> r> 2dup - >r
    2 literal pick r@ + r@ xor 0< 0=
    3 literal pick r> xor 0< 0= or if
     >r + >r @ >r exit
    then >r >r drop cell+ >r t; compile-only
-t: +loop ( n -- ) compile (+loop) dup , compile (unloop) cell- here 1 literal rshift swap ! t; compile-only immediate
+t: +loop ( n -- )
+  compile (+loop) dup ,
+  compile (unloop) cell- here 1 literal
+  rshift swap ! t; compile-only immediate
 t: (i) ( -- index ) r> r> tuck >r >r t; compile-only
 t: i ( -- index ) compile (i) noop t; compile-only immediate
 t: until ( a -- ) ?branch t; compile-only immediate
@@ -758,18 +824,32 @@ t: endcase
    repeat
    30 literal <> <?abort"> $literal bad case construct."
    compile (endcase) noop t; compile-only immediate
-t: $" ( -- ; <string> ) compile $"| $," t; compile-only immediate
-t: ." ( -- ; <string> ) compile ."| $," t; compile-only immediate
-t: >body ( ca -- pa ) cell+ t;
-t: (to) ( n -- ) r> dup cell+ >r @ ! t; compile-only
-t: to ( n -- ) compile (to) ' >body , t; compile-only immediate
-t: (+to) ( n -- ) r> dup cell+ >r @ +! t; compile-only
-t: +to ( n -- ) compile (+to) ' >body , t; compile-only immediate
-t: get-current ( -- wid ) current @ t;
-t: set-current ( wid -- ) current ! t;
-t: definitions ( -- ) context @ set-current t;
+( compiles a character string)
+t: $" ( -- ; <string> )
+  compile $"| $," t; compile-only immediate
+t: ." ( -- ; <string> )
+  compile ."| $," t; compile-only immediate
+t: >body ( ca -- pa ) 
+  cell+ t;
+t: (to) ( n -- )
+  r> dup cell+ >r @ ! t; compile-only
+t: to ( n -- )
+  compile (to) ' >body , t; compile-only immediate
+t: (+to) ( n -- )
+  r> dup cell+ >r @ +! t; compile-only
+t: +to ( n -- )
+  compile (+to) ' >body , t; compile-only immediate
+t: get-current ( -- wid )
+  current @ t;
+t: set-current ( wid -- )
+  current ! t;
+t: definitions ( -- )
+  context @ set-current t;
+( display a warning message to show)
+( that the name of a new word is a duplicate)
 t: ?unique ( a -- a )
    dup get-current find if ."| $literal  redef " over .$ then drop t;
+
 t: <$,n> ( na -- )
    dup c@ if
     ?unique
@@ -780,7 +860,10 @@ t: <$,n> ( na -- )
     get-current @
     swap ! exit
    then drop $"| $literal name" abort1 t;
+
+( builds a new entry in the name dictionary)   
 t: $,n ( na -- ) '$,n @execute t;
+( builds the body of a new colon definition)
 t: $compile ( a -- )
    name? ?dup if
     @ =imed literal and if
@@ -791,7 +874,10 @@ t: $compile ( a -- )
    number? if
      [t] literal ]asm call asm[ exit then abort1 t;
 t: abort" compile <?abort"> $," t; immediate
-t: <overt> ( -- ) last @ get-current ! t;
+( links a new definition to the current vocabulary and)
+( thus makes it available for dictionary searches.)
+t: <overt> ( -- )
+  last @ get-current ! t;
 t: overt ( -- ) 'overt @execute t;
 t: exit r> drop t;
 t: <;> ( -- )
@@ -800,10 +886,14 @@ t: <;> ( -- )
 t: ; ( -- ) '; @execute t; compile-only immediate
 t: ] ( -- ) [t] $compile literal 'eval ! t;
 t: : ( -- ; <string> ) token $,n ]  t;
-t: immediate ( -- ) =imed literal last @ @ or last @ ! t;
-t: user ( u -- ; <string> ) token $,n overt compile douser , t;
-t: <create> ( -- ; <string> ) token $,n overt [t] dovar ]asm literal asm[ call, t;
-t: create ( -- ; <string> ) 'create @execute t;
+t: immediate ( -- ) 
+  =imed literal last @ @ or last @ ! t;
+t: user ( u -- ; <string> ) 
+  token $,n overt compile douser , t;
+t: <create> ( -- ; <string> )
+  token $,n overt [t] dovar ]asm literal asm[ call, t;
+t: create ( -- ; <string> ) 
+  'create @execute t;
 t: variable ( -- ; <string> ) create 0 literal , t;
 t: 2variable ( -- ; <string> ) create 0 literal , 0 literal , t;
 
@@ -820,6 +910,9 @@ t: defer create 0 literal ,
     @ ?dup 0 literal =
    <?abort"> $literal uninitialized" execute t;
 t: is ' >body ! t; immediate
+( displays the name of a word, given the word's name field )
+( address. It also replaces non-printable characters in a )
+( name by under-scores.)
 t: .id ( na -- )
    ?dup if
    count 1f literal and type exit then
@@ -944,8 +1037,9 @@ t: cold ( -- )
    'boot @execute
    quit
    cold t;
-t: y f005  @ . ; t;
-( s" time.4th" included)
+
+t: border f005 literal t; 
+t: rs232 there literal t; 
 
 target.1 -order set-current
 
@@ -966,7 +1060,7 @@ there 			[u] dp t!
 
 save-target j1.bin
 save-hex j1.hex
-
+twords
 meta.1 -order
 
 bye
