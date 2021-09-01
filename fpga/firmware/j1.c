@@ -97,12 +97,11 @@ void eth_transmit(void) {
       exit(1);
   }
 }*/
-
 static void execute(int entrypoint)
 {
   int _pc, _t;
   int insn = 0x4000 | entrypoint; // first insn: "call entrypoint"
- // pcapdev_init();
+  // pcapdev_init();
   do {
     _pc = pc + 1;
     if (insn & 0x8000) { // literal
@@ -112,20 +111,20 @@ static void execute(int entrypoint)
       switch (insn >> 13) {
       case 0: // jump
         _pc = target;
-        break;
+      break;
       case 1: // conditional jump
-		if (pop() == 0)
-          _pc = target;
-        break;
+        if (pop() == 0)
+              _pc = target;
+      break;
       case 2: // call
         rsp = 31 & (rsp + 1);
         r[rsp] = _pc << 1;
         _pc = target;
-        break;
+      break;
       case 3: // alu
-		if (insn & 0x1000) {/* r->pc */
-			_pc = r[rsp] >> 1;
-		}
+		    if (insn & 0x1000) {/* r->pc */
+			    _pc = r[rsp] >> 1;
+		    }
         s = d[dsp];
         switch ((insn >> 8) & 0xf) {
         case 0:   _t = t; break; /* noop */
@@ -140,12 +139,13 @@ static void execute(int entrypoint)
         case 9:   _t = s>>t; break; /* rshift */
         case 0xa:  _t = t-1; break; /* 1- */
         case 0xb:  _t = r[rsp];  break; /* r@ */
-        case 0xc:  _t = //(t==0xf008)?eth_poll():
+        case 0xc:  _t =    /* @ */
+          //(t==0xf008)?eth_poll():
           (t==0xf001)?
             1:
             (t==0xf000)?
               getch():
-              memory[t>>1]; break; /* @ */
+              memory[t>>1]; break; 
         case 0xd:  _t = s<<t; break; /* lshift */
         case 0xe:  _t = (rsp<<8) + dsp; break; /* dsp */
         case 0xf:  _t = -(s<t); break; /* u< */
@@ -158,13 +158,11 @@ static void execute(int entrypoint)
            r[rsp] = t;
         if (insn & 0x20) /* s->[t] */
           //(t==0xf008)?eth_transmit():
-          (t==0xf002)?
-            (rsp=0):
-            (t==0xf000)?
-              putch(s):
-              (memory[t>>1]=s); /* ! */
+          (t==0xf002)? (rsp=0)
+             : (t==0xf000)? putch(s)
+               : (memory[t>>1]=s); /* ! */
 		      t = _t;
-        break;
+      break;
       }
     }
     pc = _pc;
@@ -183,12 +181,12 @@ int main(int argc , char *argv[])
   fread(m, 0x2000, sizeof(m[0]), f); /* 0kb - 16kb data and code */
   fclose(f);
   if (argc>1) {  // program name is counted as one
-   struct stat st;
-   f = fopen(argv[1], "r");
-   stat(argv[1], &st);
-   (&m[0x2000])[0] = st.st_size; /* 16kb - 32kb memory mapped i/o */
-   fread(&m[0x2001], 0x2000, sizeof(m[0]), f);
-   fclose(f);
+    struct stat st;
+    f = fopen(argv[1], "r");
+    stat(argv[1], &st);
+    (&m[0x2000])[0] = st.st_size; /* 16kb - 32kb memory mapped i/o */
+    fread(&m[0x2001], 0x2000, sizeof(m[0]), f);
+    fclose(f);
   }
   memory = m;
   execute(0x00);
