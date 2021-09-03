@@ -51,7 +51,7 @@ variable tdp
 : $literal [char] " word count dup tc, 0 ?do
 	count tc, loop drop talign ;
 : tallot tdp +! ;
-: org tdp ! ;
+: org dup ." org=" . tdp ! ;
 
 a: t    0000 ;
 a: n    0100 ;
@@ -143,14 +143,16 @@ variable tuser        ( point to the last name in the name dictionary)
 : ( [char] ) parse 2drop ; immediate
 : literal [a] literal ;
 : lookback there =cell - t@ ; ( назад на 1 слово)
-: call? lookback e000 and 4000 = ; ( пред слово - call ?)
+: call? ( пред слово - call ?)
+  lookback e000 and 4000 = ; ( =call)
 : call>goto ( ) 
   there =cell - dup t@ 
   1fff and 
   swap t! ;
-: safe? 
-  lookback e000 and 6000 =
-  lookback 004c and 0= and ;
+: safe? ( команда назад=АЛУ  )
+  lookback e000 and 6000 = ( =alu)
+  lookback 004c and 0= and ( без изменения RS)  ;
+( общая команда alu & return)
 : alu>return 
     there =cell - dup t@ 1000 or ( пред слово + bit return)
     [a] r-1 swap t! ;
@@ -175,7 +177,7 @@ variable tuser        ( point to the last name in the name dictionary)
 : [u]
   parse-word target.1 search-wordlist 0=
     abort" [t]?" >body @ =up - =cell + ; immediate
-: immediate tlast @ tflash + dup c@ =imed or swap c! ;
+: immediate    tlast @ tflash + dup c@ =imed or swap c! ;
 : compile-only tlast @ tflash + dup c@ =comp or swap c! ;
 
       0 tlast !
@@ -277,12 +279,12 @@ variable tuser        ( point to the last name in the name dictionary)
 : !nip ]asm t n->[t] d-1 alu asm[ ;
 : 2dup! ]asm t n->[t] alu asm[ ;
 
-: up1   ]asm t d+1 alu asm[ ; ( t=t указатель данных+1 )
-: down1 ]asm t d-1 alu asm[ ; ( t=t указатель данных-1)
-: copy  ]asm n     alu asm[ ;  ( t=n)
+: up1   ]asm t d+1 alu asm[ ; ( =6001 t=t указатель данных+1 )
+: down1 ]asm t d-1 alu asm[ ; ( =6003 t=t указатель данных-1)
+: copy  ]asm n     alu asm[ ;  ( =6100 t=n )
 
 a: down e for down1 next copy exit ; ( e=14)
-a: up e for up1 next noop exit ;
+a: up e for up1 next noop exit ;  ( цикл исполняется 15 раз)
 
 : for ( counter -- thereF) ( RS: counter)
   >r begin ; 
@@ -295,12 +297,12 @@ a: up e for up1 next noop exit ;
   repeat
   r> drop ; ( RS: empty)
 
-=pick org
+=pick org ( =80 address)
 
     ]asm down up asm[
 	
 there constant =pickbody
-
+  =pickbody ." pickbody=" .
 	copy ]asm return asm[
 	9c ]asm call asm[ bc ]asm branch asm[
 	9a ]asm call asm[ ba ]asm branch asm[
@@ -319,7 +321,7 @@ there constant =pickbody
 	80 ]asm call asm[ a0 ]asm branch asm[
 	]asm return asm[
 
-=cold org
+=cold org ( =0 )
 
 0 t,
 
@@ -362,7 +364,7 @@ there constant =uzero ( начало user области)
 there constant =ulast
 =ulast =uzero - constant =udiff
 
-=code org
+=code org ( =180)
 
 t: noop noop t;
 t: + + t;
@@ -565,8 +567,8 @@ t: cell- ( a -- a ) =cell literal - t;
 t: cells ( n -- n ) 1 literal lshift t;
 t: bl ( -- 32 ) 20 literal t;
 t: >char ( c -- c )
-   7f literal and ( 7 бит в 0 )
-   dup 7f literal bl within  ( между 7f и пробелом)
+   \ ff literal and ( 7 бит в 0 )
+   dup ff literal bl within  ( между 7f и пробелом)
    if drop 5f literal then ( ascii _  )
    exit t;
 t: +! ( n a -- ) tuck @ + swap ! t;
@@ -637,8 +639,10 @@ t: space ( -- ) bl emit t;
 t: spaces ( +n -- ) 0 literal max  for aft space then next t;
 t: type ( b u -- ) 
   for aft count emit then next drop t;
-t: cr ( -- ) =cr literal emit =lf literal emit t;
-t: do$ ( -- a ) r> r@ r> count + aligned >r swap >r t; compile-only
+t: cr ( -- ) 
+  =cr literal emit =lf literal emit t;
+t: do$ ( -- a )
+   r> r@ r> count + aligned >r swap >r t; compile-only
 t: $"| ( -- a ) do$ noop t; compile-only
 t: .$ ( a -- ) count type t;
 t: ."| ( -- ) do$ .$ t; compile-only
@@ -663,6 +667,7 @@ t: (parse) ( b u c -- b u delta ; <string> )
 	    while next dup >r else r> drop dup >r 1-
      then over - r> r> - exit
    then over r> - t;
+
 t: parse ( c -- b u ; <string> )
    >r
    tib @ >in @ +
@@ -675,15 +680,18 @@ t: <\> ( -- ) #tib @ >in ! t; immediate
 t: \ ( -- ) '\ @execute t; immediate
 t: word ( c -- a ; <string> ) parse here cell+ pack$ t;
 t: token ( -- a ; <string> ) bl word t;
+
 ( )
 t: name> ( na -- ca ) ( NFA -- CFA)
   count 1f literal and + aligned t;
+
 t: same? ( a a u -- a a f \ -0+ )
    1-
     for aft over r@ + c@
      over r@ + c@ - ?dup
    if r> drop exit then then
     next 0 literal t;
+
 t: find ( a va -- ca na | a f )
    swap
    dup c@ temp !
@@ -696,6 +704,7 @@ t: find ( a va -- ca na | a f )
    then
     while 2 literal cells -
     repeat r> drop nip cell- dup name> swap t;
+
 t: <name?> ( a -- ca na | a f )
    context dup 2@ xor if cell- then >r
     begin
@@ -706,11 +715,13 @@ t: <name?> ( a -- ca na | a f )
 
 t: name? ( a -- ca na | a f ) 
   'name? @execute t;
+
 ( processes the back-space character)
 t: ^h ( bot eot cur -- bot eot cur )
    >r over r@ < dup if
     =bksp literal dup emit space
 	emit then r> + t;
+
 t: tap ( bot eot cur c -- bot eot cur )
    dup emit over c! 1+ t;
 
@@ -1072,14 +1083,14 @@ t: see ( -- ; <string> )
     dup @ ?dup 700c literal xor
    while
     3fff literal and 1 literal lshift
-	>name ?dup if
-     space .id
-	else
-	  dup @ 7fff literal and u.
-	then
-	cell+
+	  >name ?dup if
+      space .id
+	  else
+	    dup @ 7fff literal and u.
+	  then
+	  cell+
    repeat 2drop t;
-
+( список слов)
 t: (words) ( -- )
    cr
    begin
@@ -1098,10 +1109,10 @@ t: words
 	  1-
    repeat t;
 t: ver ( -- n ) =ver literal 100 literal * =ext literal + t;
-t: hi ( -- )
+t: hi ( -- ) ( = boot )
    cr ."| $literal eforth j1 v"
 	base @ hex
-	ver <# # # 2e literal hold # #>
+	ver <# # # 2e literal hold # #> ( 2e .)
 	type base ! cr t;
 t: cold ( -- )
    =uzero literal =up literal =udiff literal cmove
@@ -1124,8 +1135,8 @@ there 			[u] dp t!
 [t] $interpret	[u] 'eval  t!
 [t] abort		[u] 'abort t!
 [t] hi			[u] 'boot t!
-[t] <name?>		[u] 'name? t!
-[t] <overt>		[u] 'overt t!
+[t] <name?>	[u] 'name? t!
+[t] <overt>	[u] 'overt t!
 [t] <$,n>		[u] '$,n t!
 [t] <;>			[u] '; t!
 [t] <create>	[u] 'create t!
@@ -1133,7 +1144,7 @@ there 			[u] dp t!
 
 save-target j1.bin
 save-hex j1.hex
-twords
+\ twords
 meta.1 -order
 
 bye
