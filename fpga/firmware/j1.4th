@@ -94,7 +94,6 @@ a: literal
 variable tlast
 variable tuser
 
-\ f003 constant time 
 0001 constant =ver
 0004 constant =ext
 0040 constant =comp
@@ -112,10 +111,10 @@ variable tuser
  8 constant =vocs
 80 constant =us
 
-=em 100 - constant =tib
-=tib =us - constant =up
-=cold =us + constant =pick
-=pick 100 + constant =code
+=em 100 - constant =tib ( =4000-100)
+=tib =us - constant =up ( =4000-100-80) 
+=cold =us + constant =pick ( =0+80)
+=pick 100 + constant =code ( =0+80+100)
 
 : thead
   talign
@@ -143,9 +142,11 @@ variable tuser
 	 r> set-current 947947 talign there , does> @ [a] call ;
 : exit
   call? if
-   call>goto else safe? if
-    alu>return else
-	 [a] return
+    call>goto 
+  else safe? if 
+     alu>return 
+   else
+	  [a] return
    then
   then ;
 : t;
@@ -367,6 +368,7 @@ t: um+ ( w w -- w cy )
    or 0< r> and invert 1+
   r> swap t;
 t: dovar ( -- a ) r> t; compile-only
+( переменная, возвращает адрес USER vars области)
 t: up dovar =up t, t;
 t: douser ( -- a ) up @ r> @ + t; compile-only
 
@@ -944,7 +946,6 @@ t: cold ( -- )
    'boot @execute
    quit
    cold t;
-t: y f005  @ . ; t;
 ( s" time.4th" included)
 
 target.1 -order set-current
