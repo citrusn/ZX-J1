@@ -115,12 +115,12 @@ variable tuser        ( point to the last name in the name dictionary)
   80 constant =us      ( user area size in cells)
 
 ( Memory allocation)
-(  0//code>--//--<name//up>--<sp//tib>--rp//em )
+( 0//code>--//--<name//up>--//tib>--//em )
 
-=em 100 - constant =tib ( terminal input buffer)
-=tib =us - constant =up ( start of user area )
-=cold =us + constant =pick (  )
-=pick 100 + constant =code  ( code dictionary)
+=em   100 - constant =tib  ( =4000-100  terminal input buffer)
+=tib  =us - constant =up   ( =3f00-80 start of user area)
+=cold =us + constant =pick ( =80+0)
+=pick 100 + constant =code ( =180 code dictionary)
 
 : thead
   talign
@@ -162,8 +162,8 @@ variable tuser        ( point to the last name in the name dictionary)
 	 r> set-current 947947 talign there , does> @ [a] call ;
 : exit
   call? if call>goto
-        else safe? if alu>return 
-                   else [a] return
+     else safe? if alu>return 
+                else [a] return
    then then ;
 : t;
   947947 <> if abort" unstructured" then 
@@ -174,9 +174,11 @@ variable tuser        ( point to the last name in the name dictionary)
    get-current >r target.1 set-current create
     r> set-current talign tuser @ dup ,
 	 [a] literal exit =cell tuser +! does> @ [a] literal ;
+
 : [u]
   parse-word target.1 search-wordlist 0=
     abort" [t]?" >body @ =up - =cell + ; immediate
+
 : immediate    tlast @ tflash + dup c@ =imed or swap c! ;
 : compile-only tlast @ tflash + dup c@ =comp or swap c! ;
 
@@ -185,10 +187,12 @@ variable tuser        ( point to the last name in the name dictionary)
 
 : hex# ( u -- addr len )
   0 <# base @ >r hex =lf hold # # # # r> base ! #> ;
+
 : save-hex ( <name> -- )
   parse-word w/o create-file throw
   there 0 do i t@  over >r hex# r> write-file throw 2 +loop
    close-file throw ;
+
 : save-target ( <name> -- )
   parse-word w/o create-file throw >r
    tflash there r@ write-file throw r> close-file ;
@@ -224,31 +228,31 @@ variable tuser        ( point to the last name in the name dictionary)
 : aft    drop skip begin swap ;
 
 : noop ]asm t alu asm[ ;
-: + ]asm t+n d-1 alu asm[ ;
-: xor ]asm t^n d-1 alu asm[ ;
-: and ]asm t&n d-1 alu asm[ ;
-: or ]asm t|n d-1 alu asm[ ;
+: +    ]asm t+n d-1 alu asm[ ;
+: xor  ]asm t^n d-1 alu asm[ ;
+: and  ]asm t&n d-1 alu asm[ ;
+: or   ]asm t|n d-1 alu asm[ ;
 : invert ]asm ~t alu asm[ ;
-: = ]asm n==t d-1 alu asm[ ;
-: < ]asm n<t d-1 alu asm[ ;
-: u< ]asm nu<t d-1 alu asm[ ;
+: =    ]asm n==t d-1 alu asm[ ;
+: <    ]asm n<t d-1 alu asm[ ;
+: u<   ]asm nu<t d-1 alu asm[ ;
 : swap ]asm n t->n alu asm[ ;
-: dup ]asm t t->n d+1 alu asm[ ;
+: dup  ]asm t t->n d+1 alu asm[ ;
 : drop ]asm n d-1 alu asm[ ;
 : over ]asm n t->n d+1 alu asm[ ;
-: nip ]asm t d-1 alu asm[ ;
-: >r ]asm n  t->r r+1 d-1 alu asm[ ;
-: r> ]asm rt t->n r-1 d+1 alu asm[ ;
-: r@ ]asm rt t->n     d+1 alu asm[ ;
-: @ ]asm [t] alu asm[ ; ( get from memory)
-: ! ]asm  ( n t -- [t]=n put to memory)    
+: nip  ]asm t d-1 alu asm[ ;
+: >r   ]asm n  t->r r+1 d-1 alu asm[ ;
+: r>   ]asm rt t->n r-1 d+1 alu asm[ ;
+: r@   ]asm rt t->n     d+1 alu asm[ ;
+: @    ]asm [t] alu asm[ ; ( get from memory)
+: !    ]asm  ( n t -- [t]=n put to memory)    
     ( Убрать t, n. t=n1-второе значение после n)
     t n->[t] d-1 alu  (    )
     n        d-1 alu asm[ ;
 : dsp ]asm dsp t->n d+1 alu asm[ ;
 : lshift ]asm n<<t d-1 alu asm[ ;
 : rshift ]asm n>>t d-1 alu asm[ ;
-: 1- ]asm t-1 alu asm[ ;
+: 1-  ]asm t-1 alu asm[ ;
 : 2r> 
   ]asm rt t->n r-1 d+1 alu ( r>)
        rt t->n r-1 d+1 alu ( r>)
@@ -272,16 +276,16 @@ variable tuser        ( point to the last name in the name dictionary)
       t r-1 alu
       t r-1 alu asm[ ;
 
-: dup@ ]asm [t] t->n d+1 alu asm[ ;
-: dup>r ]asm t t->r r+1 alu asm[ ;
+: dup@   ]asm [t] t->n d+1 alu asm[ ;
+: dup>r  ]asm t t->r r+1 alu asm[ ;
 : 2dupxor ]asm t^n t->n d+1 alu asm[ ;
-: 2dup= ]asm n==t t->n d+1 alu asm[ ;
-: !nip ]asm t n->[t] d-1 alu asm[ ;
-: 2dup! ]asm t n->[t] alu asm[ ;
+: 2dup=  ]asm n==t t->n d+1 alu asm[ ;
+: !nip   ]asm t n->[t] d-1 alu asm[ ;
+: 2dup!  ]asm t n->[t] alu asm[ ;
 
-: up1   ]asm t d+1 alu asm[ ; ( =6001 t=t указатель данных+1 )
-: down1 ]asm t d-1 alu asm[ ; ( =6003 t=t указатель данных-1)
-: copy  ]asm n     alu asm[ ;  ( =6100 t=n )
+: up1    ]asm t d+1 alu asm[ ; ( =6001 t=t указатель данных+1 )
+: down1  ]asm t d-1 alu asm[ ; ( =6003 t=t указатель данных-1)
+: copy   ]asm n     alu asm[ ;  ( =6100 t=n )
 
 a: down e for down1 next copy exit ; ( e=14)
 a: up e for up1 next noop exit ;  ( цикл исполняется 15 раз)
@@ -389,14 +393,15 @@ t: r> r> r> swap >r t; compile-only
 t: r@ r> r> dup >r swap >r t; compile-only
 t: @ ( a -- w ) @ t;
 t: ! ( w a -- ) ! t;
-
 t: <> = invert t;
 t: 0< 0 literal < t;
 t: 0= 0 literal = t;
 t: > swap < t;
 t: 0> 0 literal swap < t;
 t: >= < invert t;
-t: tuck swap over t;
+t: tuck ( a b -- b a b) 
+   swap  ( b a )
+   over ( b a b )  t;
 t: -rot swap >r swap r> t;
 t: 2/ 1 literal rshift t;
 t: 2* 1 literal lshift t;
@@ -421,9 +426,7 @@ t: um+ ( w w -- w cy )
 
 t: dovar ( -- a ) r> t; compile-only
 ( переменная, возвращает адрес USER vars области)
-t: up dovar =up t, t;
-t: douser ( -- a ) up @ r> @ + t; compile-only
-t: up ( Pointer to the user area )
+t: up  ( Pointer to the user area )
   dovar =up t, t;
 t: douser ( -- a ) 
   up @ r> @ + t; compile-only
@@ -441,7 +444,7 @@ u: context ( 8 элементов словарей)
 	=vocs =cell * tuser +!
 u: forth-wordlist
   =cell tuser +!
-	=cell tuser +!
+  =cell tuser +!
 u: current
 	=cell tuser +!
 u: dp
@@ -629,26 +632,31 @@ t: number? ( a -- n t | a f )
 t: ?rx ( -- c t | f ) f001 literal @ 1 literal and 0= invert t;
 t: tx! ( c -- )
    begin
-    f001 literal @ 2 literal and 0=
+     f001 literal @ 2 literal and 0=
    until f000 literal ! t;
 t: ?key ( -- c ) '?key @execute t;
 t: emit ( c -- ) 'emit @execute t;
 t: key ( -- c )
-    begin
+   begin
      ?key
 	until f000 literal @ t;
 t: nuf? ( -- t ) ?key dup if drop key =cr literal = then exit t;
 t: space ( -- ) bl emit t;
 t: spaces ( +n -- ) 0 literal max  for aft space then next t;
 t: type ( b u -- ) 
-  for aft count emit then next drop t;
+   for aft count emit then next drop t;
 t: cr ( -- ) 
-  =cr literal emit =lf literal emit t;
+   =cr literal emit =lf literal emit t;
+( )   
 t: do$ ( -- a )
    r> r@ r> count + aligned >r swap >r t; compile-only
+( )
 t: $"| ( -- a ) do$ noop t; compile-only
+( )
 t: .$ ( a -- ) count type t;
+( )
 t: ."| ( -- ) do$ .$ t; compile-only
+
 t: .r ( n +n -- ) >r str r> over - spaces type t;
 t: u.r ( u +n -- ) >r <# #s #> r> over - spaces type t;
 t: u. ( u -- ) <# #s #> space type t;
@@ -686,7 +694,7 @@ t: token ( -- a ; <string> ) bl word t;
 
 ( )
 t: name> ( na -- ca ) ( NFA -- CFA)
-  count 1f literal and + aligned t;
+   count 1f literal and + aligned t;
 
 t: same? ( a a u -- a a f \ -0+ )
    1-
@@ -744,15 +752,16 @@ t: accept ( b u -- b u )
       key dup bl - 7f literal u< if tap else ktap then
     repeat drop over - t;
 
-( accepts text input and copies the text characters to the TIB)
+( accepts text input and copies )
+( the text characters to the TIB)
 t: query ( -- ) 
   tib @ 50 literal accept #tib ! drop 0 literal >in ! t;
 
 t: abort2 do$ drop t;
 
 t: abort1 
-  space .$ 3f literal emit cr 'abort @execute abort2 t;
-
+  space .$ 3f literal emit cr 'abort @execute abort2 t; ( 3f=?)
+( )
 t: <?abort">
   if do$ abort1 exit then abort2 t; compile-only
 
@@ -790,8 +799,9 @@ t: $eval ( a u -- )
    >in @ >r #tib @ >r tib @ >r
    [t] >in literal 0 literal swap !
     #tib ! tib ! eval r> tib ! r> #tib ! r> >in ! t; compile-only
-
-t: preset ( -- ) =tib literal #tib cell+ ! t;
+( установка #tib в исходное значение )
+t: preset ( -- ) 
+   =tib literal #tib cell+ ! t;
 
 t: quit ( -- )
    [ begin
@@ -913,6 +923,7 @@ t: (+to) ( n -- )
   r> dup cell+ >r @ +! t; compile-only
 t: +to ( n -- )
   compile (+to) ' >body , t; compile-only immediate
+( текущий список слов)
 t: get-current ( -- wid )
   current @ t;
 t: set-current ( wid -- )
@@ -951,8 +962,9 @@ t: abort" compile <?abort"> $," t; immediate
 ( links a new definition to the current vocabulary and)
 ( thus makes it available for dictionary searches.)
 t: <overt> ( -- )
-  last @ get-current ! t;
-t: overt ( -- ) 'overt @execute t;
+   last @ get-current ! t;
+t: overt ( -- ) 
+   'overt @execute t;
 t: exit r> drop t;
 t: <;> ( -- )
    compile [t] exit ]asm call asm[
@@ -1117,20 +1129,24 @@ t: hi ( -- ) ( = boot )
 	base @ hex
 	ver <# # # 2e literal hold # #> ( 2e .)
 	type base ! cr t;
+
 t: cold ( -- )
-   =uzero literal =up literal =udiff literal cmove
-   preset forth-wordlist dup context ! dup current 2! overt
+   =uzero literal ( начало user области в коде)
+   =up literal    ( user в памяти) 
+   =udiff literal ( размер области)
+   cmove
+   preset 
+   forth-wordlist 
+   dup context ! ( uvar)
+   dup current 2! ( uvar)
+   overt  ( )
    4000 literal cell+ dup cell- @ $eval
    'boot @execute
    quit
    cold t;
-<<<<<<< HEAD
-( s" time.4th" included)
-=======
 
 t: border f005 literal t; 
 t: rs232 there literal t; 
->>>>>>> 1903209deb487a22a2649654f2f7e58ce505cbd2
 
 target.1 -order set-current
 

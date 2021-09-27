@@ -101,6 +101,7 @@ static void execute(int entrypoint)
 {
   int _pc, _t;
   int insn = 0x4000 | entrypoint; // first insn: "call entrypoint"
+  FILE *log = fopen("stepping.log", "w");
   // pcapdev_init();
   do {
     _pc = pc + 1;
@@ -108,6 +109,7 @@ static void execute(int entrypoint)
       push(insn & 0x7fff);
     } else {
       int target = insn & 0x1fff;
+
       switch (insn >> 13) {
       case 0: // jump
         _pc = target;
@@ -167,6 +169,7 @@ static void execute(int entrypoint)
     }
     pc = _pc;
     insn = memory[pc];
+    fprintf (log, "%x - %x\r", pc, insn);
   } while (1);
 }
 /* end of cpu */
