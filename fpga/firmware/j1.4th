@@ -5,6 +5,15 @@
      8086 eForth 1.0 by Bill Muench and C. H. Ting, 1990
 )
 
+(
+  LINK - 1 word => NFA pred word
+  NFA - len => tlast pointer 
+  NFA 
+  ...
+  CFA
+  PFA
+)
+
 only forth definitions hex
 
 wordlist constant meta.1
@@ -94,7 +103,7 @@ a: literal
     8000 or t,
    then ;
 
-variable tlast        ( смещение в tflash )
+variable tlast        ( адрес NFA последнего слова tflash )
 variable tuser        ( point to the last name in the name dictionary)
 
 0001 constant =ver    ( номер версии)
@@ -189,10 +198,20 @@ variable tuser        ( point to the last name in the name dictionary)
   parse-word w/o create-file throw
   there 0 do i t@  over >r hex# r> write-file throw 2 +loop
    close-file throw ;
+
 : save-target ( <name> -- )
   parse-word w/o create-file throw >r
    tflash there r@ write-file throw r> close-file ;
 
+: save-label ( <name> -- )
+  parse-word w/o create-file throw >r
+  cr tlast @ 
+  begin
+    dup dup hex# r@ write-file throw
+    tflash + count 1f and r@ write-line throw =cell - t@
+  ?dup 0= until 
+  r> close-file ;
+ 
 \ IF ( compiles ?branch and address after THEN ) <true clause> THEN
 \ IF ( compiles ?branch and address after ELSE ) <true clause>
 \   ELSE ( compiles branch and address after THEN ) <false clause>
@@ -1144,7 +1163,8 @@ there 			[u] dp t!
 
 save-target j1.bin
 save-hex j1.hex
+save-label j1.lbl
 \ twords
-meta.1 -order
+\ meta.1 -order
 
-bye
+ bye
