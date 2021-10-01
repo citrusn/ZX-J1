@@ -1,27 +1,38 @@
-import strformat
+import strformat, tables
 
-proc disassembled (insn: uint16): string =
-  var sx: array[0..3, string] = ["", "+1", "-2", "-1"]
+type 
+  forthWord = ref forthWordObj
+  forthWordObj = object
+    la, len, ca: uint
+    name: string
 
+proc disasmWithLabels (insn: uint16, 
+                  tbl: TableRef[int, forthWord]): string =
+  var 
+    sx: array[0..3, string] = ["", "+1", "-2", "-1"]
+  
   if (insn and 0x8000) > 0:
     #var lit = 
-    result = fmt"push {insn and 0x7fff:#04x}"
+    result = fmt("push {insn and 0x7fff:04x}")
   else:
     let target = insn and 0x1fff
     let op = insn shr 13
+    let ca=(target*2).int
+    # echo "ca target:", ca
+    let lbl = ( if tbl.hasKey(ca): tbl[ca].name else: "" )
     case op:
       of 0: # jump
-        result = fmt"branch {target:#04x}"
+        result = fmt("branch {lbl}({ca:04x})")
       of 1:  # conditional jump
-        result = fmt"0branch {target:#04x}"
+        result = fmt("0branch {lbl}({ca:04x})")
       of 2: # call
-        result = fmt"call {target:#04x}"
+        result = fmt("call {lbl}({ca:04x})")
       of 3: #alu
         if (insn and 0x1000)>0: #  r->pc 
           result = "RS/2->PC | "
         var alu = (insn shr 8) and 0xf
         case alu:
-          of 0: result = result & "noop"   # noop
+          of 0: result = result # & "noop"   # noop
           of 1: result = result & "copy"     # copy
           of 2: result = result & "+"  # +
           of 3: result = result & "and" # and
@@ -33,9 +44,9 @@ proc disassembled (insn: uint16): string =
           of 9: result = result & ">>"  # rshift
           of 10: result = result & "1-" # 1-
           of 11: result = result & "r@"  # r@          
-          of 12: result = result & "@ [top/2]"   # @
+          of 12: result = result & "@ [T/2]"   # @
           of 13: result = result & "<<" # lshift          
-          of 14: result = result & "dsp&rsp" # dsp
+          of 14: result = result & "status" # dsp
           of 15: result = result & "u<"  # u<
           else: 
             raiseAssert "No correct ALU code"
@@ -50,26 +61,73 @@ proc disassembled (insn: uint16): string =
         if (insn and 0x40)>0: # top->return
           result = result &  " | T->Ret"
         if (insn and 0x20)>0: # second->[t]
-          result = result & " | ! S/2->[T]"  
+          result = result & " | ! S->[T/2]"  
       
       else:
-        result = fmt"error OP: {op}"
+        result = fmt("error OP: {op}")
 
-proc main() =
-  var
-    f: File
-    sz: int64
-    memory:array[0..0x4000, uint16]
-  
-  f = open("j1.bin")
-  sz = f.getFileSize() 
-  echo f.readBuffer(memory[0].addr, sz)
-  f.close()
-  
-  var w : uint16
-  for i in 0..(sz shr 1 - 1):
-    w = memory[i]
-    echo fmt("{i:04x} {w:04x} ") & disassembled(w)
+# четное?
+proc even(i: int) : bool =
+  if (i and 1) == 0:  true else: false
 
-if isMainModule:
-  main()
+proc int2Hex(i: int): string = fmt("{i:04x}")
+
+proc buildNameTable(start: int, buffer: openArray[uint8], 
+                    tbl: TableRef[int, forthWord] ) = 
+  var cntWords = 0
+  var st = start
+  while st > 0:
+    var ln = buffer[st].int and 0x1f  # длина имени 
+    #echo "ln: " & $ln
+    var nameWord=""
+    for i in (st+1)..(st+ln):
+      nameWord.add (chr buffer[i])
+    
+    var la = buffer[st-1]*256 + buffer[st-2] # адрес пред слова
+    #echo "la: " & int2Hex(la.int)    
+    var ca = st + 1 + ln + (if even ln: 1 else:0) # address calling(body)    
+    st = la.int
+    cntWords = cntWords + 1
+    # echo "ca: " , int2Hex(ca), " name: " ,  nameWord
+    tbl[ca] = forthWord( la:la, len:ln.uint, name:nameWord, ca:ca.uint )
+  echo "Total words:", cntWords
+  echo "Table of labels len:", tbl.len
+  tbl[0] = forthWord( la:0, len:2.uint, name:"start", ca:0 )
+  #echo repr tbl[0x1b44]
+  
+var
+  wordsTable* = newTable[int, forthWord](300)
+  fn: string
+  lastWord: int
+
+proc disasm*(w: uint16) : string = 
+  disasmWithLabels(w, wordsTable)
+
+proc initDissasm*(fileName: string, lastAddress: int) =   
+  ## Инициализует декомпилятор из файла образа
+  ## с адреса NFA последнего определенного слова
+
+  fn = fileName
+  lastWord = lastAddress
+  var btmem: array[0..0x4000, uint8]
+  var f = open(fn)
+  var sz = f.getFileSize().int32  
+  echo "Readed bytes: ", f.readBuffer(btmem[0].addr, sz)
+  f.close()  
+  buildNameTable(lastWord, btmem, wordsTable)
+  
+if isMainModule:   
+  initDissasm("j1.bin", 0x1b3e)
+
+  var wdmem: array[0..0x4000, uint16]  
+  var f = open("j1.bin")
+  var sz = f.getFileSize().int32
+  echo "Readed bytes: ", f.readBuffer(wdmem[0].addr, sz)
+  f.close()  
+
+  for i in 0..10: #(sz shr 1 - 1):
+    var w= wdmem[i]
+    if wordsTable.hasKey((i*2).int):
+      echo "\\ " & wordsTable[(i*2).int].name
+    echo fmt("{i*2:04x} {w:04x} ") & disasm(w)
+  
