@@ -13,7 +13,10 @@ type
     dsp: int8
     rsp: int8
     pc: uint16
-    memory: array[0..0x3fff, uint16]  
+    start: bool
+    memory: array[0..0x3fff, uint16]
+    getch: proc:uint16
+    putch: proc(c:uint16)
 
 proc `<s` (u161, u162: uint16): bool =
   if (u162 > 32767) and (u161 > 32767) : # < 0
@@ -35,10 +38,7 @@ proc pop(cpu: j1Cpu) : uint16 =
   cpu.top = cpu.ds[cpu.dsp]
   cpu.dsp = stackSz and (cpu.dsp - 1)
 
-proc putch(c: uint16) =
-  write(stdout, $(chr c and 0xff))
-
-proc executeCommand(cpu: j1Cpu, insn: uint16) =
+proc executeCommand*(cpu: j1Cpu, insn: uint16) =
   var
     pc, top  : uint16
     sx: array[0..3, int8] = [0'i8, 1'i8, -2'i8, -1'i8]
@@ -80,7 +80,7 @@ proc executeCommand(cpu: j1Cpu, insn: uint16) =
         of 12: top =                  # @
             case cpu.top    
             of 0xf001: 1'u16
-            of 0xf000: ord(getch()).uint16
+            of 0xf000: cpu.getch()
             else: 
               cpu.memory[cpu.top shr 1]
         of 13: top = s shl cpu.top                  # lshift          
@@ -100,34 +100,46 @@ proc executeCommand(cpu: j1Cpu, insn: uint16) =
           cpu.rs[cpu.rsp]=cpu.top
         
         if (insn and 0x20)>0: # second->[t]
-          if cpu.top == 0xf002: quit(0) #cpu.rsp = 0
+          if cpu.top == 0xf002: cpu.start = false #cpu.rsp = 0
           else:
-            if cpu.top == 0xf000: putch(s)
+            if cpu.top == 0xf000: cpu.putch s
             else: cpu.memory[cpu.top shr 1] = s # !                    
         cpu.top = top
     else:
       raiseAssert "No correct INSN code"
     cpu.pc = pc
 
-proc execute (cpu: j1Cpu, entrypoint: uint16) =
+proc getchar: uint16 =
+  ord(getch()).uint16
+
+proc putchar(c: uint16) =
+  stdout.write $(chr c and 0xff)
+
+proc execute (cpu: j1Cpu, entrypoint: uint16, logging: bool=false) =
   var
     insn: uint16
-    log: File    
-    #pc: uint16 = 0
-    #counter: int = 1
-  log = open("j1nim.log", fmWrite)
-  log.write "Nim\r\n"
+    log: File
+  
+  if logging:
+    log = open("j1nim.log", fmWrite)
+    log.write "Nim\r\n"
+
   insn = 0x0000 or entrypoint
-  while true:    
-    #log.write( fmt("{cpu.pc:#d}-{insn:#d} {disasm(insn)}\r\n"))
-    log.write( fmt("{cpu.pc:04x}({cpu.pc*2:04x}) {insn:04x} ") & disasm(insn) & "\r\n")
+  cpu.start = true
+  cpu.getch = getchar
+  cpu.putch = putchar
+  while cpu.start:    
+    if logging:
+      #log.write( fmt("{cpu.pc:#d}-{insn:#d} {disasm(insn)}\r\n"))
+      log.write( fmt("{cpu.pc:04x}({cpu.pc*2:04x}) {insn:04x} ") & disasm(insn) & "\r\n")
     cpu.pc = cpu.pc + 1
     executeCommand(cpu, insn)    
     insn = cpu.memory[cpu.pc]
-    log.write( fmt("\t\ttop={cpu.top:#04x} dsp={cpu.dsp:#d} rsp={cpu.rsp:#d}\r\n"))
-    # counter=counter+1
+    if logging:
+      log.write( fmt("\t\ttop={cpu.top:#04x} dsp={cpu.dsp:#d} rsp={cpu.rsp:#d}\r\n"))    
+  echo "\ncpu stopped"
 
-proc main() =
+proc main =
   var
     f: File
     j1: j1Cpu
@@ -141,4 +153,5 @@ proc main() =
 
   j1.execute(0)
 
-main()
+if isMainModule:
+  main()

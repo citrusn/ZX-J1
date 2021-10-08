@@ -3,11 +3,20 @@ import strformat, tables
 type 
   forthWord = ref forthWordObj
   forthWordObj = object
-    la, len, ca: uint
+    la, len, ca : uint
     name: string
+  
+  TypeWordField = enum
+    lfa, nfa, cfa
+
+  sourceLine = ref sourceLineObj
+  sourceLineObj = object
+    idx: int
+    field: TypeWordField
+    fw: forthWord
 
 proc disasmWithLabels (insn: uint16, 
-                  tbl: TableRef[int, forthWord]): string =
+                  tbl: TableRef[int, sourceLine]): string =
   var 
     sx: array[0..3, string] = ["", "+1", "-2", "-1"]
   
@@ -19,14 +28,14 @@ proc disasmWithLabels (insn: uint16,
     let op = insn shr 13
     let ca=(target*2).int
     # echo "ca target:", ca
-    let lbl = ( if tbl.hasKey(ca): tbl[ca].name else: "" )
+    let lbl = ( if tbl.hasKey(ca): tbl[ca].fw.name else: "" )
     case op:
       of 0: # jump
-        result = fmt("branch {lbl}({ca:04x})")
+        result = fmt("branch {lbl} ({ca:04x})")
       of 1:  # conditional jump
-        result = fmt("0branch {lbl}({ca:04x})")
+        result = fmt("0branch {lbl} ({ca:04x})")
       of 2: # call
-        result = fmt("call {lbl}({ca:04x})")
+        result = fmt("call {lbl} ({ca:04x})")
       of 3: #alu
         if (insn and 0x1000)>0: #  r->pc 
           result = "RS/2->PC | "
@@ -70,10 +79,13 @@ proc disasmWithLabels (insn: uint16,
 proc even(i: int) : bool =
   if (i and 1) == 0:  true else: false
 
+proc align(i: int): int =
+  if even i: i+1 else: i
+
 proc int2Hex(i: int): string = fmt("{i:04x}")
 
 proc buildNameTable(start: int, buffer: openArray[uint8], 
-                    tbl: TableRef[int, forthWord] ) = 
+                    tbl: TableRef[int, sourceLine] ) = 
   var cntWords = 0
   var st = start
   while st > 0:
@@ -85,18 +97,23 @@ proc buildNameTable(start: int, buffer: openArray[uint8],
     
     var la = buffer[st-1]*256 + buffer[st-2] # адрес пред слова
     #echo "la: " & int2Hex(la.int)    
-    var ca = st + 1 + ln + (if even ln: 1 else:0) # address calling(body)    
-    st = la.int
+    var ca = st + 1 + ln + (if even ln: 1 else:0) # address calling(body)        
     cntWords = cntWords + 1
     # echo "ca: " , int2Hex(ca), " name: " ,  nameWord
-    tbl[ca] = forthWord( la:la, len:ln.uint, name:nameWord, ca:ca.uint )
+    var w = forthWord( la:la, len:ln.uint, name:nameWord, ca:ca.uint )
+    tbl[st-2.int] = sourceLine(field: lfa, fw: w)
+    tbl[st] = sourceLine(field: nfa, fw: w)
+    tbl[ca.int] = sourceLine(field: cfa, fw: w)
+    st = la.int
+
   echo "Total words:", cntWords
   echo "Table of labels len:", tbl.len
-  tbl[0] = forthWord( la:0, len:2.uint, name:"start", ca:0 )
+  var w = forthWord( la:0, len:2.uint, name:"start", ca:0 )
+  tbl[0] = sourceLine(field: cfa, fw: w)
   #echo repr tbl[0x1b44]
   
 var
-  wordsTable* = newTable[int, forthWord](300)
+  wordsTable* = newTable[int, sourceLine](900)
   fn: string
   lastWord: int
 
@@ -116,7 +133,7 @@ proc initDissasm*(fileName: string, lastAddress: int) =
   f.close()  
   buildNameTable(lastWord, btmem, wordsTable)
   
-if isMainModule:   
+proc main =
   initDissasm("j1.bin", 0x1b3e)
 
   var wdmem: array[0..0x4000, uint16]  
@@ -124,10 +141,34 @@ if isMainModule:
   var sz = f.getFileSize().int32
   echo "Readed bytes: ", f.readBuffer(wdmem[0].addr, sz)
   f.close()  
-
-  for i in 0..10: #(sz shr 1 - 1):
+  
+  f=open("j1n.lst", fmWrite)
+  var i=0
+  while i < (sz shr 1 - 1):
     var w= wdmem[i]
     if wordsTable.hasKey((i*2).int):
-      echo "\\ " & wordsTable[(i*2).int].name
-    echo fmt("{i*2:04x} {w:04x} ") & disasm(w)
+      var sl = wordsTable[(i*2).int]
+      case sl.field
+      of lfa:         
+        f.writeLine "---------- " & sl.fw.name & " ----------"
+        f.writeLine fmt("{i*2:04x} {w:04x} ") & "lfa"
+      of nfa:
+        var l = sl.fw.len.int        
+        f.writeLine fmt("{i*2:04x} {w:04x} nfa ") & $l
+        l = (align(l)-1) shr 1
+        for j in i+1..(i+l):
+          w = wdmem[j]
+          f.writeLine fmt("{j*2:04x} {w:04x} ")  
+        i = i + l 
+      of cfa:
+        f.writeLine "\\ " & sl.fw.name & " cfa"
+        f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
+      else:
+        echo "[htym"
+    else:
+        f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
+    i=i+1
+
+if isMainModule:   
+  main()
   

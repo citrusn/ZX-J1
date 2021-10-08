@@ -1,0 +1,4082 @@
+\ start cfa
+0000 0d7f branch cold (1afe)
+0002 0010 branch  (0020)
+0004 0000 branch start (0000)
+0006 0000 branch start (0000)
+0008 0000 branch start (0000)
+000a 3f00 0branch  (3e00)
+000c 0f56 branch  (1eac)
+000e 1034 branch  (2068)
+0010 0000 branch start (0000)
+0012 0000 branch start (0000)
+0014 0000 branch start (0000)
+0016 0000 branch start (0000)
+0018 0000 branch start (0000)
+001a 0000 branch start (0000)
+001c 0000 branch start (0000)
+001e 0000 branch start (0000)
+0020 0000 branch start (0000)
+0022 0000 branch start (0000)
+0024 0000 branch start (0000)
+0026 0000 branch start (0000)
+0028 0000 branch start (0000)
+002a 0000 branch start (0000)
+002c 0000 branch start (0000)
+002e 1b48 branch  (3690)
+0030 1b3e branch  (367c)
+0032 0a84 branch  (1508)
+0034 0a98 branch  (1530)
+0036 1ac6 branch  (358c)
+0038 0d12 branch  (1a24)
+003a 0dfe branch  (1bfc)
+003c 150a branch  (2a14)
+003e 158c branch  (2b18)
+0040 15b4 branch  (2b68)
+0042 1620 branch  (2c40)
+0044 0000 branch start (0000)
+0046 0000 branch start (0000)
+0048 0000 branch start (0000)
+004a 0000 branch start (0000)
+004c 0000 branch start (0000)
+004e 0000 branch start (0000)
+0050 0000 branch start (0000)
+0052 0000 branch start (0000)
+0054 0000 branch start (0000)
+0056 0000 branch start (0000)
+0058 0000 branch start (0000)
+005a 0000 branch start (0000)
+005c 0000 branch start (0000)
+005e 0000 branch start (0000)
+0060 0000 branch start (0000)
+0062 0000 branch start (0000)
+0064 0000 branch start (0000)
+0066 0000 branch start (0000)
+0068 0000 branch start (0000)
+006a 0000 branch start (0000)
+006c 0000 branch start (0000)
+006e 0000 branch start (0000)
+0070 0000 branch start (0000)
+0072 0000 branch start (0000)
+0074 0000 branch start (0000)
+0076 0000 branch start (0000)
+0078 0000 branch start (0000)
+007a 0000 branch start (0000)
+007c 0000 branch start (0000)
+007e 0000 branch start (0000)
+0080 6003  | DS-1
+0082 6003  | DS-1
+0084 6003  | DS-1
+0086 6003  | DS-1
+0088 6003  | DS-1
+008a 6003  | DS-1
+008c 6003  | DS-1
+008e 6003  | DS-1
+0090 6003  | DS-1
+0092 6003  | DS-1
+0094 6003  | DS-1
+0096 6003  | DS-1
+0098 6003  | DS-1
+009a 6003  | DS-1
+009c 6003  | DS-1
+009e 710c RS/2->PC | copy | RS-1
+00a0 6001  | DS+1
+00a2 6001  | DS+1
+00a4 6001  | DS+1
+00a6 6001  | DS+1
+00a8 6001  | DS+1
+00aa 6001  | DS+1
+00ac 6001  | DS+1
+00ae 6001  | DS+1
+00b0 6001  | DS+1
+00b2 6001  | DS+1
+00b4 6001  | DS+1
+00b6 6001  | DS+1
+00b8 6001  | DS+1
+00ba 6001  | DS+1
+00bc 6001  | DS+1
+00be 700c RS/2->PC |  | RS-1
+00c0 6100 copy
+00c2 700c RS/2->PC |  | RS-1
+00c4 404e call  (009c)
+00c6 005e branch  (00bc)
+00c8 404d call  (009a)
+00ca 005d branch  (00ba)
+00cc 404c call  (0098)
+00ce 005c branch  (00b8)
+00d0 404b call  (0096)
+00d2 005b branch  (00b6)
+00d4 404a call  (0094)
+00d6 005a branch  (00b4)
+00d8 4049 call  (0092)
+00da 0059 branch  (00b2)
+00dc 4048 call  (0090)
+00de 0058 branch  (00b0)
+00e0 4047 call  (008e)
+00e2 0057 branch  (00ae)
+00e4 4046 call  (008c)
+00e6 0056 branch  (00ac)
+00e8 4045 call  (008a)
+00ea 0055 branch  (00aa)
+00ec 4044 call  (0088)
+00ee 0054 branch  (00a8)
+00f0 4043 call  (0086)
+00f2 0053 branch  (00a6)
+00f4 4042 call  (0084)
+00f6 0052 branch  (00a4)
+00f8 4041 call  (0082)
+00fa 0051 branch  (00a2)
+00fc 4040 call  (0080)
+00fe 0050 branch  (00a0)
+0100 700c RS/2->PC |  | RS-1
+0102 0000 branch start (0000)
+0104 0000 branch start (0000)
+0106 0000 branch start (0000)
+0108 0000 branch start (0000)
+010a 0000 branch start (0000)
+010c 0000 branch start (0000)
+010e 0000 branch start (0000)
+0110 0000 branch start (0000)
+0112 0000 branch start (0000)
+0114 0000 branch start (0000)
+0116 0000 branch start (0000)
+0118 0000 branch start (0000)
+011a 0000 branch start (0000)
+011c 0000 branch start (0000)
+011e 0000 branch start (0000)
+0120 0000 branch start (0000)
+0122 0000 branch start (0000)
+0124 0000 branch start (0000)
+0126 0000 branch start (0000)
+0128 0000 branch start (0000)
+012a 0000 branch start (0000)
+012c 0000 branch start (0000)
+012e 0000 branch start (0000)
+0130 0000 branch start (0000)
+0132 0000 branch start (0000)
+0134 0000 branch start (0000)
+0136 0000 branch start (0000)
+0138 0000 branch start (0000)
+013a 0000 branch start (0000)
+013c 0000 branch start (0000)
+013e 0000 branch start (0000)
+0140 0000 branch start (0000)
+0142 0000 branch start (0000)
+0144 0000 branch start (0000)
+0146 0000 branch start (0000)
+0148 0000 branch start (0000)
+014a 0000 branch start (0000)
+014c 0000 branch start (0000)
+014e 0000 branch start (0000)
+0150 0000 branch start (0000)
+0152 0000 branch start (0000)
+0154 0000 branch start (0000)
+0156 0000 branch start (0000)
+0158 0000 branch start (0000)
+015a 0000 branch start (0000)
+015c 0000 branch start (0000)
+015e 0000 branch start (0000)
+0160 0000 branch start (0000)
+0162 0000 branch start (0000)
+0164 0000 branch start (0000)
+0166 0000 branch start (0000)
+0168 0000 branch start (0000)
+016a 0000 branch start (0000)
+016c 0000 branch start (0000)
+016e 0000 branch start (0000)
+0170 0000 branch start (0000)
+0172 0000 branch start (0000)
+0174 0000 branch start (0000)
+0176 0000 branch start (0000)
+0178 0000 branch start (0000)
+017a 0000 branch start (0000)
+017c 0000 branch start (0000)
+017e 0000 branch start (0000)
+---------- noop ----------
+0180 0000 lfa
+0182 6e04 nfa 4
+0184 6f6f 
+0186 0070 
+\ noop cfa
+0188 700c RS/2->PC |  | RS-1
+---------- + ----------
+018a 0182 lfa
+018c 2b01 nfa 1
+\ + cfa
+018e 720f RS/2->PC | + | DS-1 | RS-1
+---------- xor ----------
+0190 018c lfa
+0192 7803 nfa 3
+0194 726f 
+\ xor cfa
+0196 750f RS/2->PC | xor | DS-1 | RS-1
+---------- and ----------
+0198 0192 lfa
+019a 6103 nfa 3
+019c 646e 
+\ and cfa
+019e 730f RS/2->PC | and | DS-1 | RS-1
+---------- or ----------
+01a0 019a lfa
+01a2 6f02 nfa 2
+01a4 0072 
+\ or cfa
+01a6 740f RS/2->PC | or | DS-1 | RS-1
+---------- invert ----------
+01a8 01a2 lfa
+01aa 6906 nfa 6
+01ac 766e 
+01ae 7265 
+01b0 0074 
+\ invert cfa
+01b2 760c RS/2->PC | invert | RS-1
+---------- = ----------
+01b4 01aa lfa
+01b6 3d01 nfa 1
+\ = cfa
+01b8 770f RS/2->PC | = | DS-1 | RS-1
+---------- < ----------
+01ba 01b6 lfa
+01bc 3c01 nfa 1
+\ < cfa
+01be 780f RS/2->PC | < | DS-1 | RS-1
+---------- u< ----------
+01c0 01bc lfa
+01c2 7502 nfa 2
+01c4 003c 
+\ u< cfa
+01c6 7f0f RS/2->PC | u< | DS-1 | RS-1
+---------- swap ----------
+01c8 01c2 lfa
+01ca 7304 nfa 4
+01cc 6177 
+01ce 0070 
+\ swap cfa
+01d0 718c RS/2->PC | copy | RS-1 | T->S
+---------- u> ----------
+01d2 01ca lfa
+01d4 7502 nfa 2
+01d6 003e 
+\ u> cfa
+01d8 6180 copy | T->S
+01da 7f0f RS/2->PC | u< | DS-1 | RS-1
+---------- dup ----------
+01dc 01d4 lfa
+01de 6403 nfa 3
+01e0 7075 
+\ dup cfa
+01e2 708d RS/2->PC |  | DS+1 | RS-1 | T->S
+---------- drop ----------
+01e4 01de lfa
+01e6 6404 nfa 4
+01e8 6f72 
+01ea 0070 
+\ drop cfa
+01ec 710f RS/2->PC | copy | DS-1 | RS-1
+---------- over ----------
+01ee 01e6 lfa
+01f0 6f04 nfa 4
+01f2 6576 
+01f4 0072 
+\ over cfa
+01f6 718d RS/2->PC | copy | DS+1 | RS-1 | T->S
+---------- nip ----------
+01f8 01f0 lfa
+01fa 6e03 nfa 3
+01fc 7069 
+\ nip cfa
+01fe 700f RS/2->PC |  | DS-1 | RS-1
+---------- lshift ----------
+0200 01fa lfa
+0202 6c06 nfa 6
+0204 6873 
+0206 6669 
+0208 0074 
+\ lshift cfa
+020a 7d0f RS/2->PC | << | DS-1 | RS-1
+---------- rshift ----------
+020c 0202 lfa
+020e 7206 nfa 6
+0210 6873 
+0212 6669 
+0214 0074 
+\ rshift cfa
+0216 790f RS/2->PC | >> | DS-1 | RS-1
+---------- 1- ----------
+0218 020e lfa
+021a 3102 nfa 2
+021c 002d 
+\ 1- cfa
+021e 7a0c RS/2->PC | 1- | RS-1
+---------- >r ----------
+0220 021a lfa
+0222 3e42 nfa 2
+0224 0072 
+\ >r cfa
+0226 6b8d r@ | DS+1 | RS-1 | T->S
+0228 6180 copy | T->S
+022a 6147 copy | DS-1 | RS+1 | T->Ret
+022c 6147 copy | DS-1 | RS+1 | T->Ret
+022e 700c RS/2->PC |  | RS-1
+---------- r> ----------
+0230 0222 lfa
+0232 7242 nfa 2
+0234 003e 
+\ r> cfa
+0236 6b8d r@ | DS+1 | RS-1 | T->S
+0238 6b8d r@ | DS+1 | RS-1 | T->S
+023a 6180 copy | T->S
+023c 6147 copy | DS-1 | RS+1 | T->Ret
+023e 700c RS/2->PC |  | RS-1
+---------- r@ ----------
+0240 0232 lfa
+0242 7242 nfa 2
+0244 0040 
+\ r@ cfa
+0246 6b8d r@ | DS+1 | RS-1 | T->S
+0248 6b8d r@ | DS+1 | RS-1 | T->S
+024a 6081  | DS+1 | T->S
+024c 6147 copy | DS-1 | RS+1 | T->Ret
+024e 6180 copy | T->S
+0250 6147 copy | DS-1 | RS+1 | T->Ret
+0252 700c RS/2->PC |  | RS-1
+---------- @ ----------
+0254 0242 lfa
+0256 4001 nfa 1
+\ @ cfa
+0258 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- ! ----------
+025a 0256 lfa
+025c 2101 nfa 1
+\ ! cfa
+025e 6023  | DS-1 | ! S->[T/2]
+0260 710f RS/2->PC | copy | DS-1 | RS-1
+---------- <> ----------
+0262 025c lfa
+0264 3c02 nfa 2
+0266 003e 
+\ <> cfa
+0268 6703 = | DS-1
+026a 760c RS/2->PC | invert | RS-1
+---------- 0< ----------
+026c 0264 lfa
+026e 3002 nfa 2
+0270 003c 
+\ 0< cfa
+0272 8000 push 0000
+0274 780f RS/2->PC | < | DS-1 | RS-1
+---------- 0= ----------
+0276 026e lfa
+0278 3002 nfa 2
+027a 003d 
+\ 0= cfa
+027c 8000 push 0000
+027e 770f RS/2->PC | = | DS-1 | RS-1
+---------- > ----------
+0280 0278 lfa
+0282 3e01 nfa 1
+\ > cfa
+0284 6180 copy | T->S
+0286 780f RS/2->PC | < | DS-1 | RS-1
+---------- 0> ----------
+0288 0282 lfa
+028a 3002 nfa 2
+028c 003e 
+\ 0> cfa
+028e 8000 push 0000
+0290 6180 copy | T->S
+0292 780f RS/2->PC | < | DS-1 | RS-1
+---------- >= ----------
+0294 028a lfa
+0296 3e02 nfa 2
+0298 003d 
+\ >= cfa
+029a 6803 < | DS-1
+029c 760c RS/2->PC | invert | RS-1
+---------- tuck ----------
+029e 0296 lfa
+02a0 7404 nfa 4
+02a2 6375 
+02a4 006b 
+\ tuck cfa
+02a6 6180 copy | T->S
+02a8 718d RS/2->PC | copy | DS+1 | RS-1 | T->S
+---------- -rot ----------
+02aa 02a0 lfa
+02ac 2d04 nfa 4
+02ae 6f72 
+02b0 0074 
+\ -rot cfa
+02b2 6180 copy | T->S
+02b4 6147 copy | DS-1 | RS+1 | T->Ret
+02b6 6180 copy | T->S
+02b8 6b8d r@ | DS+1 | RS-1 | T->S
+02ba 700c RS/2->PC |  | RS-1
+---------- 2/ ----------
+02bc 02ac lfa
+02be 3202 nfa 2
+02c0 002f 
+\ 2/ cfa
+02c2 8001 push 0001
+02c4 790f RS/2->PC | >> | DS-1 | RS-1
+---------- 2* ----------
+02c6 02be lfa
+02c8 3202 nfa 2
+02ca 002a 
+\ 2* cfa
+02cc 8001 push 0001
+02ce 7d0f RS/2->PC | << | DS-1 | RS-1
+---------- 1+ ----------
+02d0 02c8 lfa
+02d2 3102 nfa 2
+02d4 002b 
+\ 1+ cfa
+02d6 8001 push 0001
+02d8 720f RS/2->PC | + | DS-1 | RS-1
+---------- sp@ ----------
+02da 02d2 lfa
+02dc 7303 nfa 3
+02de 4070 
+\ sp@ cfa
+02e0 6e81 status | DS+1 | T->S
+02e2 80ff push 00ff
+02e4 730f RS/2->PC | and | DS-1 | RS-1
+---------- execute ----------
+02e6 02dc lfa
+02e8 6507 nfa 7
+02ea 6578 
+02ec 7563 
+02ee 6574 
+\ execute cfa
+02f0 6147 copy | DS-1 | RS+1 | T->Ret
+02f2 700c RS/2->PC |  | RS-1
+---------- bye ----------
+02f4 02e8 lfa
+02f6 6203 nfa 3
+02f8 6579 
+\ bye cfa
+02fa 8ffd push 0ffd
+02fc 6600 invert
+02fe 6023  | DS-1 | ! S->[T/2]
+0300 710f RS/2->PC | copy | DS-1 | RS-1
+---------- c@ ----------
+0302 02f6 lfa
+0304 6302 nfa 2
+0306 0040 
+\ c@ cfa
+0308 6081  | DS+1 | T->S
+030a 6c00 @ [T/2]
+030c 6180 copy | T->S
+030e 8001 push 0001
+0310 6303 and | DS-1
+0312 218d 0branch  (031a)
+0314 8008 push 0008
+0316 6903 >> | DS-1
+0318 018f branch  (031e)
+031a 80ff push 00ff
+031c 730f RS/2->PC | and | DS-1 | RS-1
+031e 700c RS/2->PC |  | RS-1
+---------- c! ----------
+0320 0304 lfa
+0322 6302 nfa 2
+0324 0021 
+\ c! cfa
+0326 6180 copy | T->S
+0328 80ff push 00ff
+032a 6303 and | DS-1
+032c 6081  | DS+1 | T->S
+032e 8008 push 0008
+0330 6d03 << | DS-1
+0332 6403 or | DS-1
+0334 6180 copy | T->S
+0336 4153 call tuck (02a6)
+0338 6081  | DS+1 | T->S
+033a 6c00 @ [T/2]
+033c 6180 copy | T->S
+033e 8001 push 0001
+0340 6303 and | DS-1
+0342 8000 push 0000
+0344 6703 = | DS-1
+0346 80ff push 00ff
+0348 6503 xor | DS-1
+034a 6147 copy | DS-1 | RS+1 | T->Ret
+034c 6181 copy | DS+1 | T->S
+034e 6503 xor | DS-1
+0350 6b8d r@ | DS+1 | RS-1 | T->S
+0352 6303 and | DS-1
+0354 6503 xor | DS-1
+0356 6180 copy | T->S
+0358 6023  | DS-1 | ! S->[T/2]
+035a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- um+ ----------
+035c 0322 lfa
+035e 7503 nfa 3
+0360 2b6d 
+\ um+ cfa
+0362 6181 copy | DS+1 | T->S
+0364 6181 copy | DS+1 | T->S
+0366 6203 + | DS-1
+0368 6147 copy | DS-1 | RS+1 | T->Ret
+036a 6b81 r@ | DS+1 | T->S
+036c 8000 push 0000
+036e 414d call >= (029a)
+0370 6147 copy | DS-1 | RS+1 | T->Ret
+0372 6181 copy | DS+1 | T->S
+0374 6181 copy | DS+1 | T->S
+0376 6303 and | DS-1
+0378 4139 call 0< (0272)
+037a 6b8d r@ | DS+1 | RS-1 | T->S
+037c 6403 or | DS-1
+037e 6147 copy | DS-1 | RS+1 | T->Ret
+0380 6403 or | DS-1
+0382 4139 call 0< (0272)
+0384 6b8d r@ | DS+1 | RS-1 | T->S
+0386 6303 and | DS-1
+0388 6600 invert
+038a 416b call 1+ (02d6)
+038c 6b8d r@ | DS+1 | RS-1 | T->S
+038e 718c RS/2->PC | copy | RS-1 | T->S
+---------- dovar ----------
+0390 035e lfa
+0392 6445 nfa 5
+0394 766f 
+0396 7261 
+\ dovar cfa
+0398 6b8d r@ | DS+1 | RS-1 | T->S
+039a 700c RS/2->PC |  | RS-1
+---------- up ----------
+039c 0392 lfa
+039e 7502 nfa 2
+03a0 0070 
+\ up cfa
+03a2 41cc call dovar (0398)
+03a4 3e80 0branch  (3d00)
+03a6 700c RS/2->PC |  | RS-1
+---------- douser ----------
+03a8 039e lfa
+03aa 6446 nfa 6
+03ac 756f 
+03ae 6573 
+03b0 0072 
+\ douser cfa
+03b2 41d1 call up (03a2)
+03b4 6c00 @ [T/2]
+03b6 6b8d r@ | DS+1 | RS-1 | T->S
+03b8 6c00 @ [T/2]
+03ba 720f RS/2->PC | + | DS-1 | RS-1
+---------- base ----------
+03bc 03aa lfa
+03be 6204 nfa 4
+03c0 7361 
+03c2 0065 
+\ base cfa
+03c4 be80 push 3e80
+03c6 700c RS/2->PC |  | RS-1
+---------- temp ----------
+03c8 03be lfa
+03ca 7404 nfa 4
+03cc 6d65 
+03ce 0070 
+\ temp cfa
+03d0 be82 push 3e82
+03d2 700c RS/2->PC |  | RS-1
+---------- >in ----------
+03d4 03ca lfa
+03d6 3e03 nfa 3
+03d8 6e69 
+\ >in cfa
+03da be84 push 3e84
+03dc 700c RS/2->PC |  | RS-1
+---------- #tib ----------
+03de 03d6 lfa
+03e0 2304 nfa 4
+03e2 6974 
+03e4 0062 
+\ #tib cfa
+03e6 be86 push 3e86
+03e8 700c RS/2->PC |  | RS-1
+---------- tib ----------
+03ea 03e0 lfa
+03ec 7403 nfa 3
+03ee 6269 
+\ tib cfa
+03f0 be88 push 3e88
+03f2 700c RS/2->PC |  | RS-1
+---------- 'eval ----------
+03f4 03ec lfa
+03f6 2705 nfa 5
+03f8 7665 
+03fa 6c61 
+\ 'eval cfa
+03fc be8a push 3e8a
+03fe 700c RS/2->PC |  | RS-1
+---------- 'abort ----------
+0400 03f6 lfa
+0402 2706 nfa 6
+0404 6261 
+0406 726f 
+0408 0074 
+\ 'abort cfa
+040a be8c push 3e8c
+040c 700c RS/2->PC |  | RS-1
+---------- hld ----------
+040e 0402 lfa
+0410 6803 nfa 3
+0412 646c 
+\ hld cfa
+0414 be8e push 3e8e
+0416 700c RS/2->PC |  | RS-1
+---------- context ----------
+0418 0410 lfa
+041a 6307 nfa 7
+041c 6e6f 
+041e 6574 
+0420 7478 
+\ context cfa
+0422 be90 push 3e90
+0424 700c RS/2->PC |  | RS-1
+---------- forth-wordlist ----------
+0426 041a lfa
+0428 660e nfa 14
+042a 726f 
+042c 6874 
+042e 772d 
+0430 726f 
+0432 6c64 
+0434 7369 
+0436 0074 
+\ forth-wordlist cfa
+0438 bea2 push 3ea2
+043a 700c RS/2->PC |  | RS-1
+---------- current ----------
+043c 0428 lfa
+043e 6307 nfa 7
+0440 7275 
+0442 6572 
+0444 746e 
+\ current cfa
+0446 bea8 push 3ea8
+0448 700c RS/2->PC |  | RS-1
+---------- dp ----------
+044a 043e lfa
+044c 6402 nfa 2
+044e 0070 
+\ dp cfa
+0450 beac push 3eac
+0452 700c RS/2->PC |  | RS-1
+---------- last ----------
+0454 044c lfa
+0456 6c04 nfa 4
+0458 7361 
+045a 0074 
+\ last cfa
+045c beae push 3eae
+045e 700c RS/2->PC |  | RS-1
+---------- '?key ----------
+0460 0456 lfa
+0462 2705 nfa 5
+0464 6b3f 
+0466 7965 
+\ '?key cfa
+0468 beb0 push 3eb0
+046a 700c RS/2->PC |  | RS-1
+---------- 'emit ----------
+046c 0462 lfa
+046e 2705 nfa 5
+0470 6d65 
+0472 7469 
+\ 'emit cfa
+0474 beb2 push 3eb2
+0476 700c RS/2->PC |  | RS-1
+---------- 'boot ----------
+0478 046e lfa
+047a 2705 nfa 5
+047c 6f62 
+047e 746f 
+\ 'boot cfa
+0480 beb4 push 3eb4
+0482 700c RS/2->PC |  | RS-1
+---------- '\ ----------
+0484 047a lfa
+0486 2702 nfa 2
+0488 005c 
+\ '\ cfa
+048a beb6 push 3eb6
+048c 700c RS/2->PC |  | RS-1
+---------- 'name? ----------
+048e 0486 lfa
+0490 2706 nfa 6
+0492 616e 
+0494 656d 
+0496 003f 
+\ 'name? cfa
+0498 beb8 push 3eb8
+049a 700c RS/2->PC |  | RS-1
+---------- '$,n ----------
+049c 0490 lfa
+049e 2704 nfa 4
+04a0 2c24 
+04a2 006e 
+\ '$,n cfa
+04a4 beba push 3eba
+04a6 700c RS/2->PC |  | RS-1
+---------- 'overt ----------
+04a8 049e lfa
+04aa 2706 nfa 6
+04ac 766f 
+04ae 7265 
+04b0 0074 
+\ 'overt cfa
+04b2 bebc push 3ebc
+04b4 700c RS/2->PC |  | RS-1
+---------- '; ----------
+04b6 04aa lfa
+04b8 2702 nfa 2
+04ba 003b 
+\ '; cfa
+04bc bebe push 3ebe
+04be 700c RS/2->PC |  | RS-1
+---------- 'create ----------
+04c0 04b8 lfa
+04c2 2707 nfa 7
+04c4 7263 
+04c6 6165 
+04c8 6574 
+\ 'create cfa
+04ca bec0 push 3ec0
+04cc 700c RS/2->PC |  | RS-1
+---------- ?dup ----------
+04ce 04c2 lfa
+04d0 3f04 nfa 4
+04d2 7564 
+04d4 0070 
+\ ?dup cfa
+04d6 6081  | DS+1 | T->S
+04d8 226e 0branch  (04dc)
+04da 708d RS/2->PC |  | DS+1 | RS-1 | T->S
+04dc 700c RS/2->PC |  | RS-1
+---------- rot ----------
+04de 04d0 lfa
+04e0 7203 nfa 3
+04e2 746f 
+\ rot cfa
+04e4 6147 copy | DS-1 | RS+1 | T->Ret
+04e6 6180 copy | T->S
+04e8 6b8d r@ | DS+1 | RS-1 | T->S
+04ea 718c RS/2->PC | copy | RS-1 | T->S
+---------- 2dup ----------
+04ec 04e0 lfa
+04ee 3204 nfa 4
+04f0 7564 
+04f2 0070 
+\ 2dup cfa
+04f4 6181 copy | DS+1 | T->S
+04f6 718d RS/2->PC | copy | DS+1 | RS-1 | T->S
+---------- 2swap ----------
+04f8 04ee lfa
+04fa 3205 nfa 5
+04fc 7773 
+04fe 7061 
+\ 2swap cfa
+0500 4272 call rot (04e4)
+0502 6147 copy | DS-1 | RS+1 | T->Ret
+0504 4272 call rot (04e4)
+0506 6b8d r@ | DS+1 | RS-1 | T->S
+0508 700c RS/2->PC |  | RS-1
+---------- 2over ----------
+050a 04fa lfa
+050c 3205 nfa 5
+050e 766f 
+0510 7265 
+\ 2over cfa
+0512 6147 copy | DS-1 | RS+1 | T->Ret
+0514 6147 copy | DS-1 | RS+1 | T->Ret
+0516 427a call 2dup (04f4)
+0518 6b8d r@ | DS+1 | RS-1 | T->S
+051a 6b8d r@ | DS+1 | RS-1 | T->S
+051c 0280 branch 2swap (0500)
+---------- 2nip ----------
+051e 050c lfa
+0520 3204 nfa 4
+0522 696e 
+0524 0070 
+\ 2nip cfa
+0526 6147 copy | DS-1 | RS+1 | T->Ret
+0528 6147 copy | DS-1 | RS+1 | T->Ret
+052a 6103 copy | DS-1
+052c 6103 copy | DS-1
+052e 6b8d r@ | DS+1 | RS-1 | T->S
+0530 6b8d r@ | DS+1 | RS-1 | T->S
+0532 718c RS/2->PC | copy | RS-1 | T->S
+---------- 2rot ----------
+0534 0520 lfa
+0536 3204 nfa 4
+0538 6f72 
+053a 0074 
+\ 2rot cfa
+053c 6180 copy | T->S
+053e 6147 copy | DS-1 | RS+1 | T->Ret
+0540 6147 copy | DS-1 | RS+1 | T->Ret
+0542 4280 call 2swap (0500)
+0544 6b8d r@ | DS+1 | RS-1 | T->S
+0546 6b8d r@ | DS+1 | RS-1 | T->S
+0548 6180 copy | T->S
+054a 0280 branch 2swap (0500)
+---------- negate ----------
+054c 0536 lfa
+054e 6e06 nfa 6
+0550 6765 
+0552 7461 
+0554 0065 
+\ negate cfa
+0556 6600 invert
+0558 016b branch 1+ (02d6)
+---------- dnegate ----------
+055a 054e lfa
+055c 6407 nfa 7
+055e 656e 
+0560 6167 
+0562 6574 
+\ dnegate cfa
+0564 6600 invert
+0566 6147 copy | DS-1 | RS+1 | T->Ret
+0568 6600 invert
+056a 8001 push 0001
+056c 41b1 call um+ (0362)
+056e 6b8d r@ | DS+1 | RS-1 | T->S
+0570 720f RS/2->PC | + | DS-1 | RS-1
+---------- dinvert ----------
+0572 055c lfa
+0574 6407 nfa 7
+0576 6e69 
+0578 6576 
+057a 7472 
+\ dinvert cfa
+057c 6600 invert
+057e 6180 copy | T->S
+0580 6600 invert
+0582 718c RS/2->PC | copy | RS-1 | T->S
+---------- 2drop ----------
+0584 0574 lfa
+0586 3205 nfa 5
+0588 7264 
+058a 706f 
+\ 2drop cfa
+058c 6103 copy | DS-1
+058e 710f RS/2->PC | copy | DS-1 | RS-1
+---------- d< ----------
+0590 0586 lfa
+0592 6402 nfa 2
+0594 003c 
+\ d< cfa
+0596 4272 call rot (04e4)
+0598 427a call 2dup (04f4)
+059a 6703 = | DS-1
+059c 22d2 0branch  (05a4)
+059e 42c6 call 2drop (058c)
+05a0 6f03 u< | DS-1
+05a2 02d4 branch d> (05a8)
+05a4 4293 call 2nip (0526)
+05a6 0142 branch > (0284)
+---------- d> ----------
+05a8 0592 lfa
+05aa 6402 nfa 2
+05ac 003e 
+\ d> cfa
+05ae 4280 call 2swap (0500)
+05b0 02cb branch d< (0596)
+---------- d0<= ----------
+05b2 05aa lfa
+05b4 6404 nfa 4
+05b6 3c30 
+05b8 003d 
+\ d0<= cfa
+05ba 8000 push 0000
+05bc 8000 push 0000
+05be 42d7 call d> (05ae)
+05c0 760c RS/2->PC | invert | RS-1
+---------- d<= ----------
+05c2 05b4 lfa
+05c4 6403 nfa 3
+05c6 3d3c 
+\ d<= cfa
+05c8 42d7 call d> (05ae)
+05ca 760c RS/2->PC | invert | RS-1
+---------- d>= ----------
+05cc 05c4 lfa
+05ce 6403 nfa 3
+05d0 3d3e 
+\ d>= cfa
+05d2 42cb call d< (0596)
+05d4 760c RS/2->PC | invert | RS-1
+---------- d0= ----------
+05d6 05ce lfa
+05d8 6403 nfa 3
+05da 3d30 
+\ d0= cfa
+05dc 6403 or | DS-1
+05de 013e branch 0= (027c)
+---------- d= ----------
+05e0 05d8 lfa
+05e2 6402 nfa 2
+05e4 003d 
+\ d= cfa
+05e6 6147 copy | DS-1 | RS+1 | T->Ret
+05e8 4272 call rot (04e4)
+05ea 6503 xor | DS-1
+05ec 6180 copy | T->S
+05ee 6b8d r@ | DS+1 | RS-1 | T->S
+05f0 6503 xor | DS-1
+05f2 6403 or | DS-1
+05f4 013e branch 0= (027c)
+---------- d0<> ----------
+05f6 05e2 lfa
+05f8 6404 nfa 4
+05fa 3c30 
+05fc 003e 
+\ d0<> cfa
+05fe 42ee call d0= (05dc)
+0600 760c RS/2->PC | invert | RS-1
+---------- d<> ----------
+0602 05f8 lfa
+0604 6403 nfa 3
+0606 3e3c 
+\ d<> cfa
+0608 42f3 call d= (05e6)
+060a 760c RS/2->PC | invert | RS-1
+---------- d+ ----------
+060c 0604 lfa
+060e 6402 nfa 2
+0610 002b 
+\ d+ cfa
+0612 4272 call rot (04e4)
+0614 6203 + | DS-1
+0616 6147 copy | DS-1 | RS+1 | T->Ret
+0618 6181 copy | DS+1 | T->S
+061a 6203 + | DS-1
+061c 6081  | DS+1 | T->S
+061e 4272 call rot (04e4)
+0620 6f03 u< | DS-1
+0622 2315 0branch  (062a)
+0624 6b8d r@ | DS+1 | RS-1 | T->S
+0626 416b call 1+ (02d6)
+0628 0316 branch  (062c)
+062a 6b8d r@ | DS+1 | RS-1 | T->S
+062c 700c RS/2->PC |  | RS-1
+---------- d- ----------
+062e 060e lfa
+0630 6402 nfa 2
+0632 002d 
+\ d- cfa
+0634 42b2 call dnegate (0564)
+0636 0309 branch d+ (0612)
+---------- - ----------
+0638 0630 lfa
+063a 2d01 nfa 1
+\ - cfa
+063c 42ab call negate (0556)
+063e 720f RS/2->PC | + | DS-1 | RS-1
+---------- abs ----------
+0640 063a lfa
+0642 6103 nfa 3
+0644 7362 
+\ abs cfa
+0646 6081  | DS+1 | T->S
+0648 4139 call 0< (0272)
+064a 2327 0branch  (064e)
+064c 02ab branch negate (0556)
+064e 700c RS/2->PC |  | RS-1
+---------- max ----------
+0650 0642 lfa
+0652 6d03 nfa 3
+0654 7861 
+\ max cfa
+0656 427a call 2dup (04f4)
+0658 4142 call > (0284)
+065a 232f 0branch  (065e)
+065c 710f RS/2->PC | copy | DS-1 | RS-1
+065e 700f RS/2->PC |  | DS-1 | RS-1
+---------- min ----------
+0660 0652 lfa
+0662 6d03 nfa 3
+0664 6e69 
+\ min cfa
+0666 427a call 2dup (04f4)
+0668 6803 < | DS-1
+066a 2337 0branch  (066e)
+066c 710f RS/2->PC | copy | DS-1 | RS-1
+066e 700f RS/2->PC |  | DS-1 | RS-1
+---------- within ----------
+0670 0662 lfa
+0672 7706 nfa 6
+0674 7469 
+0676 6968 
+0678 006e 
+\ within cfa
+067a 6181 copy | DS+1 | T->S
+067c 431e call - (063c)
+067e 6147 copy | DS-1 | RS+1 | T->Ret
+0680 431e call - (063c)
+0682 6b8d r@ | DS+1 | RS-1 | T->S
+0684 7f0f RS/2->PC | u< | DS-1 | RS-1
+---------- um/mod ----------
+0686 0672 lfa
+0688 7506 nfa 6
+068a 2f6d 
+068c 6f6d 
+068e 0064 
+\ um/mod cfa
+0690 427a call 2dup (04f4)
+0692 6f03 u< | DS-1
+0694 2371 0branch  (06e2)
+0696 42ab call negate (0556)
+0698 800f push 000f
+069a 6147 copy | DS-1 | RS+1 | T->Ret
+069c 6147 copy | DS-1 | RS+1 | T->Ret
+069e 6081  | DS+1 | T->S
+06a0 41b1 call um+ (0362)
+06a2 6147 copy | DS-1 | RS+1 | T->Ret
+06a4 6147 copy | DS-1 | RS+1 | T->Ret
+06a6 6081  | DS+1 | T->S
+06a8 41b1 call um+ (0362)
+06aa 6b8d r@ | DS+1 | RS-1 | T->S
+06ac 6203 + | DS-1
+06ae 6081  | DS+1 | T->S
+06b0 6b8d r@ | DS+1 | RS-1 | T->S
+06b2 6b81 r@ | DS+1 | T->S
+06b4 6180 copy | T->S
+06b6 6147 copy | DS-1 | RS+1 | T->Ret
+06b8 41b1 call um+ (0362)
+06ba 6b8d r@ | DS+1 | RS-1 | T->S
+06bc 6403 or | DS-1
+06be 2365 0branch  (06ca)
+06c0 6147 copy | DS-1 | RS+1 | T->Ret
+06c2 6103 copy | DS-1
+06c4 416b call 1+ (02d6)
+06c6 6b8d r@ | DS+1 | RS-1 | T->S
+06c8 0366 branch  (06cc)
+06ca 6103 copy | DS-1
+06cc 6b8d r@ | DS+1 | RS-1 | T->S
+06ce 6b81 r@ | DS+1 | T->S
+06d0 236d 0branch  (06da)
+06d2 6b8d r@ | DS+1 | RS-1 | T->S
+06d4 6a00 1-
+06d6 6147 copy | DS-1 | RS+1 | T->Ret
+06d8 034e branch  (069c)
+06da 6b8d r@ | DS+1 | RS-1 | T->S
+06dc 6103 copy | DS-1
+06de 6103 copy | DS-1
+06e0 718c RS/2->PC | copy | RS-1 | T->S
+06e2 6103 copy | DS-1
+06e4 42c6 call 2drop (058c)
+06e6 8000 push 0000
+06e8 6600 invert
+06ea 708d RS/2->PC |  | DS+1 | RS-1 | T->S
+---------- m/mod ----------
+06ec 0688 lfa
+06ee 6d05 nfa 5
+06f0 6d2f 
+06f2 646f 
+\ m/mod cfa
+06f4 6081  | DS+1 | T->S
+06f6 4139 call 0< (0272)
+06f8 6081  | DS+1 | T->S
+06fa 6147 copy | DS-1 | RS+1 | T->Ret
+06fc 2383 0branch  (0706)
+06fe 42ab call negate (0556)
+0700 6147 copy | DS-1 | RS+1 | T->Ret
+0702 42b2 call dnegate (0564)
+0704 6b8d r@ | DS+1 | RS-1 | T->S
+0706 6147 copy | DS-1 | RS+1 | T->Ret
+0708 6081  | DS+1 | T->S
+070a 4139 call 0< (0272)
+070c 2389 0branch  (0712)
+070e 6b81 r@ | DS+1 | T->S
+0710 6203 + | DS-1
+0712 6b8d r@ | DS+1 | RS-1 | T->S
+0714 4348 call um/mod (0690)
+0716 6b8d r@ | DS+1 | RS-1 | T->S
+0718 2390 0branch  (0720)
+071a 6180 copy | T->S
+071c 42ab call negate (0556)
+071e 718c RS/2->PC | copy | RS-1 | T->S
+0720 700c RS/2->PC |  | RS-1
+---------- /mod ----------
+0722 06ee lfa
+0724 2f04 nfa 4
+0726 6f6d 
+0728 0064 
+\ /mod cfa
+072a 6181 copy | DS+1 | T->S
+072c 4139 call 0< (0272)
+072e 6180 copy | T->S
+0730 037a branch m/mod (06f4)
+---------- mod ----------
+0732 0724 lfa
+0734 6d03 nfa 3
+0736 646f 
+\ mod cfa
+0738 4395 call /mod (072a)
+073a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- / ----------
+073c 0734 lfa
+073e 2f01 nfa 1
+\ / cfa
+0740 4395 call /mod (072a)
+0742 700f RS/2->PC |  | DS-1 | RS-1
+---------- um* ----------
+0744 073e lfa
+0746 7503 nfa 3
+0748 2a6d 
+\ um* cfa
+074a 8000 push 0000
+074c 6180 copy | T->S
+074e 800f push 000f
+0750 6147 copy | DS-1 | RS+1 | T->Ret
+0752 6081  | DS+1 | T->S
+0754 41b1 call um+ (0362)
+0756 6147 copy | DS-1 | RS+1 | T->Ret
+0758 6147 copy | DS-1 | RS+1 | T->Ret
+075a 6081  | DS+1 | T->S
+075c 41b1 call um+ (0362)
+075e 6b8d r@ | DS+1 | RS-1 | T->S
+0760 6203 + | DS-1
+0762 6b8d r@ | DS+1 | RS-1 | T->S
+0764 23b8 0branch  (0770)
+0766 6147 copy | DS-1 | RS+1 | T->Ret
+0768 6181 copy | DS+1 | T->S
+076a 41b1 call um+ (0362)
+076c 6b8d r@ | DS+1 | RS-1 | T->S
+076e 6203 + | DS-1
+0770 6b81 r@ | DS+1 | T->S
+0772 23be 0branch  (077c)
+0774 6b8d r@ | DS+1 | RS-1 | T->S
+0776 6a00 1-
+0778 6147 copy | DS-1 | RS+1 | T->Ret
+077a 03a9 branch  (0752)
+077c 6b8d r@ | DS+1 | RS-1 | T->S
+077e 6103 copy | DS-1
+0780 4272 call rot (04e4)
+0782 710f RS/2->PC | copy | DS-1 | RS-1
+---------- * ----------
+0784 0746 lfa
+0786 2a01 nfa 1
+\ * cfa
+0788 43a5 call um* (074a)
+078a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- m* ----------
+078c 0786 lfa
+078e 6d02 nfa 2
+0790 002a 
+\ m* cfa
+0792 427a call 2dup (04f4)
+0794 6503 xor | DS-1
+0796 4139 call 0< (0272)
+0798 6147 copy | DS-1 | RS+1 | T->Ret
+079a 4323 call abs (0646)
+079c 6180 copy | T->S
+079e 4323 call abs (0646)
+07a0 43a5 call um* (074a)
+07a2 6b8d r@ | DS+1 | RS-1 | T->S
+07a4 23d4 0branch  (07a8)
+07a6 02b2 branch dnegate (0564)
+07a8 700c RS/2->PC |  | RS-1
+---------- */mod ----------
+07aa 078e lfa
+07ac 2a05 nfa 5
+07ae 6d2f 
+07b0 646f 
+\ */mod cfa
+07b2 6147 copy | DS-1 | RS+1 | T->Ret
+07b4 43c9 call m* (0792)
+07b6 6b8d r@ | DS+1 | RS-1 | T->S
+07b8 037a branch m/mod (06f4)
+---------- */ ----------
+07ba 07ac lfa
+07bc 2a02 nfa 2
+07be 002f 
+\ */ cfa
+07c0 43d9 call */mod (07b2)
+07c2 700f RS/2->PC |  | DS-1 | RS-1
+---------- cell+ ----------
+07c4 07bc lfa
+07c6 6305 nfa 5
+07c8 6c65 
+07ca 2b6c 
+\ cell+ cfa
+07cc 8002 push 0002
+07ce 720f RS/2->PC | + | DS-1 | RS-1
+---------- cell- ----------
+07d0 07c6 lfa
+07d2 6305 nfa 5
+07d4 6c65 
+07d6 2d6c 
+\ cell- cfa
+07d8 8002 push 0002
+07da 031e branch - (063c)
+---------- cells ----------
+07dc 07d2 lfa
+07de 6305 nfa 5
+07e0 6c65 
+07e2 736c 
+\ cells cfa
+07e4 8001 push 0001
+07e6 7d0f RS/2->PC | << | DS-1 | RS-1
+---------- bl ----------
+07e8 07de lfa
+07ea 6202 nfa 2
+07ec 006c 
+\ bl cfa
+07ee 8020 push 0020
+07f0 700c RS/2->PC |  | RS-1
+---------- >char ----------
+07f2 07ea lfa
+07f4 3e05 nfa 5
+07f6 6863 
+07f8 7261 
+\ >char cfa
+07fa 6081  | DS+1 | T->S
+07fc 80ff push 00ff
+07fe 43f7 call bl (07ee)
+0800 433d call within (067a)
+0802 2404 0branch  (0808)
+0804 6103 copy | DS-1
+0806 805f push 005f
+0808 700c RS/2->PC |  | RS-1
+080a 700c RS/2->PC |  | RS-1
+---------- +! ----------
+080c 07f4 lfa
+080e 2b02 nfa 2
+0810 0021 
+\ +! cfa
+0812 4153 call tuck (02a6)
+0814 6c00 @ [T/2]
+0816 6203 + | DS-1
+0818 6180 copy | T->S
+081a 6023  | DS-1 | ! S->[T/2]
+081c 710f RS/2->PC | copy | DS-1 | RS-1
+---------- 2! ----------
+081e 080e lfa
+0820 3202 nfa 2
+0822 0021 
+\ 2! cfa
+0824 6180 copy | T->S
+0826 6181 copy | DS+1 | T->S
+0828 6023  | DS-1 | ! S->[T/2]
+082a 6103 copy | DS-1
+082c 43e6 call cell+ (07cc)
+082e 6023  | DS-1 | ! S->[T/2]
+0830 710f RS/2->PC | copy | DS-1 | RS-1
+---------- 2@ ----------
+0832 0820 lfa
+0834 3202 nfa 2
+0836 0040 
+\ 2@ cfa
+0838 6081  | DS+1 | T->S
+083a 43e6 call cell+ (07cc)
+083c 6c00 @ [T/2]
+083e 6180 copy | T->S
+0840 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- count ----------
+0842 0834 lfa
+0844 6305 nfa 5
+0846 756f 
+0848 746e 
+\ count cfa
+084a 6081  | DS+1 | T->S
+084c 416b call 1+ (02d6)
+084e 6180 copy | T->S
+0850 0184 branch c@ (0308)
+---------- here ----------
+0852 0844 lfa
+0854 6804 nfa 4
+0856 7265 
+0858 0065 
+\ here cfa
+085a beac push 3eac
+085c 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- aligned ----------
+085e 0854 lfa
+0860 6107 nfa 7
+0862 696c 
+0864 6e67 
+0866 6465 
+\ aligned cfa
+0868 6081  | DS+1 | T->S
+086a 8000 push 0000
+086c 8002 push 0002
+086e 4348 call um/mod (0690)
+0870 6103 copy | DS-1
+0872 6081  | DS+1 | T->S
+0874 243e 0branch  (087c)
+0876 8002 push 0002
+0878 6180 copy | T->S
+087a 431e call - (063c)
+087c 720f RS/2->PC | + | DS-1 | RS-1
+---------- align ----------
+087e 0860 lfa
+0880 6105 nfa 5
+0882 696c 
+0884 6e67 
+\ align cfa
+0886 442d call here (085a)
+0888 4434 call aligned (0868)
+088a beac push 3eac
+088c 6023  | DS-1 | ! S->[T/2]
+088e 710f RS/2->PC | copy | DS-1 | RS-1
+---------- pad ----------
+0890 0880 lfa
+0892 7003 nfa 3
+0894 6461 
+\ pad cfa
+0896 442d call here (085a)
+0898 8050 push 0050
+089a 6203 + | DS-1
+089c 0434 branch aligned (0868)
+---------- @execute ----------
+089e 0892 lfa
+08a0 4008 nfa 8
+08a2 7865 
+08a4 6365 
+08a6 7475 
+08a8 0065 
+\ @execute cfa
+08aa 6c00 @ [T/2]
+08ac 426b call ?dup (04d6)
+08ae 2459 0branch  (08b2)
+08b0 0178 branch execute (02f0)
+08b2 700c RS/2->PC |  | RS-1
+---------- fill ----------
+08b4 08a0 lfa
+08b6 6604 nfa 4
+08b8 6c69 
+08ba 006c 
+\ fill cfa
+08bc 6180 copy | T->S
+08be 6147 copy | DS-1 | RS+1 | T->Ret
+08c0 6180 copy | T->S
+08c2 0465 branch  (08ca)
+08c4 427a call 2dup (04f4)
+08c6 4193 call c! (0326)
+08c8 416b call 1+ (02d6)
+08ca 6b81 r@ | DS+1 | T->S
+08cc 246b 0branch  (08d6)
+08ce 6b8d r@ | DS+1 | RS-1 | T->S
+08d0 6a00 1-
+08d2 6147 copy | DS-1 | RS+1 | T->Ret
+08d4 0462 branch  (08c4)
+08d6 6b8d r@ | DS+1 | RS-1 | T->S
+08d8 6103 copy | DS-1
+08da 02c6 branch 2drop (058c)
+---------- erase ----------
+08dc 08b6 lfa
+08de 6505 nfa 5
+08e0 6172 
+08e2 6573 
+\ erase cfa
+08e4 8000 push 0000
+08e6 045e branch fill (08bc)
+---------- digit ----------
+08e8 08de lfa
+08ea 6405 nfa 5
+08ec 6769 
+08ee 7469 
+\ digit cfa
+08f0 8009 push 0009
+08f2 6181 copy | DS+1 | T->S
+08f4 6803 < | DS-1
+08f6 8007 push 0007
+08f8 6303 and | DS-1
+08fa 6203 + | DS-1
+08fc 8030 push 0030
+08fe 720f RS/2->PC | + | DS-1 | RS-1
+---------- extract ----------
+0900 08ea lfa
+0902 6507 nfa 7
+0904 7478 
+0906 6172 
+0908 7463 
+\ extract cfa
+090a 8000 push 0000
+090c 6180 copy | T->S
+090e 4348 call um/mod (0690)
+0910 6180 copy | T->S
+0912 0478 branch digit (08f0)
+---------- <# ----------
+0914 0902 lfa
+0916 3c02 nfa 2
+0918 0023 
+\ <# cfa
+091a 444b call pad (0896)
+091c be8e push 3e8e
+091e 6023  | DS-1 | ! S->[T/2]
+0920 710f RS/2->PC | copy | DS-1 | RS-1
+---------- hold ----------
+0922 0916 lfa
+0924 6804 nfa 4
+0926 6c6f 
+0928 0064 
+\ hold cfa
+092a be8e push 3e8e
+092c 6c00 @ [T/2]
+092e 6a00 1-
+0930 6081  | DS+1 | T->S
+0932 be8e push 3e8e
+0934 6023  | DS-1 | ! S->[T/2]
+0936 6103 copy | DS-1
+0938 0193 branch c! (0326)
+---------- # ----------
+093a 0924 lfa
+093c 2301 nfa 1
+\ # cfa
+093e be80 push 3e80
+0940 6c00 @ [T/2]
+0942 4485 call extract (090a)
+0944 0495 branch hold (092a)
+---------- #s ----------
+0946 093c lfa
+0948 2302 nfa 2
+094a 0073 
+\ #s cfa
+094c 449f call # (093e)
+094e 6081  | DS+1 | T->S
+0950 24aa 0branch  (0954)
+0952 04a6 branch #s (094c)
+0954 700c RS/2->PC |  | RS-1
+---------- sign ----------
+0956 0948 lfa
+0958 7304 nfa 4
+095a 6769 
+095c 006e 
+\ sign cfa
+095e 4139 call 0< (0272)
+0960 24b3 0branch  (0966)
+0962 802d push 002d
+0964 0495 branch hold (092a)
+0966 700c RS/2->PC |  | RS-1
+---------- #> ----------
+0968 0958 lfa
+096a 2302 nfa 2
+096c 003e 
+\ #> cfa
+096e 6103 copy | DS-1
+0970 be8e push 3e8e
+0972 6c00 @ [T/2]
+0974 444b call pad (0896)
+0976 6181 copy | DS+1 | T->S
+0978 031e branch - (063c)
+---------- str ----------
+097a 096a lfa
+097c 7303 nfa 3
+097e 7274 
+\ str cfa
+0980 6081  | DS+1 | T->S
+0982 6147 copy | DS-1 | RS+1 | T->Ret
+0984 4323 call abs (0646)
+0986 448d call <# (091a)
+0988 44a6 call #s (094c)
+098a 6b8d r@ | DS+1 | RS-1 | T->S
+098c 44af call sign (095e)
+098e 04b7 branch #> (096e)
+---------- hex ----------
+0990 097c lfa
+0992 6803 nfa 3
+0994 7865 
+\ hex cfa
+0996 8010 push 0010
+0998 be80 push 3e80
+099a 6023  | DS-1 | ! S->[T/2]
+099c 710f RS/2->PC | copy | DS-1 | RS-1
+---------- decimal ----------
+099e 0992 lfa
+09a0 6407 nfa 7
+09a2 6365 
+09a4 6d69 
+09a6 6c61 
+\ decimal cfa
+09a8 800a push 000a
+09aa be80 push 3e80
+09ac 6023  | DS-1 | ! S->[T/2]
+09ae 710f RS/2->PC | copy | DS-1 | RS-1
+---------- digit? ----------
+09b0 09a0 lfa
+09b2 6406 nfa 6
+09b4 6769 
+09b6 7469 
+09b8 003f 
+\ digit? cfa
+09ba 6147 copy | DS-1 | RS+1 | T->Ret
+09bc 8030 push 0030
+09be 431e call - (063c)
+09c0 8009 push 0009
+09c2 6181 copy | DS+1 | T->S
+09c4 6803 < | DS-1
+09c6 24f0 0branch  (09e0)
+09c8 6081  | DS+1 | T->S
+09ca 8020 push 0020
+09cc 4142 call > (0284)
+09ce 24ea 0branch  (09d4)
+09d0 8020 push 0020
+09d2 431e call - (063c)
+09d4 8007 push 0007
+09d6 431e call - (063c)
+09d8 6081  | DS+1 | T->S
+09da 800a push 000a
+09dc 6803 < | DS-1
+09de 6403 or | DS-1
+09e0 6081  | DS+1 | T->S
+09e2 6b8d r@ | DS+1 | RS-1 | T->S
+09e4 7f0f RS/2->PC | u< | DS-1 | RS-1
+---------- number? ----------
+09e6 09b2 lfa
+09e8 6e07 nfa 7
+09ea 6d75 
+09ec 6562 
+09ee 3f72 
+\ number? cfa
+09f0 be80 push 3e80
+09f2 6c00 @ [T/2]
+09f4 6147 copy | DS-1 | RS+1 | T->Ret
+09f6 8000 push 0000
+09f8 6181 copy | DS+1 | T->S
+09fa 4425 call count (084a)
+09fc 6181 copy | DS+1 | T->S
+09fe 4184 call c@ (0308)
+0a00 8024 push 0024
+0a02 6703 = | DS-1
+0a04 2508 0branch  (0a10)
+0a06 44cb call hex (0996)
+0a08 6180 copy | T->S
+0a0a 416b call 1+ (02d6)
+0a0c 6180 copy | T->S
+0a0e 6a00 1-
+0a10 6181 copy | DS+1 | T->S
+0a12 4184 call c@ (0308)
+0a14 802d push 002d
+0a16 6703 = | DS-1
+0a18 6147 copy | DS-1 | RS+1 | T->Ret
+0a1a 6180 copy | T->S
+0a1c 6b81 r@ | DS+1 | T->S
+0a1e 431e call - (063c)
+0a20 6180 copy | T->S
+0a22 6b81 r@ | DS+1 | T->S
+0a24 6203 + | DS-1
+0a26 426b call ?dup (04d6)
+0a28 2539 0branch  (0a72)
+0a2a 6a00 1-
+0a2c 6147 copy | DS-1 | RS+1 | T->Ret
+0a2e 6081  | DS+1 | T->S
+0a30 6147 copy | DS-1 | RS+1 | T->Ret
+0a32 4184 call c@ (0308)
+0a34 be80 push 3e80
+0a36 6c00 @ [T/2]
+0a38 44dd call digit? (09ba)
+0a3a 2533 0branch  (0a66)
+0a3c 6180 copy | T->S
+0a3e be80 push 3e80
+0a40 6c00 @ [T/2]
+0a42 43c4 call * (0788)
+0a44 6203 + | DS-1
+0a46 6b8d r@ | DS+1 | RS-1 | T->S
+0a48 416b call 1+ (02d6)
+0a4a 6b81 r@ | DS+1 | T->S
+0a4c 252b 0branch  (0a56)
+0a4e 6b8d r@ | DS+1 | RS-1 | T->S
+0a50 6a00 1-
+0a52 6147 copy | DS-1 | RS+1 | T->Ret
+0a54 0517 branch  (0a2e)
+0a56 6b8d r@ | DS+1 | RS-1 | T->S
+0a58 6103 copy | DS-1
+0a5a 6b81 r@ | DS+1 | T->S
+0a5c 6003  | DS-1
+0a5e 2531 0branch  (0a62)
+0a60 42ab call negate (0556)
+0a62 6180 copy | T->S
+0a64 0538 branch  (0a70)
+0a66 6b8d r@ | DS+1 | RS-1 | T->S
+0a68 6b8d r@ | DS+1 | RS-1 | T->S
+0a6a 42c6 call 2drop (058c)
+0a6c 42c6 call 2drop (058c)
+0a6e 8000 push 0000
+0a70 6081  | DS+1 | T->S
+0a72 6b8d r@ | DS+1 | RS-1 | T->S
+0a74 42c6 call 2drop (058c)
+0a76 6b8d r@ | DS+1 | RS-1 | T->S
+0a78 be80 push 3e80
+0a7a 6023  | DS-1 | ! S->[T/2]
+0a7c 710f RS/2->PC | copy | DS-1 | RS-1
+---------- ?rx ----------
+0a7e 09e8 lfa
+0a80 3f03 nfa 3
+0a82 7872 
+\ ?rx cfa
+0a84 8ffe push 0ffe
+0a86 6600 invert
+0a88 6c00 @ [T/2]
+0a8a 8001 push 0001
+0a8c 6303 and | DS-1
+0a8e 413e call 0= (027c)
+0a90 760c RS/2->PC | invert | RS-1
+---------- tx! ----------
+0a92 0a80 lfa
+0a94 7403 nfa 3
+0a96 2178 
+\ tx! cfa
+0a98 8ffe push 0ffe
+0a9a 6600 invert
+0a9c 6c00 @ [T/2]
+0a9e 8002 push 0002
+0aa0 6303 and | DS-1
+0aa2 413e call 0= (027c)
+0aa4 254c 0branch tx! (0a98)
+0aa6 8fff push 0fff
+0aa8 6600 invert
+0aaa 6023  | DS-1 | ! S->[T/2]
+0aac 710f RS/2->PC | copy | DS-1 | RS-1
+---------- ?key ----------
+0aae 0a94 lfa
+0ab0 3f04 nfa 4
+0ab2 656b 
+0ab4 0079 
+\ ?key cfa
+0ab6 beb0 push 3eb0
+0ab8 0455 branch @execute (08aa)
+---------- emit ----------
+0aba 0ab0 lfa
+0abc 6504 nfa 4
+0abe 696d 
+0ac0 0074 
+\ emit cfa
+0ac2 beb2 push 3eb2
+0ac4 0455 branch @execute (08aa)
+---------- key ----------
+0ac6 0abc lfa
+0ac8 6b03 nfa 3
+0aca 7965 
+\ key cfa
+0acc 455b call ?key (0ab6)
+0ace 2566 0branch key (0acc)
+0ad0 8fff push 0fff
+0ad2 6600 invert
+0ad4 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- nuf? ----------
+0ad6 0ac8 lfa
+0ad8 6e04 nfa 4
+0ada 6675 
+0adc 003f 
+\ nuf? cfa
+0ade 455b call ?key (0ab6)
+0ae0 6081  | DS+1 | T->S
+0ae2 2576 0branch  (0aec)
+0ae4 6103 copy | DS-1
+0ae6 4566 call key (0acc)
+0ae8 800d push 000d
+0aea 770f RS/2->PC | = | DS-1 | RS-1
+0aec 700c RS/2->PC |  | RS-1
+---------- space ----------
+0aee 0ad8 lfa
+0af0 7305 nfa 5
+0af2 6170 
+0af4 6563 
+\ space cfa
+0af6 43f7 call bl (07ee)
+0af8 0561 branch emit (0ac2)
+---------- spaces ----------
+0afa 0af0 lfa
+0afc 7306 nfa 6
+0afe 6170 
+0b00 6563 
+0b02 0073 
+\ spaces cfa
+0b04 8000 push 0000
+0b06 432b call max (0656)
+0b08 6147 copy | DS-1 | RS+1 | T->Ret
+0b0a 0587 branch  (0b0e)
+0b0c 457b call space (0af6)
+0b0e 6b81 r@ | DS+1 | T->S
+0b10 258d 0branch  (0b1a)
+0b12 6b8d r@ | DS+1 | RS-1 | T->S
+0b14 6a00 1-
+0b16 6147 copy | DS-1 | RS+1 | T->Ret
+0b18 0586 branch  (0b0c)
+0b1a 6b8d r@ | DS+1 | RS-1 | T->S
+0b1c 710f RS/2->PC | copy | DS-1 | RS-1
+---------- type ----------
+0b1e 0afc lfa
+0b20 7404 nfa 4
+0b22 7079 
+0b24 0065 
+\ type cfa
+0b26 6147 copy | DS-1 | RS+1 | T->Ret
+0b28 0597 branch  (0b2e)
+0b2a 4425 call count (084a)
+0b2c 4561 call emit (0ac2)
+0b2e 6b81 r@ | DS+1 | T->S
+0b30 259d 0branch  (0b3a)
+0b32 6b8d r@ | DS+1 | RS-1 | T->S
+0b34 6a00 1-
+0b36 6147 copy | DS-1 | RS+1 | T->Ret
+0b38 0595 branch  (0b2a)
+0b3a 6b8d r@ | DS+1 | RS-1 | T->S
+0b3c 6103 copy | DS-1
+0b3e 710f RS/2->PC | copy | DS-1 | RS-1
+---------- cr ----------
+0b40 0b20 lfa
+0b42 6302 nfa 2
+0b44 0072 
+\ cr cfa
+0b46 800d push 000d
+0b48 4561 call emit (0ac2)
+0b4a 800a push 000a
+0b4c 0561 branch emit (0ac2)
+---------- do$ ----------
+0b4e 0b42 lfa
+0b50 6443 nfa 3
+0b52 246f 
+\ do$ cfa
+0b54 6b8d r@ | DS+1 | RS-1 | T->S
+0b56 6b81 r@ | DS+1 | T->S
+0b58 6b8d r@ | DS+1 | RS-1 | T->S
+0b5a 4425 call count (084a)
+0b5c 6203 + | DS-1
+0b5e 4434 call aligned (0868)
+0b60 6147 copy | DS-1 | RS+1 | T->Ret
+0b62 6180 copy | T->S
+0b64 6147 copy | DS-1 | RS+1 | T->Ret
+0b66 700c RS/2->PC |  | RS-1
+---------- $"| ----------
+0b68 0b50 lfa
+0b6a 2443 nfa 3
+0b6c 7c22 
+\ $"| cfa
+0b6e 45aa call do$ (0b54)
+0b70 700c RS/2->PC |  | RS-1
+---------- .$ ----------
+0b72 0b6a lfa
+0b74 2e02 nfa 2
+0b76 0024 
+\ .$ cfa
+0b78 4425 call count (084a)
+0b7a 0593 branch type (0b26)
+---------- ."| ----------
+0b7c 0b74 lfa
+0b7e 2e43 nfa 3
+0b80 7c22 
+\ ."| cfa
+0b82 45aa call do$ (0b54)
+0b84 05bc branch .$ (0b78)
+---------- .r ----------
+0b86 0b7e lfa
+0b88 2e02 nfa 2
+0b8a 0072 
+\ .r cfa
+0b8c 6147 copy | DS-1 | RS+1 | T->Ret
+0b8e 44c0 call str (0980)
+0b90 6b8d r@ | DS+1 | RS-1 | T->S
+0b92 6181 copy | DS+1 | T->S
+0b94 431e call - (063c)
+0b96 4582 call spaces (0b04)
+0b98 0593 branch type (0b26)
+---------- u.r ----------
+0b9a 0b88 lfa
+0b9c 7503 nfa 3
+0b9e 722e 
+\ u.r cfa
+0ba0 6147 copy | DS-1 | RS+1 | T->Ret
+0ba2 448d call <# (091a)
+0ba4 44a6 call #s (094c)
+0ba6 44b7 call #> (096e)
+0ba8 6b8d r@ | DS+1 | RS-1 | T->S
+0baa 6181 copy | DS+1 | T->S
+0bac 431e call - (063c)
+0bae 4582 call spaces (0b04)
+0bb0 0593 branch type (0b26)
+---------- u. ----------
+0bb2 0b9c lfa
+0bb4 7502 nfa 2
+0bb6 002e 
+\ u. cfa
+0bb8 448d call <# (091a)
+0bba 44a6 call #s (094c)
+0bbc 44b7 call #> (096e)
+0bbe 457b call space (0af6)
+0bc0 0593 branch type (0b26)
+---------- . ----------
+0bc2 0bb4 lfa
+0bc4 2e01 nfa 1
+\ . cfa
+0bc6 be80 push 3e80
+0bc8 6c00 @ [T/2]
+0bca 800a push 000a
+0bcc 6503 xor | DS-1
+0bce 25e9 0branch  (0bd2)
+0bd0 05dc branch u. (0bb8)
+0bd2 44c0 call str (0980)
+0bd4 457b call space (0af6)
+0bd6 0593 branch type (0b26)
+---------- cmove ----------
+0bd8 0bc4 lfa
+0bda 6305 nfa 5
+0bdc 6f6d 
+0bde 6576 
+\ cmove cfa
+0be0 6147 copy | DS-1 | RS+1 | T->Ret
+0be2 05fa branch  (0bf4)
+0be4 6147 copy | DS-1 | RS+1 | T->Ret
+0be6 6081  | DS+1 | T->S
+0be8 4184 call c@ (0308)
+0bea 6b81 r@ | DS+1 | T->S
+0bec 4193 call c! (0326)
+0bee 416b call 1+ (02d6)
+0bf0 6b8d r@ | DS+1 | RS-1 | T->S
+0bf2 416b call 1+ (02d6)
+0bf4 6b81 r@ | DS+1 | T->S
+0bf6 2600 0branch  (0c00)
+0bf8 6b8d r@ | DS+1 | RS-1 | T->S
+0bfa 6a00 1-
+0bfc 6147 copy | DS-1 | RS+1 | T->Ret
+0bfe 05f2 branch  (0be4)
+0c00 6b8d r@ | DS+1 | RS-1 | T->S
+0c02 6103 copy | DS-1
+0c04 02c6 branch 2drop (058c)
+---------- pack$ ----------
+0c06 0bda lfa
+0c08 7005 nfa 5
+0c0a 6361 
+0c0c 246b 
+\ pack$ cfa
+0c0e 6081  | DS+1 | T->S
+0c10 6147 copy | DS-1 | RS+1 | T->Ret
+0c12 427a call 2dup (04f4)
+0c14 6023  | DS-1 | ! S->[T/2]
+0c16 6103 copy | DS-1
+0c18 416b call 1+ (02d6)
+0c1a 6180 copy | T->S
+0c1c 45f0 call cmove (0be0)
+0c1e 6b8d r@ | DS+1 | RS-1 | T->S
+0c20 700c RS/2->PC |  | RS-1
+---------- ? ----------
+0c22 0c08 lfa
+0c24 3f01 nfa 1
+\ ? cfa
+0c26 6c00 @ [T/2]
+0c28 05e3 branch . (0bc6)
+---------- (parse) ----------
+0c2a 0c24 lfa
+0c2c 2807 nfa 7
+0c2e 6170 
+0c30 7372 
+0c32 2965 
+\ (parse) cfa
+0c34 be82 push 3e82
+0c36 6023  | DS-1 | ! S->[T/2]
+0c38 6103 copy | DS-1
+0c3a 6181 copy | DS+1 | T->S
+0c3c 6147 copy | DS-1 | RS+1 | T->Ret
+0c3e 6081  | DS+1 | T->S
+0c40 2665 0branch  (0cca)
+0c42 6a00 1-
+0c44 be82 push 3e82
+0c46 6c00 @ [T/2]
+0c48 43f7 call bl (07ee)
+0c4a 6703 = | DS-1
+0c4c 2641 0branch  (0c82)
+0c4e 6147 copy | DS-1 | RS+1 | T->Ret
+0c50 4425 call count (084a)
+0c52 be82 push 3e82
+0c54 6c00 @ [T/2]
+0c56 6180 copy | T->S
+0c58 431e call - (063c)
+0c5a 4139 call 0< (0272)
+0c5c 6600 invert
+0c5e 6b81 r@ | DS+1 | T->S
+0c60 4147 call 0> (028e)
+0c62 6303 and | DS-1
+0c64 263f 0branch  (0c7e)
+0c66 6b81 r@ | DS+1 | T->S
+0c68 2639 0branch  (0c72)
+0c6a 6b8d r@ | DS+1 | RS-1 | T->S
+0c6c 6a00 1-
+0c6e 6147 copy | DS-1 | RS+1 | T->Ret
+0c70 0628 branch  (0c50)
+0c72 6b8d r@ | DS+1 | RS-1 | T->S
+0c74 6103 copy | DS-1
+0c76 6b8d r@ | DS+1 | RS-1 | T->S
+0c78 6103 copy | DS-1
+0c7a 8000 push 0000
+0c7c 708d RS/2->PC |  | DS+1 | RS-1 | T->S
+0c7e 6a00 1-
+0c80 6b8d r@ | DS+1 | RS-1 | T->S
+0c82 6181 copy | DS+1 | T->S
+0c84 6180 copy | T->S
+0c86 6147 copy | DS-1 | RS+1 | T->Ret
+0c88 4425 call count (084a)
+0c8a be82 push 3e82
+0c8c 6c00 @ [T/2]
+0c8e 6180 copy | T->S
+0c90 431e call - (063c)
+0c92 be82 push 3e82
+0c94 6c00 @ [T/2]
+0c96 43f7 call bl (07ee)
+0c98 6703 = | DS-1
+0c9a 264f 0branch  (0c9e)
+0c9c 4139 call 0< (0272)
+0c9e 265b 0branch  (0cb6)
+0ca0 6b81 r@ | DS+1 | T->S
+0ca2 2656 0branch  (0cac)
+0ca4 6b8d r@ | DS+1 | RS-1 | T->S
+0ca6 6a00 1-
+0ca8 6147 copy | DS-1 | RS+1 | T->Ret
+0caa 0644 branch  (0c88)
+0cac 6b8d r@ | DS+1 | RS-1 | T->S
+0cae 6103 copy | DS-1
+0cb0 6081  | DS+1 | T->S
+0cb2 6147 copy | DS-1 | RS+1 | T->Ret
+0cb4 0660 branch  (0cc0)
+0cb6 6b8d r@ | DS+1 | RS-1 | T->S
+0cb8 6103 copy | DS-1
+0cba 6081  | DS+1 | T->S
+0cbc 6147 copy | DS-1 | RS+1 | T->Ret
+0cbe 6a00 1-
+0cc0 6181 copy | DS+1 | T->S
+0cc2 431e call - (063c)
+0cc4 6b8d r@ | DS+1 | RS-1 | T->S
+0cc6 6b8d r@ | DS+1 | RS-1 | T->S
+0cc8 031e branch - (063c)
+0cca 6181 copy | DS+1 | T->S
+0ccc 6b8d r@ | DS+1 | RS-1 | T->S
+0cce 031e branch - (063c)
+---------- parse ----------
+0cd0 0c2c lfa
+0cd2 7005 nfa 5
+0cd4 7261 
+0cd6 6573 
+\ parse cfa
+0cd8 6147 copy | DS-1 | RS+1 | T->Ret
+0cda be88 push 3e88
+0cdc 6c00 @ [T/2]
+0cde be84 push 3e84
+0ce0 6c00 @ [T/2]
+0ce2 6203 + | DS-1
+0ce4 be86 push 3e86
+0ce6 6c00 @ [T/2]
+0ce8 be84 push 3e84
+0cea 6c00 @ [T/2]
+0cec 431e call - (063c)
+0cee 6b8d r@ | DS+1 | RS-1 | T->S
+0cf0 461a call (parse) (0c34)
+0cf2 be84 push 3e84
+0cf4 0409 branch +! (0812)
+---------- .( ----------
+0cf6 0cd2 lfa
+0cf8 2e82 nfa 2
+0cfa 0028 
+\ .( cfa
+0cfc 8029 push 0029
+0cfe 466c call parse (0cd8)
+0d00 0593 branch type (0b26)
+---------- ( ----------
+0d02 0cf8 lfa
+0d04 2881 nfa 1
+\ ( cfa
+0d06 8029 push 0029
+0d08 466c call parse (0cd8)
+0d0a 02c6 branch 2drop (058c)
+---------- <\> ----------
+0d0c 0d04 lfa
+0d0e 3c83 nfa 3
+0d10 3e5c 
+\ <\> cfa
+0d12 be86 push 3e86
+0d14 6c00 @ [T/2]
+0d16 be84 push 3e84
+0d18 6023  | DS-1 | ! S->[T/2]
+0d1a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- \ ----------
+0d1c 0d0e lfa
+0d1e 5c81 nfa 1
+\ \ cfa
+0d20 beb6 push 3eb6
+0d22 0455 branch @execute (08aa)
+---------- word ----------
+0d24 0d1e lfa
+0d26 7704 nfa 4
+0d28 726f 
+0d2a 0064 
+\ word cfa
+0d2c 466c call parse (0cd8)
+0d2e 442d call here (085a)
+0d30 43e6 call cell+ (07cc)
+0d32 0607 branch pack$ (0c0e)
+---------- token ----------
+0d34 0d26 lfa
+0d36 7405 nfa 5
+0d38 6b6f 
+0d3a 6e65 
+\ token cfa
+0d3c 43f7 call bl (07ee)
+0d3e 0696 branch word (0d2c)
+---------- name> ----------
+0d40 0d36 lfa
+0d42 6e05 nfa 5
+0d44 6d61 
+0d46 3e65 
+\ name> cfa
+0d48 4425 call count (084a)
+0d4a 801f push 001f
+0d4c 6303 and | DS-1
+0d4e 6203 + | DS-1
+0d50 0434 branch aligned (0868)
+---------- same? ----------
+0d52 0d42 lfa
+0d54 7305 nfa 5
+0d56 6d61 
+0d58 3f65 
+\ same? cfa
+0d5a 6a00 1-
+0d5c 6147 copy | DS-1 | RS+1 | T->Ret
+0d5e 06bd branch  (0d7a)
+0d60 6181 copy | DS+1 | T->S
+0d62 6b81 r@ | DS+1 | T->S
+0d64 6203 + | DS-1
+0d66 4184 call c@ (0308)
+0d68 6181 copy | DS+1 | T->S
+0d6a 6b81 r@ | DS+1 | T->S
+0d6c 6203 + | DS-1
+0d6e 4184 call c@ (0308)
+0d70 431e call - (063c)
+0d72 426b call ?dup (04d6)
+0d74 26bd 0branch  (0d7a)
+0d76 6b8d r@ | DS+1 | RS-1 | T->S
+0d78 710f RS/2->PC | copy | DS-1 | RS-1
+0d7a 6b81 r@ | DS+1 | T->S
+0d7c 26c3 0branch  (0d86)
+0d7e 6b8d r@ | DS+1 | RS-1 | T->S
+0d80 6a00 1-
+0d82 6147 copy | DS-1 | RS+1 | T->Ret
+0d84 06b0 branch  (0d60)
+0d86 6b8d r@ | DS+1 | RS-1 | T->S
+0d88 6103 copy | DS-1
+0d8a 8000 push 0000
+0d8c 700c RS/2->PC |  | RS-1
+---------- find ----------
+0d8e 0d54 lfa
+0d90 6604 nfa 4
+0d92 6e69 
+0d94 0064 
+\ find cfa
+0d96 6180 copy | T->S
+0d98 6081  | DS+1 | T->S
+0d9a 4184 call c@ (0308)
+0d9c be82 push 3e82
+0d9e 6023  | DS-1 | ! S->[T/2]
+0da0 6103 copy | DS-1
+0da2 6081  | DS+1 | T->S
+0da4 6c00 @ [T/2]
+0da6 6147 copy | DS-1 | RS+1 | T->Ret
+0da8 43e6 call cell+ (07cc)
+0daa 6180 copy | T->S
+0dac 6c00 @ [T/2]
+0dae 6081  | DS+1 | T->S
+0db0 26e9 0branch  (0dd2)
+0db2 6081  | DS+1 | T->S
+0db4 6c00 @ [T/2]
+0db6 ff1f push 7f1f
+0db8 6303 and | DS-1
+0dba 6b81 r@ | DS+1 | T->S
+0dbc 6503 xor | DS-1
+0dbe 26e4 0branch  (0dc8)
+0dc0 43e6 call cell+ (07cc)
+0dc2 8000 push 0000
+0dc4 6600 invert
+0dc6 06e8 branch  (0dd0)
+0dc8 43e6 call cell+ (07cc)
+0dca be82 push 3e82
+0dcc 6c00 @ [T/2]
+0dce 46ad call same? (0d5a)
+0dd0 06ee branch  (0ddc)
+0dd2 6b8d r@ | DS+1 | RS-1 | T->S
+0dd4 6103 copy | DS-1
+0dd6 6180 copy | T->S
+0dd8 43ec call cell- (07d8)
+0dda 718c RS/2->PC | copy | RS-1 | T->S
+0ddc 26f3 0branch  (0de6)
+0dde 8002 push 0002
+0de0 43f2 call cells (07e4)
+0de2 431e call - (063c)
+0de4 06d6 branch  (0dac)
+0de6 6b8d r@ | DS+1 | RS-1 | T->S
+0de8 6103 copy | DS-1
+0dea 6003  | DS-1
+0dec 43ec call cell- (07d8)
+0dee 6081  | DS+1 | T->S
+0df0 46a4 call name> (0d48)
+0df2 718c RS/2->PC | copy | RS-1 | T->S
+---------- <name?> ----------
+0df4 0d90 lfa
+0df6 3c07 nfa 7
+0df8 616e 
+0dfa 656d 
+0dfc 3e3f 
+\ <name?> cfa
+0dfe be90 push 3e90
+0e00 6081  | DS+1 | T->S
+0e02 441c call 2@ (0838)
+0e04 6503 xor | DS-1
+0e06 2705 0branch  (0e0a)
+0e08 43ec call cell- (07d8)
+0e0a 6147 copy | DS-1 | RS+1 | T->Ret
+0e0c 6b8d r@ | DS+1 | RS-1 | T->S
+0e0e 43e6 call cell+ (07cc)
+0e10 6081  | DS+1 | T->S
+0e12 6147 copy | DS-1 | RS+1 | T->Ret
+0e14 6c00 @ [T/2]
+0e16 426b call ?dup (04d6)
+0e18 2712 0branch  (0e24)
+0e1a 46cb call find (0d96)
+0e1c 426b call ?dup (04d6)
+0e1e 2706 0branch  (0e0c)
+0e20 6b8d r@ | DS+1 | RS-1 | T->S
+0e22 710f RS/2->PC | copy | DS-1 | RS-1
+0e24 6b8d r@ | DS+1 | RS-1 | T->S
+0e26 6103 copy | DS-1
+0e28 8000 push 0000
+0e2a 700c RS/2->PC |  | RS-1
+---------- name? ----------
+0e2c 0df6 lfa
+0e2e 6e05 nfa 5
+0e30 6d61 
+0e32 3f65 
+\ name? cfa
+0e34 beb8 push 3eb8
+0e36 0455 branch @execute (08aa)
+---------- ^h ----------
+0e38 0e2e lfa
+0e3a 5e02 nfa 2
+0e3c 0068 
+\ ^h cfa
+0e3e 6147 copy | DS-1 | RS+1 | T->Ret
+0e40 6181 copy | DS+1 | T->S
+0e42 6b81 r@ | DS+1 | T->S
+0e44 6803 < | DS-1
+0e46 6081  | DS+1 | T->S
+0e48 272a 0branch  (0e54)
+0e4a 8008 push 0008
+0e4c 6081  | DS+1 | T->S
+0e4e 4561 call emit (0ac2)
+0e50 457b call space (0af6)
+0e52 4561 call emit (0ac2)
+0e54 6b8d r@ | DS+1 | RS-1 | T->S
+0e56 720f RS/2->PC | + | DS-1 | RS-1
+---------- tap ----------
+0e58 0e3a lfa
+0e5a 7403 nfa 3
+0e5c 7061 
+\ tap cfa
+0e5e 6081  | DS+1 | T->S
+0e60 4561 call emit (0ac2)
+0e62 6181 copy | DS+1 | T->S
+0e64 4193 call c! (0326)
+0e66 016b branch 1+ (02d6)
+---------- ktap ----------
+0e68 0e5a lfa
+0e6a 6b04 nfa 4
+0e6c 6174 
+0e6e 0070 
+\ ktap cfa
+0e70 6081  | DS+1 | T->S
+0e72 800d push 000d
+0e74 6503 xor | DS-1
+0e76 2742 0branch  (0e84)
+0e78 8008 push 0008
+0e7a 6503 xor | DS-1
+0e7c 2741 0branch  (0e82)
+0e7e 43f7 call bl (07ee)
+0e80 072f branch tap (0e5e)
+0e82 071f branch ^h (0e3e)
+0e84 6103 copy | DS-1
+0e86 6003  | DS-1
+0e88 708d RS/2->PC |  | DS+1 | RS-1 | T->S
+---------- accept ----------
+0e8a 0e6a lfa
+0e8c 6106 nfa 6
+0e8e 6363 
+0e90 7065 
+0e92 0074 
+\ accept cfa
+0e94 6181 copy | DS+1 | T->S
+0e96 6203 + | DS-1
+0e98 6181 copy | DS+1 | T->S
+0e9a 427a call 2dup (04f4)
+0e9c 6503 xor | DS-1
+0e9e 275b 0branch  (0eb6)
+0ea0 4566 call key (0acc)
+0ea2 6081  | DS+1 | T->S
+0ea4 43f7 call bl (07ee)
+0ea6 431e call - (063c)
+0ea8 807f push 007f
+0eaa 6f03 u< | DS-1
+0eac 2759 0branch  (0eb2)
+0eae 472f call tap (0e5e)
+0eb0 075a branch  (0eb4)
+0eb2 4738 call ktap (0e70)
+0eb4 074d branch  (0e9a)
+0eb6 6103 copy | DS-1
+0eb8 6181 copy | DS+1 | T->S
+0eba 031e branch - (063c)
+---------- query ----------
+0ebc 0e8c lfa
+0ebe 7105 nfa 5
+0ec0 6575 
+0ec2 7972 
+\ query cfa
+0ec4 be88 push 3e88
+0ec6 6c00 @ [T/2]
+0ec8 8050 push 0050
+0eca 474a call accept (0e94)
+0ecc be86 push 3e86
+0ece 6023  | DS-1 | ! S->[T/2]
+0ed0 6103 copy | DS-1
+0ed2 6103 copy | DS-1
+0ed4 8000 push 0000
+0ed6 be84 push 3e84
+0ed8 6023  | DS-1 | ! S->[T/2]
+0eda 710f RS/2->PC | copy | DS-1 | RS-1
+---------- abort2 ----------
+0edc 0ebe lfa
+0ede 6106 nfa 6
+0ee0 6f62 
+0ee2 7472 
+0ee4 0032 
+\ abort2 cfa
+0ee6 45aa call do$ (0b54)
+0ee8 710f RS/2->PC | copy | DS-1 | RS-1
+---------- abort1 ----------
+0eea 0ede lfa
+0eec 6106 nfa 6
+0eee 6f62 
+0ef0 7472 
+0ef2 0031 
+\ abort1 cfa
+0ef4 457b call space (0af6)
+0ef6 45bc call .$ (0b78)
+0ef8 803f push 003f
+0efa 4561 call emit (0ac2)
+0efc 45a3 call cr (0b46)
+0efe be8c push 3e8c
+0f00 4455 call @execute (08aa)
+0f02 0773 branch abort2 (0ee6)
+---------- <?abort"> ----------
+0f04 0eec lfa
+0f06 3c49 nfa 9
+0f08 613f 
+0f0a 6f62 
+0f0c 7472 
+0f0e 3e22 
+\ <?abort"> cfa
+0f10 278b 0branch  (0f16)
+0f12 45aa call do$ (0b54)
+0f14 077a branch abort1 (0ef4)
+0f16 0773 branch abort2 (0ee6)
+---------- forget ----------
+0f18 0f06 lfa
+0f1a 6606 nfa 6
+0f1c 726f 
+0f1e 6567 
+0f20 0074 
+\ forget cfa
+0f22 469e call token (0d3c)
+0f24 471a call name? (0e34)
+0f26 426b call ?dup (04d6)
+0f28 27a3 0branch  (0f46)
+0f2a 43ec call cell- (07d8)
+0f2c 6081  | DS+1 | T->S
+0f2e beac push 3eac
+0f30 6023  | DS-1 | ! S->[T/2]
+0f32 6103 copy | DS-1
+0f34 6c00 @ [T/2]
+0f36 6081  | DS+1 | T->S
+0f38 be90 push 3e90
+0f3a 6023  | DS-1 | ! S->[T/2]
+0f3c 6103 copy | DS-1
+0f3e beae push 3eae
+0f40 6023  | DS-1 | ! S->[T/2]
+0f42 6103 copy | DS-1
+0f44 710f RS/2->PC | copy | DS-1 | RS-1
+0f46 077a branch abort1 (0ef4)
+---------- $interpret ----------
+0f48 0f1a lfa
+0f4a 240a nfa 10
+0f4c 6e69 
+0f4e 6574 
+0f50 7072 
+0f52 6572 
+0f54 0074 
+\ $interpret cfa
+0f56 471a call name? (0e34)
+0f58 426b call ?dup (04d6)
+0f5a 27bb 0branch  (0f76)
+0f5c 6c00 @ [T/2]
+0f5e 8040 push 0040
+0f60 6303 and | DS-1
+0f62 4788 call <?abort"> (0f10)
+0f64 630c and | RS-1
+0f66 6d6f << | DS-1 | RS-1 | T->Ret | ! S->[T/2]
+0f68 6970 >> | T->Ret | ! S->[T/2]
+0f6a 656c xor | RS-1 | T->Ret | ! S->[T/2]
+0f6c 6f2d u< | DS+1 | RS-1 | ! S->[T/2]
+0f6e 6c6e @ [T/2] | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+0f70 0079 branch  (00f2)
+0f72 0178 branch execute (02f0)
+0f74 07bf branch [ (0f7e)
+0f76 44f8 call number? (09f0)
+0f78 27be 0branch  (0f7c)
+0f7a 700c RS/2->PC |  | RS-1
+0f7c 077a branch abort1 (0ef4)
+---------- [ ----------
+0f7e 0f4a lfa
+0f80 5b81 nfa 1
+\ [ cfa
+0f82 8f56 push 0f56
+0f84 be8a push 3e8a
+0f86 6023  | DS-1 | ! S->[T/2]
+0f88 710f RS/2->PC | copy | DS-1 | RS-1
+---------- .ok ----------
+0f8a 0f80 lfa
+0f8c 2e03 nfa 3
+0f8e 6b6f 
+\ .ok cfa
+0f90 8f56 push 0f56
+0f92 be8a push 3e8a
+0f94 6c00 @ [T/2]
+0f96 6703 = | DS-1
+0f98 27d0 0branch  (0fa0)
+0f9a 45c1 call ."| (0b82)
+0f9c 2003 0branch  (0006)
+0f9e 6b6f r@ | DS-1 | RS-1 | T->Ret | ! S->[T/2]
+0fa0 05a3 branch cr (0b46)
+---------- eval ----------
+0fa2 0f8c lfa
+0fa4 6504 nfa 4
+0fa6 6176 
+0fa8 006c 
+\ eval cfa
+0faa 469e call token (0d3c)
+0fac 6081  | DS+1 | T->S
+0fae 4184 call c@ (0308)
+0fb0 27dc 0branch  (0fb8)
+0fb2 be8a push 3e8a
+0fb4 4455 call @execute (08aa)
+0fb6 07d5 branch eval (0faa)
+0fb8 6103 copy | DS-1
+0fba 07c8 branch .ok (0f90)
+---------- $eval ----------
+0fbc 0fa4 lfa
+0fbe 2445 nfa 5
+0fc0 7665 
+0fc2 6c61 
+\ $eval cfa
+0fc4 be84 push 3e84
+0fc6 6c00 @ [T/2]
+0fc8 6147 copy | DS-1 | RS+1 | T->Ret
+0fca be86 push 3e86
+0fcc 6c00 @ [T/2]
+0fce 6147 copy | DS-1 | RS+1 | T->Ret
+0fd0 be88 push 3e88
+0fd2 6c00 @ [T/2]
+0fd4 6147 copy | DS-1 | RS+1 | T->Ret
+0fd6 be84 push 3e84
+0fd8 8000 push 0000
+0fda 6180 copy | T->S
+0fdc 6023  | DS-1 | ! S->[T/2]
+0fde 6103 copy | DS-1
+0fe0 be86 push 3e86
+0fe2 6023  | DS-1 | ! S->[T/2]
+0fe4 6103 copy | DS-1
+0fe6 be88 push 3e88
+0fe8 6023  | DS-1 | ! S->[T/2]
+0fea 6103 copy | DS-1
+0fec 47d5 call eval (0faa)
+0fee 6b8d r@ | DS+1 | RS-1 | T->S
+0ff0 be88 push 3e88
+0ff2 6023  | DS-1 | ! S->[T/2]
+0ff4 6103 copy | DS-1
+0ff6 6b8d r@ | DS+1 | RS-1 | T->S
+0ff8 be86 push 3e86
+0ffa 6023  | DS-1 | ! S->[T/2]
+0ffc 6103 copy | DS-1
+0ffe 6b8d r@ | DS+1 | RS-1 | T->S
+1000 be84 push 3e84
+1002 6023  | DS-1 | ! S->[T/2]
+1004 710f RS/2->PC | copy | DS-1 | RS-1
+---------- preset ----------
+1006 0fbe lfa
+1008 7006 nfa 6
+100a 6572 
+100c 6573 
+100e 0074 
+\ preset cfa
+1010 bf00 push 3f00
+1012 be86 push 3e86
+1014 43e6 call cell+ (07cc)
+1016 6023  | DS-1 | ! S->[T/2]
+1018 710f RS/2->PC | copy | DS-1 | RS-1
+---------- quit ----------
+101a 1008 lfa
+101c 7104 nfa 4
+101e 6975 
+1020 0074 
+\ quit cfa
+1022 47c1 call [ (0f82)
+1024 4762 call query (0ec4)
+1026 47d5 call eval (0faa)
+1028 0812 branch  (1024)
+102a 700c RS/2->PC |  | RS-1
+---------- abort ----------
+102c 101c lfa
+102e 6105 nfa 5
+1030 6f62 
+1032 7472 
+\ abort cfa
+1034 6103 copy | DS-1
+1036 4808 call preset (1010)
+1038 47c8 call .ok (0f90)
+103a 0811 branch quit (1022)
+---------- ' ----------
+103c 102e lfa
+103e 2701 nfa 1
+\ ' cfa
+1040 469e call token (0d3c)
+1042 471a call name? (0e34)
+1044 2824 0branch  (1048)
+1046 700c RS/2->PC |  | RS-1
+1048 077a branch abort1 (0ef4)
+---------- allot ----------
+104a 103e lfa
+104c 6105 nfa 5
+104e 6c6c 
+1050 746f 
+\ allot cfa
+1052 4434 call aligned (0868)
+1054 beac push 3eac
+1056 0409 branch +! (0812)
+---------- , ----------
+1058 104c lfa
+105a 2c01 nfa 1
+\ , cfa
+105c 442d call here (085a)
+105e 6081  | DS+1 | T->S
+1060 43e6 call cell+ (07cc)
+1062 beac push 3eac
+1064 6023  | DS-1 | ! S->[T/2]
+1066 6103 copy | DS-1
+1068 6023  | DS-1 | ! S->[T/2]
+106a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- call, ----------
+106c 105a lfa
+106e 6345 nfa 5
+1070 6c61 
+1072 2c6c 
+\ call, cfa
+1074 8001 push 0001
+1076 6903 >> | DS-1
+1078 c000 push 4000
+107a 6403 or | DS-1
+107c 082e branch , (105c)
+---------- ?branch ----------
+107e 106e lfa
+1080 3f47 nfa 7
+1082 7262 
+1084 6e61 
+1086 6863 
+\ ?branch cfa
+1088 8001 push 0001
+108a 6903 >> | DS-1
+108c a000 push 2000
+108e 6403 or | DS-1
+1090 082e branch , (105c)
+---------- branch ----------
+1092 1080 lfa
+1094 6246 nfa 6
+1096 6172 
+1098 636e 
+109a 0068 
+\ branch cfa
+109c 8001 push 0001
+109e 6903 >> | DS-1
+10a0 8000 push 0000
+10a2 6403 or | DS-1
+10a4 082e branch , (105c)
+---------- [compile] ----------
+10a6 1094 lfa
+10a8 5b89 nfa 9
+10aa 6f63 
+10ac 706d 
+10ae 6c69 
+10b0 5d65 
+\ [compile] cfa
+10b2 4820 call ' (1040)
+10b4 083a branch call, (1074)
+---------- compile ----------
+10b6 10a8 lfa
+10b8 6347 nfa 7
+10ba 6d6f 
+10bc 6970 
+10be 656c 
+\ compile cfa
+10c0 6b8d r@ | DS+1 | RS-1 | T->S
+10c2 6081  | DS+1 | T->S
+10c4 6c00 @ [T/2]
+10c6 482e call , (105c)
+10c8 43e6 call cell+ (07cc)
+10ca 6147 copy | DS-1 | RS+1 | T->Ret
+10cc 700c RS/2->PC |  | RS-1
+---------- recurse ----------
+10ce 10b8 lfa
+10d0 7287 nfa 7
+10d2 6365 
+10d4 7275 
+10d6 6573 
+\ recurse cfa
+10d8 beae push 3eae
+10da 6c00 @ [T/2]
+10dc 46a4 call name> (0d48)
+10de 083a branch call, (1074)
+---------- pick ----------
+10e0 10d0 lfa
+10e2 7004 nfa 4
+10e4 6369 
+10e6 006b 
+\ pick cfa
+10e8 6081  | DS+1 | T->S
+10ea 4166 call 2* (02cc)
+10ec 4166 call 2* (02cc)
+10ee 80c0 push 00c0
+10f0 6203 + | DS-1
+10f2 6147 copy | DS-1 | RS+1 | T->Ret
+10f4 700c RS/2->PC |  | RS-1
+---------- literal ----------
+10f6 10e2 lfa
+10f8 6c87 nfa 7
+10fa 7469 
+10fc 7265 
+10fe 6c61 
+\ literal cfa
+1100 6081  | DS+1 | T->S
+1102 ffff push 7fff
+1104 6600 invert
+1106 6303 and | DS-1
+1108 288c 0branch  (1118)
+110a 8000 push 0000
+110c 6600 invert
+110e 6503 xor | DS-1
+1110 4880 call literal (1100)
+1112 4860 call compile (10c0)
+1114 6600 invert
+1116 0890 branch  (1120)
+1118 ffff push 7fff
+111a 6600 invert
+111c 6403 or | DS-1
+111e 082e branch , (105c)
+1120 700c RS/2->PC |  | RS-1
+---------- ['] ----------
+1122 10f8 lfa
+1124 5b83 nfa 3
+1126 5d27 
+\ ['] cfa
+1128 4820 call ' (1040)
+112a 0880 branch literal (1100)
+---------- $," ----------
+112c 1124 lfa
+112e 2403 nfa 3
+1130 222c 
+\ $," cfa
+1132 8022 push 0022
+1134 466c call parse (0cd8)
+1136 442d call here (085a)
+1138 4607 call pack$ (0c0e)
+113a 4425 call count (084a)
+113c 6203 + | DS-1
+113e 4434 call aligned (0868)
+1140 beac push 3eac
+1142 6023  | DS-1 | ! S->[T/2]
+1144 710f RS/2->PC | copy | DS-1 | RS-1
+---------- for ----------
+1146 112e lfa
+1148 66c3 nfa 3
+114a 726f 
+\ for cfa
+114c 4860 call compile (10c0)
+114e 4113 call >r (0226)
+1150 042d branch here (085a)
+---------- begin ----------
+1152 1148 lfa
+1154 62c5 nfa 5
+1156 6765 
+1158 6e69 
+\ begin cfa
+115a 042d branch here (085a)
+---------- (next) ----------
+115c 1154 lfa
+115e 2846 nfa 6
+1160 656e 
+1162 7478 
+1164 0029 
+\ (next) cfa
+1166 6b8d r@ | DS+1 | RS-1 | T->S
+1168 6b8d r@ | DS+1 | RS-1 | T->S
+116a 426b call ?dup (04d6)
+116c 28bc 0branch  (1178)
+116e 6a00 1-
+1170 6147 copy | DS-1 | RS+1 | T->Ret
+1172 6c00 @ [T/2]
+1174 6147 copy | DS-1 | RS+1 | T->Ret
+1176 700c RS/2->PC |  | RS-1
+1178 43e6 call cell+ (07cc)
+117a 6147 copy | DS-1 | RS+1 | T->Ret
+117c 700c RS/2->PC |  | RS-1
+---------- next ----------
+117e 115e lfa
+1180 6ec4 nfa 4
+1182 7865 
+1184 0074 
+\ next cfa
+1186 4860 call compile (10c0)
+1188 48b3 call (next) (1166)
+118a 082e branch , (105c)
+---------- (do) ----------
+118c 1180 lfa
+118e 2844 nfa 4
+1190 6f64 
+1192 0029 
+\ (do) cfa
+1194 6b8d r@ | DS+1 | RS-1 | T->S
+1196 6081  | DS+1 | T->S
+1198 6147 copy | DS-1 | RS+1 | T->Ret
+119a 6180 copy | T->S
+119c 4272 call rot (04e4)
+119e 6147 copy | DS-1 | RS+1 | T->Ret
+11a0 6147 copy | DS-1 | RS+1 | T->Ret
+11a2 43e6 call cell+ (07cc)
+11a4 6147 copy | DS-1 | RS+1 | T->Ret
+11a6 700c RS/2->PC |  | RS-1
+---------- do ----------
+11a8 118e lfa
+11aa 64c2 nfa 2
+11ac 006f 
+\ do cfa
+11ae 4860 call compile (10c0)
+11b0 48ca call (do) (1194)
+11b2 8000 push 0000
+11b4 482e call , (105c)
+11b6 042d branch here (085a)
+---------- (leave) ----------
+11b8 11aa lfa
+11ba 2847 nfa 7
+11bc 656c 
+11be 7661 
+11c0 2965 
+\ (leave) cfa
+11c2 6b8d r@ | DS+1 | RS-1 | T->S
+11c4 6103 copy | DS-1
+11c6 6b8d r@ | DS+1 | RS-1 | T->S
+11c8 6103 copy | DS-1
+11ca 6b8d r@ | DS+1 | RS-1 | T->S
+11cc 710f RS/2->PC | copy | DS-1 | RS-1
+---------- leave ----------
+11ce 11ba lfa
+11d0 6cc5 nfa 5
+11d2 6165 
+11d4 6576 
+\ leave cfa
+11d6 4860 call compile (10c0)
+11d8 48e1 call (leave) (11c2)
+11da 700c RS/2->PC |  | RS-1
+---------- (loop) ----------
+11dc 11d0 lfa
+11de 2846 nfa 6
+11e0 6f6c 
+11e2 706f 
+11e4 0029 
+\ (loop) cfa
+11e6 6b8d r@ | DS+1 | RS-1 | T->S
+11e8 6b8d r@ | DS+1 | RS-1 | T->S
+11ea 416b call 1+ (02d6)
+11ec 6b8d r@ | DS+1 | RS-1 | T->S
+11ee 427a call 2dup (04f4)
+11f0 4134 call <> (0268)
+11f2 28ff 0branch  (11fe)
+11f4 6147 copy | DS-1 | RS+1 | T->Ret
+11f6 6147 copy | DS-1 | RS+1 | T->Ret
+11f8 6c00 @ [T/2]
+11fa 6147 copy | DS-1 | RS+1 | T->Ret
+11fc 700c RS/2->PC |  | RS-1
+11fe 6147 copy | DS-1 | RS+1 | T->Ret
+1200 6a00 1-
+1202 6147 copy | DS-1 | RS+1 | T->Ret
+1204 43e6 call cell+ (07cc)
+1206 6147 copy | DS-1 | RS+1 | T->Ret
+1208 700c RS/2->PC |  | RS-1
+---------- (unloop) ----------
+120a 11de lfa
+120c 2848 nfa 8
+120e 6e75 
+1210 6f6c 
+1212 706f 
+1214 0029 
+\ (unloop) cfa
+1216 6b8d r@ | DS+1 | RS-1 | T->S
+1218 6b8d r@ | DS+1 | RS-1 | T->S
+121a 6103 copy | DS-1
+121c 6b8d r@ | DS+1 | RS-1 | T->S
+121e 6103 copy | DS-1
+1220 6b8d r@ | DS+1 | RS-1 | T->S
+1222 6103 copy | DS-1
+1224 6147 copy | DS-1 | RS+1 | T->Ret
+1226 700c RS/2->PC |  | RS-1
+---------- unloop ----------
+1228 120c lfa
+122a 75c6 nfa 6
+122c 6c6e 
+122e 6f6f 
+1230 0070 
+\ unloop cfa
+1232 4860 call compile (10c0)
+1234 490b call (unloop) (1216)
+1236 700c RS/2->PC |  | RS-1
+---------- (?do) ----------
+1238 122a lfa
+123a 2845 nfa 5
+123c 643f 
+123e 296f 
+\ (?do) cfa
+1240 427a call 2dup (04f4)
+1242 4134 call <> (0268)
+1244 292d 0branch  (125a)
+1246 6b8d r@ | DS+1 | RS-1 | T->S
+1248 6081  | DS+1 | T->S
+124a 6147 copy | DS-1 | RS+1 | T->Ret
+124c 6180 copy | T->S
+124e 4272 call rot (04e4)
+1250 6147 copy | DS-1 | RS+1 | T->Ret
+1252 6147 copy | DS-1 | RS+1 | T->Ret
+1254 43e6 call cell+ (07cc)
+1256 6147 copy | DS-1 | RS+1 | T->Ret
+1258 700c RS/2->PC |  | RS-1
+125a 02c6 branch 2drop (058c)
+125c 700c RS/2->PC |  | RS-1
+---------- ?do ----------
+125e 123a lfa
+1260 3fc3 nfa 3
+1262 6f64 
+\ ?do cfa
+1264 4860 call compile (10c0)
+1266 4920 call (?do) (1240)
+1268 8000 push 0000
+126a 482e call , (105c)
+126c 042d branch here (085a)
+---------- loop ----------
+126e 1260 lfa
+1270 6cc4 nfa 4
+1272 6f6f 
+1274 0070 
+\ loop cfa
+1276 4860 call compile (10c0)
+1278 48f3 call (loop) (11e6)
+127a 6081  | DS+1 | T->S
+127c 482e call , (105c)
+127e 4860 call compile (10c0)
+1280 490b call (unloop) (1216)
+1282 43ec call cell- (07d8)
+1284 442d call here (085a)
+1286 8001 push 0001
+1288 6903 >> | DS-1
+128a 6180 copy | T->S
+128c 6023  | DS-1 | ! S->[T/2]
+128e 710f RS/2->PC | copy | DS-1 | RS-1
+---------- (+loop) ----------
+1290 1270 lfa
+1292 2847 nfa 7
+1294 6c2b 
+1296 6f6f 
+1298 2970 
+\ (+loop) cfa
+129a 6b8d r@ | DS+1 | RS-1 | T->S
+129c 6180 copy | T->S
+129e 6b8d r@ | DS+1 | RS-1 | T->S
+12a0 6b8d r@ | DS+1 | RS-1 | T->S
+12a2 427a call 2dup (04f4)
+12a4 431e call - (063c)
+12a6 6147 copy | DS-1 | RS+1 | T->Ret
+12a8 8002 push 0002
+12aa 4874 call pick (10e8)
+12ac 6b81 r@ | DS+1 | T->S
+12ae 6203 + | DS-1
+12b0 6b81 r@ | DS+1 | T->S
+12b2 6503 xor | DS-1
+12b4 4139 call 0< (0272)
+12b6 413e call 0= (027c)
+12b8 8003 push 0003
+12ba 4874 call pick (10e8)
+12bc 6b8d r@ | DS+1 | RS-1 | T->S
+12be 6503 xor | DS-1
+12c0 4139 call 0< (0272)
+12c2 413e call 0= (027c)
+12c4 6403 or | DS-1
+12c6 296a 0branch  (12d4)
+12c8 6147 copy | DS-1 | RS+1 | T->Ret
+12ca 6203 + | DS-1
+12cc 6147 copy | DS-1 | RS+1 | T->Ret
+12ce 6c00 @ [T/2]
+12d0 6147 copy | DS-1 | RS+1 | T->Ret
+12d2 700c RS/2->PC |  | RS-1
+12d4 6147 copy | DS-1 | RS+1 | T->Ret
+12d6 6147 copy | DS-1 | RS+1 | T->Ret
+12d8 6103 copy | DS-1
+12da 43e6 call cell+ (07cc)
+12dc 6147 copy | DS-1 | RS+1 | T->Ret
+12de 700c RS/2->PC |  | RS-1
+---------- +loop ----------
+12e0 1292 lfa
+12e2 2bc5 nfa 5
+12e4 6f6c 
+12e6 706f 
+\ +loop cfa
+12e8 4860 call compile (10c0)
+12ea 494d call (+loop) (129a)
+12ec 6081  | DS+1 | T->S
+12ee 482e call , (105c)
+12f0 4860 call compile (10c0)
+12f2 490b call (unloop) (1216)
+12f4 43ec call cell- (07d8)
+12f6 442d call here (085a)
+12f8 8001 push 0001
+12fa 6903 >> | DS-1
+12fc 6180 copy | T->S
+12fe 6023  | DS-1 | ! S->[T/2]
+1300 710f RS/2->PC | copy | DS-1 | RS-1
+---------- (i) ----------
+1302 12e2 lfa
+1304 2843 nfa 3
+1306 2969 
+\ (i) cfa
+1308 6b8d r@ | DS+1 | RS-1 | T->S
+130a 6b8d r@ | DS+1 | RS-1 | T->S
+130c 4153 call tuck (02a6)
+130e 6147 copy | DS-1 | RS+1 | T->Ret
+1310 6147 copy | DS-1 | RS+1 | T->Ret
+1312 700c RS/2->PC |  | RS-1
+---------- i ----------
+1314 1304 lfa
+1316 69c1 nfa 1
+\ i cfa
+1318 4860 call compile (10c0)
+131a 4984 call (i) (1308)
+131c 700c RS/2->PC |  | RS-1
+---------- until ----------
+131e 1316 lfa
+1320 75c5 nfa 5
+1322 746e 
+1324 6c69 
+\ until cfa
+1326 0844 branch ?branch (1088)
+---------- again ----------
+1328 1320 lfa
+132a 61c5 nfa 5
+132c 6167 
+132e 6e69 
+\ again cfa
+1330 084e branch branch (109c)
+---------- if ----------
+1332 132a lfa
+1334 69c2 nfa 2
+1336 0066 
+\ if cfa
+1338 442d call here (085a)
+133a 8000 push 0000
+133c 0844 branch ?branch (1088)
+---------- then ----------
+133e 1334 lfa
+1340 74c4 nfa 4
+1342 6568 
+1344 006e 
+\ then cfa
+1346 442d call here (085a)
+1348 8001 push 0001
+134a 6903 >> | DS-1
+134c 6181 copy | DS+1 | T->S
+134e 6c00 @ [T/2]
+1350 6403 or | DS-1
+1352 6180 copy | T->S
+1354 6023  | DS-1 | ! S->[T/2]
+1356 710f RS/2->PC | copy | DS-1 | RS-1
+---------- repeat ----------
+1358 1340 lfa
+135a 72c6 nfa 6
+135c 7065 
+135e 6165 
+1360 0074 
+\ repeat cfa
+1362 484e call branch (109c)
+1364 09a3 branch then (1346)
+---------- skip ----------
+1366 135a lfa
+1368 73c4 nfa 4
+136a 696b 
+136c 0070 
+\ skip cfa
+136e 442d call here (085a)
+1370 8000 push 0000
+1372 084e branch branch (109c)
+---------- aft ----------
+1374 1368 lfa
+1376 61c3 nfa 3
+1378 7466 
+\ aft cfa
+137a 6103 copy | DS-1
+137c 49b7 call skip (136e)
+137e 48ad call begin (115a)
+1380 718c RS/2->PC | copy | RS-1 | T->S
+---------- else ----------
+1382 1376 lfa
+1384 65c4 nfa 4
+1386 736c 
+1388 0065 
+\ else cfa
+138a 49b7 call skip (136e)
+138c 6180 copy | T->S
+138e 09a3 branch then (1346)
+---------- while ----------
+1390 1384 lfa
+1392 77c5 nfa 5
+1394 6968 
+1396 656c 
+\ while cfa
+1398 499c call if (1338)
+139a 718c RS/2->PC | copy | RS-1 | T->S
+---------- (case) ----------
+139c 1392 lfa
+139e 2846 nfa 6
+13a0 6163 
+13a2 6573 
+13a4 0029 
+\ (case) cfa
+13a6 6b8d r@ | DS+1 | RS-1 | T->S
+13a8 6180 copy | T->S
+13aa 6147 copy | DS-1 | RS+1 | T->Ret
+13ac 6147 copy | DS-1 | RS+1 | T->Ret
+13ae 700c RS/2->PC |  | RS-1
+---------- case ----------
+13b0 139e lfa
+13b2 63c4 nfa 4
+13b4 7361 
+13b6 0065 
+\ case cfa
+13b8 4860 call compile (10c0)
+13ba 49d3 call (case) (13a6)
+13bc 8030 push 0030
+13be 700c RS/2->PC |  | RS-1
+---------- (of) ----------
+13c0 13b2 lfa
+13c2 2844 nfa 4
+13c4 666f 
+13c6 0029 
+\ (of) cfa
+13c8 6b8d r@ | DS+1 | RS-1 | T->S
+13ca 6b81 r@ | DS+1 | T->S
+13cc 6180 copy | T->S
+13ce 6147 copy | DS-1 | RS+1 | T->Ret
+13d0 770f RS/2->PC | = | DS-1 | RS-1
+---------- of ----------
+13d2 13c2 lfa
+13d4 6fc2 nfa 2
+13d6 0066 
+\ of cfa
+13d8 4860 call compile (10c0)
+13da 49e4 call (of) (13c8)
+13dc 099c branch if (1338)
+---------- endof ----------
+13de 13d4 lfa
+13e0 65c5 nfa 5
+13e2 646e 
+13e4 666f 
+\ endof cfa
+13e6 49c5 call else (138a)
+13e8 8031 push 0031
+13ea 700c RS/2->PC |  | RS-1
+---------- (endcase) ----------
+13ec 13e0 lfa
+13ee 2809 nfa 9
+13f0 6e65 
+13f2 6364 
+13f4 7361 
+13f6 2965 
+\ (endcase) cfa
+13f8 6b8d r@ | DS+1 | RS-1 | T->S
+13fa 6b8d r@ | DS+1 | RS-1 | T->S
+13fc 6103 copy | DS-1
+13fe 6147 copy | DS-1 | RS+1 | T->Ret
+1400 700c RS/2->PC |  | RS-1
+---------- endcase ----------
+1402 13ee lfa
+1404 65c7 nfa 7
+1406 646e 
+1408 6163 
+140a 6573 
+\ endcase cfa
+140c 6081  | DS+1 | T->S
+140e 8031 push 0031
+1410 6703 = | DS-1
+1412 2a0d 0branch  (141a)
+1414 6103 copy | DS-1
+1416 49a3 call then (1346)
+1418 0a06 branch endcase (140c)
+141a 8030 push 0030
+141c 4134 call <> (0268)
+141e 4788 call <?abort"> (0f10)
+1420 6213 + | DS-1
+1422 6461 or | DS+1 | T->Ret | ! S->[T/2]
+1424 6320 and | ! S->[T/2]
+1426 7361 RS/2->PC | and | DS+1 | T->Ret | ! S->[T/2]
+1428 2065 0branch  (00ca)
+142a 6f63 u< | DS-1 | T->Ret | ! S->[T/2]
+142c 736e RS/2->PC | and | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+142e 7274 RS/2->PC | + | RS+1 | T->Ret | ! S->[T/2]
+1430 6375 and | DS+1 | RS+1 | T->Ret | ! S->[T/2]
+1432 2e74 0branch  (1ce8)
+1434 4860 call compile (10c0)
+1436 49fc call (endcase) (13f8)
+1438 700c RS/2->PC |  | RS-1
+---------- $" ----------
+143a 1404 lfa
+143c 24c2 nfa 2
+143e 0022 
+\ $" cfa
+1440 4860 call compile (10c0)
+1442 45b7 call $"| (0b6e)
+1444 0899 branch $," (1132)
+---------- ." ----------
+1446 143c lfa
+1448 2ec2 nfa 2
+144a 0022 
+\ ." cfa
+144c 4860 call compile (10c0)
+144e 45c1 call ."| (0b82)
+1450 0899 branch $," (1132)
+---------- >body ----------
+1452 1448 lfa
+1454 3e05 nfa 5
+1456 6f62 
+1458 7964 
+\ >body cfa
+145a 03e6 branch cell+ (07cc)
+---------- (to) ----------
+145c 1454 lfa
+145e 2844 nfa 4
+1460 6f74 
+1462 0029 
+\ (to) cfa
+1464 6b8d r@ | DS+1 | RS-1 | T->S
+1466 6081  | DS+1 | T->S
+1468 43e6 call cell+ (07cc)
+146a 6147 copy | DS-1 | RS+1 | T->Ret
+146c 6c00 @ [T/2]
+146e 6023  | DS-1 | ! S->[T/2]
+1470 710f RS/2->PC | copy | DS-1 | RS-1
+---------- to ----------
+1472 145e lfa
+1474 74c2 nfa 2
+1476 006f 
+\ to cfa
+1478 4860 call compile (10c0)
+147a 4a32 call (to) (1464)
+147c 4820 call ' (1040)
+147e 4a2d call >body (145a)
+1480 082e branch , (105c)
+---------- (+to) ----------
+1482 1474 lfa
+1484 2845 nfa 5
+1486 742b 
+1488 296f 
+\ (+to) cfa
+148a 6b8d r@ | DS+1 | RS-1 | T->S
+148c 6081  | DS+1 | T->S
+148e 43e6 call cell+ (07cc)
+1490 6147 copy | DS-1 | RS+1 | T->Ret
+1492 6c00 @ [T/2]
+1494 0409 branch +! (0812)
+---------- +to ----------
+1496 1484 lfa
+1498 2bc3 nfa 3
+149a 6f74 
+\ +to cfa
+149c 4860 call compile (10c0)
+149e 4a45 call (+to) (148a)
+14a0 4820 call ' (1040)
+14a2 4a2d call >body (145a)
+14a4 082e branch , (105c)
+---------- get-current ----------
+14a6 1498 lfa
+14a8 670b nfa 11
+14aa 7465 
+14ac 632d 
+14ae 7275 
+14b0 6572 
+14b2 746e 
+\ get-current cfa
+14b4 bea8 push 3ea8
+14b6 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- set-current ----------
+14b8 14a8 lfa
+14ba 730b nfa 11
+14bc 7465 
+14be 632d 
+14c0 7275 
+14c2 6572 
+14c4 746e 
+\ set-current cfa
+14c6 bea8 push 3ea8
+14c8 6023  | DS-1 | ! S->[T/2]
+14ca 710f RS/2->PC | copy | DS-1 | RS-1
+---------- definitions ----------
+14cc 14ba lfa
+14ce 640b nfa 11
+14d0 6665 
+14d2 6e69 
+14d4 7469 
+14d6 6f69 
+14d8 736e 
+\ definitions cfa
+14da be90 push 3e90
+14dc 6c00 @ [T/2]
+14de 0a63 branch set-current (14c6)
+---------- ?unique ----------
+14e0 14ce lfa
+14e2 3f07 nfa 7
+14e4 6e75 
+14e6 7169 
+14e8 6575 
+\ ?unique cfa
+14ea 6081  | DS+1 | T->S
+14ec 4a5a call get-current (14b4)
+14ee 46cb call find (0d96)
+14f0 2a80 0branch  (1500)
+14f2 45c1 call ."| (0b82)
+14f4 2007 0branch  (000e)
+14f6 6572 xor | DS-2 | T->Ret | ! S->[T/2]
+14f8 6564 xor | RS+1 | T->Ret | ! S->[T/2]
+14fa 2066 0branch  (00cc)
+14fc 6181 copy | DS+1 | T->S
+14fe 45bc call .$ (0b78)
+1500 710f RS/2->PC | copy | DS-1 | RS-1
+---------- <$,n> ----------
+1502 14e2 lfa
+1504 3c05 nfa 5
+1506 2c24 
+1508 3e6e 
+\ <$,n> cfa
+150a 6081  | DS+1 | T->S
+150c 4184 call c@ (0308)
+150e 2a9a 0branch  (1534)
+1510 4a75 call ?unique (14ea)
+1512 6081  | DS+1 | T->S
+1514 4425 call count (084a)
+1516 6203 + | DS-1
+1518 4434 call aligned (0868)
+151a beac push 3eac
+151c 6023  | DS-1 | ! S->[T/2]
+151e 6103 copy | DS-1
+1520 6081  | DS+1 | T->S
+1522 beae push 3eae
+1524 6023  | DS-1 | ! S->[T/2]
+1526 6103 copy | DS-1
+1528 43ec call cell- (07d8)
+152a 4a5a call get-current (14b4)
+152c 6c00 @ [T/2]
+152e 6180 copy | T->S
+1530 6023  | DS-1 | ! S->[T/2]
+1532 710f RS/2->PC | copy | DS-1 | RS-1
+1534 6103 copy | DS-1
+1536 45b7 call $"| (0b6e)
+1538 6e04 status | RS+1
+153a 6d61 << | DS+1 | T->Ret | ! S->[T/2]
+153c 0065 branch  (00ca)
+153e 077a branch abort1 (0ef4)
+---------- $,n ----------
+1540 1504 lfa
+1542 2403 nfa 3
+1544 6e2c 
+\ $,n cfa
+1546 beba push 3eba
+1548 0455 branch @execute (08aa)
+---------- $compile ----------
+154a 1542 lfa
+154c 2408 nfa 8
+154e 6f63 
+1550 706d 
+1552 6c69 
+1554 0065 
+\ $compile cfa
+1556 471a call name? (0e34)
+1558 426b call ?dup (04d6)
+155a 2ab5 0branch  (156a)
+155c 6c00 @ [T/2]
+155e 8080 push 0080
+1560 6303 and | DS-1
+1562 2ab4 0branch  (1568)
+1564 0178 branch execute (02f0)
+1566 0ab5 branch  (156a)
+1568 083a branch call, (1074)
+156a 44f8 call number? (09f0)
+156c 2ab8 0branch  (1570)
+156e 0880 branch literal (1100)
+1570 077a branch abort1 (0ef4)
+---------- abort" ----------
+1572 154c lfa
+1574 6186 nfa 6
+1576 6f62 
+1578 7472 
+157a 0022 
+\ abort" cfa
+157c 4860 call compile (10c0)
+157e 4788 call <?abort"> (0f10)
+1580 0899 branch $," (1132)
+---------- <overt> ----------
+1582 1574 lfa
+1584 3c07 nfa 7
+1586 766f 
+1588 7265 
+158a 3e74 
+\ <overt> cfa
+158c beae push 3eae
+158e 6c00 @ [T/2]
+1590 4a5a call get-current (14b4)
+1592 6023  | DS-1 | ! S->[T/2]
+1594 710f RS/2->PC | copy | DS-1 | RS-1
+---------- overt ----------
+1596 1584 lfa
+1598 6f05 nfa 5
+159a 6576 
+159c 7472 
+\ overt cfa
+159e bebc push 3ebc
+15a0 0455 branch @execute (08aa)
+---------- exit ----------
+15a2 1598 lfa
+15a4 6504 nfa 4
+15a6 6978 
+15a8 0074 
+\ exit cfa
+15aa 6b8d r@ | DS+1 | RS-1 | T->S
+15ac 710f RS/2->PC | copy | DS-1 | RS-1
+---------- <;> ----------
+15ae 15a4 lfa
+15b0 3cc3 nfa 3
+15b2 3e3b 
+\ <;> cfa
+15b4 4860 call compile (10c0)
+15b6 4ad5 call exit (15aa)
+15b8 47c1 call [ (0f82)
+15ba 4acf call overt (159e)
+15bc 8000 push 0000
+15be 442d call here (085a)
+15c0 6023  | DS-1 | ! S->[T/2]
+15c2 710f RS/2->PC | copy | DS-1 | RS-1
+---------- ; ----------
+15c4 15b0 lfa
+15c6 3bc1 nfa 1
+\ ; cfa
+15c8 bebe push 3ebe
+15ca 0455 branch @execute (08aa)
+---------- ] ----------
+15cc 15c6 lfa
+15ce 5d01 nfa 1
+\ ] cfa
+15d0 9556 push 1556
+15d2 be8a push 3e8a
+15d4 6023  | DS-1 | ! S->[T/2]
+15d6 710f RS/2->PC | copy | DS-1 | RS-1
+---------- : ----------
+15d8 15ce lfa
+15da 3a01 nfa 1
+\ : cfa
+15dc 469e call token (0d3c)
+15de 4aa3 call $,n (1546)
+15e0 0ae8 branch ] (15d0)
+---------- immediate ----------
+15e2 15da lfa
+15e4 6909 nfa 9
+15e6 6d6d 
+15e8 6465 
+15ea 6169 
+15ec 6574 
+\ immediate cfa
+15ee 8080 push 0080
+15f0 beae push 3eae
+15f2 6c00 @ [T/2]
+15f4 6c00 @ [T/2]
+15f6 6403 or | DS-1
+15f8 beae push 3eae
+15fa 6c00 @ [T/2]
+15fc 6023  | DS-1 | ! S->[T/2]
+15fe 710f RS/2->PC | copy | DS-1 | RS-1
+---------- user ----------
+1600 15e4 lfa
+1602 7504 nfa 4
+1604 6573 
+1606 0072 
+\ user cfa
+1608 469e call token (0d3c)
+160a 4aa3 call $,n (1546)
+160c 4acf call overt (159e)
+160e 4860 call compile (10c0)
+1610 41d9 call douser (03b2)
+1612 082e branch , (105c)
+---------- <create> ----------
+1614 1602 lfa
+1616 3c08 nfa 8
+1618 7263 
+161a 6165 
+161c 6574 
+161e 003e 
+\ <create> cfa
+1620 469e call token (0d3c)
+1622 4aa3 call $,n (1546)
+1624 4acf call overt (159e)
+1626 8398 push 0398
+1628 083a branch call, (1074)
+---------- create ----------
+162a 1616 lfa
+162c 6306 nfa 6
+162e 6572 
+1630 7461 
+1632 0065 
+\ create cfa
+1634 bec0 push 3ec0
+1636 0455 branch @execute (08aa)
+---------- variable ----------
+1638 162c lfa
+163a 7608 nfa 8
+163c 7261 
+163e 6169 
+1640 6c62 
+1642 0065 
+\ variable cfa
+1644 4b1a call create (1634)
+1646 8000 push 0000
+1648 082e branch , (105c)
+---------- 2variable ----------
+164a 163a lfa
+164c 3209 nfa 9
+164e 6176 
+1650 6972 
+1652 6261 
+1654 656c 
+\ 2variable cfa
+1656 4b1a call create (1634)
+1658 8000 push 0000
+165a 482e call , (105c)
+165c 8000 push 0000
+165e 082e branch , (105c)
+---------- (does>) ----------
+1660 164c lfa
+1662 2847 nfa 7
+1664 6f64 
+1666 7365 
+1668 293e 
+\ (does>) cfa
+166a 6b8d r@ | DS+1 | RS-1 | T->S
+166c 8001 push 0001
+166e 6903 >> | DS-1
+1670 442d call here (085a)
+1672 8001 push 0001
+1674 6903 >> | DS-1
+1676 beae push 3eae
+1678 6c00 @ [T/2]
+167a 46a4 call name> (0d48)
+167c 6081  | DS+1 | T->S
+167e 43e6 call cell+ (07cc)
+1680 ffff push 7fff
+1682 6600 invert
+1684 6403 or | DS-1
+1686 482e call , (105c)
+1688 6023  | DS-1 | ! S->[T/2]
+168a 6103 copy | DS-1
+168c 082e branch , (105c)
+---------- compile-only ----------
+168e 1662 lfa
+1690 630c nfa 12
+1692 6d6f 
+1694 6970 
+1696 656c 
+1698 6f2d 
+169a 6c6e 
+169c 0079 
+\ compile-only cfa
+169e 8040 push 0040
+16a0 beae push 3eae
+16a2 6c00 @ [T/2]
+16a4 6c00 @ [T/2]
+16a6 6403 or | DS-1
+16a8 beae push 3eae
+16aa 6c00 @ [T/2]
+16ac 6023  | DS-1 | ! S->[T/2]
+16ae 710f RS/2->PC | copy | DS-1 | RS-1
+---------- does> ----------
+16b0 1690 lfa
+16b2 6485 nfa 5
+16b4 656f 
+16b6 3e73 
+\ does> cfa
+16b8 4860 call compile (10c0)
+16ba 4b35 call (does>) (166a)
+16bc 700c RS/2->PC |  | RS-1
+---------- char ----------
+16be 16b2 lfa
+16c0 6304 nfa 4
+16c2 6168 
+16c4 0072 
+\ char cfa
+16c6 43f7 call bl (07ee)
+16c8 4696 call word (0d2c)
+16ca 416b call 1+ (02d6)
+16cc 0184 branch c@ (0308)
+---------- [char] ----------
+16ce 16c0 lfa
+16d0 5b86 nfa 6
+16d2 6863 
+16d4 7261 
+16d6 005d 
+\ [char] cfa
+16d8 4b63 call char (16c6)
+16da 0880 branch literal (1100)
+---------- constant ----------
+16dc 16d0 lfa
+16de 6308 nfa 8
+16e0 6e6f 
+16e2 7473 
+16e4 6e61 
+16e6 0074 
+\ constant cfa
+16e8 4b1a call create (1634)
+16ea 482e call , (105c)
+16ec 4b35 call (does>) (166a)
+16ee 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- defer ----------
+16f0 16de lfa
+16f2 6405 nfa 5
+16f4 6665 
+16f6 7265 
+\ defer cfa
+16f8 4b1a call create (1634)
+16fa 8000 push 0000
+16fc 482e call , (105c)
+16fe 4b35 call (does>) (166a)
+1700 6c00 @ [T/2]
+1702 426b call ?dup (04d6)
+1704 8000 push 0000
+1706 6703 = | DS-1
+1708 4788 call <?abort"> (0f10)
+170a 750d RS/2->PC | xor | DS+1 | RS-1
+170c 696e >> | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+170e 696e >> | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+1710 6974 >> | RS+1 | T->Ret | ! S->[T/2]
+1712 6c61 @ [T/2] | DS+1 | T->Ret | ! S->[T/2]
+1714 7a69 RS/2->PC | 1- | DS+1 | RS-2 | T->Ret | ! S->[T/2]
+1716 6465 or | DS+1 | RS+1 | T->Ret | ! S->[T/2]
+1718 0178 branch execute (02f0)
+---------- is ----------
+171a 16f2 lfa
+171c 6982 nfa 2
+171e 0073 
+\ is cfa
+1720 4820 call ' (1040)
+1722 4a2d call >body (145a)
+1724 6023  | DS-1 | ! S->[T/2]
+1726 710f RS/2->PC | copy | DS-1 | RS-1
+---------- .id ----------
+1728 171c lfa
+172a 2e03 nfa 3
+172c 6469 
+\ .id cfa
+172e 426b call ?dup (04d6)
+1730 2b9d 0branch  (173a)
+1732 4425 call count (084a)
+1734 801f push 001f
+1736 6303 and | DS-1
+1738 0593 branch type (0b26)
+173a 45a3 call cr (0b46)
+173c 45c1 call ."| (0b82)
+173e 7b08 RS/2->PC | r@ | RS-2
+1740 6f6e u< | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+1742 616e copy | DS-2 | RS-1 | T->Ret | ! S->[T/2]
+1744 656d xor | DS+1 | RS-1 | T->Ret | ! S->[T/2]
+1746 007d branch  (00fa)
+1748 700c RS/2->PC |  | RS-1
+---------- wordlist ----------
+174a 172a lfa
+174c 7708 nfa 8
+174e 726f 
+1750 6c64 
+1752 7369 
+1754 0074 
+\ wordlist cfa
+1756 4443 call align (0886)
+1758 442d call here (085a)
+175a 8000 push 0000
+175c 482e call , (105c)
+175e 6081  | DS+1 | T->S
+1760 bea8 push 3ea8
+1762 43e6 call cell+ (07cc)
+1764 6081  | DS+1 | T->S
+1766 6c00 @ [T/2]
+1768 482e call , (105c)
+176a 6023  | DS-1 | ! S->[T/2]
+176c 6103 copy | DS-1
+176e 8000 push 0000
+1770 082e branch , (105c)
+---------- order@ ----------
+1772 174c lfa
+1774 6f06 nfa 6
+1776 6472 
+1778 7265 
+177a 0040 
+\ order@ cfa
+177c 6081  | DS+1 | T->S
+177e 6c00 @ [T/2]
+1780 6081  | DS+1 | T->S
+1782 2bc8 0branch  (1790)
+1784 6147 copy | DS-1 | RS+1 | T->Ret
+1786 43e6 call cell+ (07cc)
+1788 4bbe call order@ (177c)
+178a 6b8d r@ | DS+1 | RS-1 | T->S
+178c 6180 copy | T->S
+178e 016b branch 1+ (02d6)
+1790 700f RS/2->PC |  | DS-1 | RS-1
+---------- get-order ----------
+1792 1774 lfa
+1794 6709 nfa 9
+1796 7465 
+1798 6f2d 
+179a 6472 
+179c 7265 
+\ get-order cfa
+179e be90 push 3e90
+17a0 0bbe branch order@ (177c)
+---------- >wid ----------
+17a2 1794 lfa
+17a4 3e04 nfa 4
+17a6 6977 
+17a8 0064 
+\ >wid cfa
+17aa 03e6 branch cell+ (07cc)
+---------- .wid ----------
+17ac 17a4 lfa
+17ae 2e04 nfa 4
+17b0 6977 
+17b2 0064 
+\ .wid cfa
+17b4 457b call space (0af6)
+17b6 6081  | DS+1 | T->S
+17b8 4bd5 call >wid (17aa)
+17ba 43e6 call cell+ (07cc)
+17bc 6c00 @ [T/2]
+17be 426b call ?dup (04d6)
+17c0 2be3 0branch  (17c6)
+17c2 4b97 call .id (172e)
+17c4 710f RS/2->PC | copy | DS-1 | RS-1
+17c6 8000 push 0000
+17c8 05d0 branch u.r (0ba0)
+---------- !wid ----------
+17ca 17ae lfa
+17cc 2104 nfa 4
+17ce 6977 
+17d0 0064 
+\ !wid cfa
+17d2 4bd5 call >wid (17aa)
+17d4 43e6 call cell+ (07cc)
+17d6 beae push 3eae
+17d8 6c00 @ [T/2]
+17da 6180 copy | T->S
+17dc 6023  | DS-1 | ! S->[T/2]
+17de 710f RS/2->PC | copy | DS-1 | RS-1
+---------- vocs ----------
+17e0 17cc lfa
+17e2 7604 nfa 4
+17e4 636f 
+17e6 0073 
+\ vocs cfa
+17e8 45a3 call cr (0b46)
+17ea 45c1 call ."| (0b82)
+17ec 7605 RS/2->PC | invert | DS+1 | RS+1
+17ee 636f and | DS-1 | RS-1 | T->Ret | ! S->[T/2]
+17f0 3a73 0branch  (34e6)
+17f2 bea8 push 3ea8
+17f4 43e6 call cell+ (07cc)
+17f6 6c00 @ [T/2]
+17f8 426b call ?dup (04d6)
+17fa 2c02 0branch  (1804)
+17fc 6081  | DS+1 | T->S
+17fe 4bda call .wid (17b4)
+1800 4bd5 call >wid (17aa)
+1802 0bfb branch  (17f6)
+1804 700c RS/2->PC |  | RS-1
+---------- order ----------
+1806 17e2 lfa
+1808 6f05 nfa 5
+180a 6472 
+180c 7265 
+\ order cfa
+180e 45a3 call cr (0b46)
+1810 45c1 call ."| (0b82)
+1812 7307 RS/2->PC | and | DS-1 | RS+1
+1814 6165 copy | DS+1 | RS+1 | T->Ret | ! S->[T/2]
+1816 6372 and | DS-2 | T->Ret | ! S->[T/2]
+1818 3a68 0branch  (34d0)
+181a 4bcf call get-order (179e)
+181c 426b call ?dup (04d6)
+181e 2c14 0branch  (1828)
+1820 6180 copy | T->S
+1822 4bda call .wid (17b4)
+1824 6a00 1-
+1826 0c0e branch  (181c)
+1828 45a3 call cr (0b46)
+182a 45c1 call ."| (0b82)
+182c 6407 or | DS-1 | RS+1
+182e 6665 invert | DS+1 | RS+1 | T->Ret | ! S->[T/2]
+1830 6e69 status | DS+1 | RS-2 | T->Ret | ! S->[T/2]
+1832 3a65 0branch  (34ca)
+1834 4a5a call get-current (14b4)
+1836 0bda branch .wid (17b4)
+---------- set-order ----------
+1838 1808 lfa
+183a 7309 nfa 9
+183c 7465 
+183e 6f2d 
+1840 6472 
+1842 7265 
+\ set-order cfa
+1844 6081  | DS+1 | T->S
+1846 8000 push 0000
+1848 6600 invert
+184a 6703 = | DS-1
+184c 2c2a 0branch  (1854)
+184e 6103 copy | DS-1
+1850 bea2 push 3ea2
+1852 8001 push 0001
+1854 8008 push 0008
+1856 6181 copy | DS+1 | T->S
+1858 6f03 u< | DS-1
+185a 4788 call <?abort"> (0f10)
+185c 6f12 u< | DS-2
+185e 6576 xor | DS-2 | RS+1 | T->Ret | ! S->[T/2]
+1860 2072 0branch  (00e4)
+1862 6973 >> | DS-1 | T->Ret | ! S->[T/2]
+1864 657a xor | DS-2 | RS-2 | T->Ret | ! S->[T/2]
+1866 6f20 u< | ! S->[T/2]
+1868 2066 0branch  (00cc)
+186a 7623 RS/2->PC | invert | DS-1 | ! S->[T/2]
+186c 636f and | DS-1 | RS-1 | T->Ret | ! S->[T/2]
+186e 0073 branch  (00e6)
+1870 be90 push 3e90
+1872 6180 copy | T->S
+1874 6081  | DS+1 | T->S
+1876 2c45 0branch  (188a)
+1878 6147 copy | DS-1 | RS+1 | T->Ret
+187a 6180 copy | T->S
+187c 6181 copy | DS+1 | T->S
+187e 6023  | DS-1 | ! S->[T/2]
+1880 6103 copy | DS-1
+1882 43e6 call cell+ (07cc)
+1884 6b8d r@ | DS+1 | RS-1 | T->S
+1886 6a00 1-
+1888 0c3a branch  (1874)
+188a 6180 copy | T->S
+188c 6023  | DS-1 | ! S->[T/2]
+188e 710f RS/2->PC | copy | DS-1 | RS-1
+---------- only ----------
+1890 183a lfa
+1892 6f04 nfa 4
+1894 6c6e 
+1896 0079 
+\ only cfa
+1898 8000 push 0000
+189a 6600 invert
+189c 0c22 branch set-order (1844)
+---------- also ----------
+189e 1892 lfa
+18a0 6104 nfa 4
+18a2 736c 
+18a4 006f 
+\ also cfa
+18a6 4bcf call get-order (179e)
+18a8 6181 copy | DS+1 | T->S
+18aa 6180 copy | T->S
+18ac 416b call 1+ (02d6)
+18ae 0c22 branch set-order (1844)
+---------- previous ----------
+18b0 18a0 lfa
+18b2 7008 nfa 8
+18b4 6572 
+18b6 6976 
+18b8 756f 
+18ba 0073 
+\ previous cfa
+18bc 4bcf call get-order (179e)
+18be 6180 copy | T->S
+18c0 6103 copy | DS-1
+18c2 6a00 1-
+18c4 0c22 branch set-order (1844)
+---------- >voc ----------
+18c6 18b2 lfa
+18c8 3e04 nfa 4
+18ca 6f76 
+18cc 0063 
+\ >voc cfa
+18ce 4b1a call create (1634)
+18d0 6081  | DS+1 | T->S
+18d2 482e call , (105c)
+18d4 4be9 call !wid (17d2)
+18d6 4b35 call (does>) (166a)
+18d8 6c00 @ [T/2]
+18da 6147 copy | DS-1 | RS+1 | T->Ret
+18dc 4bcf call get-order (179e)
+18de 6180 copy | T->S
+18e0 6103 copy | DS-1
+18e2 6b8d r@ | DS+1 | RS-1 | T->S
+18e4 6180 copy | T->S
+18e6 0c22 branch set-order (1844)
+---------- widof ----------
+18e8 18c8 lfa
+18ea 7705 nfa 5
+18ec 6469 
+18ee 666f 
+\ widof cfa
+18f0 4820 call ' (1040)
+18f2 4a2d call >body (145a)
+18f4 7c0c RS/2->PC | @ [T/2] | RS-1
+---------- vocabulary ----------
+18f6 18ea lfa
+18f8 760a nfa 10
+18fa 636f 
+18fc 6261 
+18fe 6c75 
+1900 7261 
+1902 0079 
+\ vocabulary cfa
+1904 4bab call wordlist (1756)
+1906 0c67 branch >voc (18ce)
+---------- _type ----------
+1908 18f8 lfa
+190a 5f05 nfa 5
+190c 7974 
+190e 6570 
+\ _type cfa
+1910 6147 copy | DS-1 | RS+1 | T->Ret
+1912 0c8d branch  (191a)
+1914 4425 call count (084a)
+1916 43fd call >char (07fa)
+1918 4561 call emit (0ac2)
+191a 6b81 r@ | DS+1 | T->S
+191c 2c93 0branch  (1926)
+191e 6b8d r@ | DS+1 | RS-1 | T->S
+1920 6a00 1-
+1922 6147 copy | DS-1 | RS+1 | T->Ret
+1924 0c8a branch  (1914)
+1926 6b8d r@ | DS+1 | RS-1 | T->S
+1928 6103 copy | DS-1
+192a 710f RS/2->PC | copy | DS-1 | RS-1
+---------- dm+ ----------
+192c 190a lfa
+192e 6403 nfa 3
+1930 2b6d 
+\ dm+ cfa
+1932 6181 copy | DS+1 | T->S
+1934 8004 push 0004
+1936 45d0 call u.r (0ba0)
+1938 457b call space (0af6)
+193a 6147 copy | DS-1 | RS+1 | T->Ret
+193c 0ca2 branch  (1944)
+193e 4425 call count (084a)
+1940 8003 push 0003
+1942 45d0 call u.r (0ba0)
+1944 6b81 r@ | DS+1 | T->S
+1946 2ca8 0branch  (1950)
+1948 6b8d r@ | DS+1 | RS-1 | T->S
+194a 6a00 1-
+194c 6147 copy | DS-1 | RS+1 | T->Ret
+194e 0c9f branch  (193e)
+1950 6b8d r@ | DS+1 | RS-1 | T->S
+1952 710f RS/2->PC | copy | DS-1 | RS-1
+---------- dump ----------
+1954 192e lfa
+1956 6404 nfa 4
+1958 6d75 
+195a 0070 
+\ dump cfa
+195c be80 push 3e80
+195e 6c00 @ [T/2]
+1960 6147 copy | DS-1 | RS+1 | T->Ret
+1962 44cb call hex (0996)
+1964 8010 push 0010
+1966 43a0 call / (0740)
+1968 6147 copy | DS-1 | RS+1 | T->Ret
+196a 45a3 call cr (0b46)
+196c 8010 push 0010
+196e 427a call 2dup (04f4)
+1970 4c99 call dm+ (1932)
+1972 4159 call -rot (02b2)
+1974 8002 push 0002
+1976 4582 call spaces (0b04)
+1978 4c88 call _type (1910)
+197a 6b81 r@ | DS+1 | T->S
+197c 2cc3 0branch  (1986)
+197e 6b8d r@ | DS+1 | RS-1 | T->S
+1980 6a00 1-
+1982 6147 copy | DS-1 | RS+1 | T->Ret
+1984 0cb5 branch  (196a)
+1986 6b8d r@ | DS+1 | RS-1 | T->S
+1988 6103 copy | DS-1
+198a 6103 copy | DS-1
+198c 6b8d r@ | DS+1 | RS-1 | T->S
+198e be80 push 3e80
+1990 6023  | DS-1 | ! S->[T/2]
+1992 710f RS/2->PC | copy | DS-1 | RS-1
+---------- .s ----------
+1994 1956 lfa
+1996 2e02 nfa 2
+1998 0073 
+\ .s cfa
+199a 45a3 call cr (0b46)
+199c 4170 call sp@ (02e0)
+199e 6a00 1-
+19a0 800f push 000f
+19a2 6303 and | DS-1
+19a4 6147 copy | DS-1 | RS+1 | T->Ret
+19a6 6b81 r@ | DS+1 | T->S
+19a8 4874 call pick (10e8)
+19aa 45e3 call . (0bc6)
+19ac 6b81 r@ | DS+1 | T->S
+19ae 2cdc 0branch  (19b8)
+19b0 6b8d r@ | DS+1 | RS-1 | T->S
+19b2 6a00 1-
+19b4 6147 copy | DS-1 | RS+1 | T->Ret
+19b6 0cd3 branch  (19a6)
+19b8 6b8d r@ | DS+1 | RS-1 | T->S
+19ba 6103 copy | DS-1
+19bc 45c1 call ."| (0b82)
+19be 3c04 0branch  (3808)
+19c0 6f74 u< | RS+1 | T->Ret | ! S->[T/2]
+19c2 0073 branch  (00e6)
+19c4 700c RS/2->PC |  | RS-1
+---------- (>name) ----------
+19c6 1996 lfa
+19c8 2807 nfa 7
+19ca 6e3e 
+19cc 6d61 
+19ce 2965 
+\ (>name) cfa
+19d0 6c00 @ [T/2]
+19d2 426b call ?dup (04d6)
+19d4 2cf2 0branch  (19e4)
+19d6 427a call 2dup (04f4)
+19d8 46a4 call name> (0d48)
+19da 6503 xor | DS-1
+19dc 2cf1 0branch  (19e2)
+19de 43ec call cell- (07d8)
+19e0 0ce8 branch (>name) (19d0)
+19e2 700f RS/2->PC |  | DS-1 | RS-1
+19e4 6103 copy | DS-1
+19e6 8000 push 0000
+19e8 700c RS/2->PC |  | RS-1
+---------- >name ----------
+19ea 19c8 lfa
+19ec 3e05 nfa 5
+19ee 616e 
+19f0 656d 
+\ >name cfa
+19f2 6147 copy | DS-1 | RS+1 | T->Ret
+19f4 4bcf call get-order (179e)
+19f6 426b call ?dup (04d6)
+19f8 2d15 0branch  (1a2a)
+19fa 6180 copy | T->S
+19fc 6b81 r@ | DS+1 | T->S
+19fe 6180 copy | T->S
+1a00 4ce8 call (>name) (19d0)
+1a02 426b call ?dup (04d6)
+1a04 2d13 0branch  (1a26)
+1a06 6147 copy | DS-1 | RS+1 | T->Ret
+1a08 6a00 1-
+1a0a 6147 copy | DS-1 | RS+1 | T->Ret
+1a0c 0d08 branch  (1a10)
+1a0e 6103 copy | DS-1
+1a10 6b81 r@ | DS+1 | T->S
+1a12 2d0e 0branch  (1a1c)
+1a14 6b8d r@ | DS+1 | RS-1 | T->S
+1a16 6a00 1-
+1a18 6147 copy | DS-1 | RS+1 | T->Ret
+1a1a 0d07 branch  (1a0e)
+1a1c 6b8d r@ | DS+1 | RS-1 | T->S
+1a1e 6103 copy | DS-1
+1a20 6b8d r@ | DS+1 | RS-1 | T->S
+1a22 6b8d r@ | DS+1 | RS-1 | T->S
+1a24 710f RS/2->PC | copy | DS-1 | RS-1
+1a26 6a00 1-
+1a28 0cfb branch  (19f6)
+1a2a 6b8d r@ | DS+1 | RS-1 | T->S
+1a2c 6103 copy | DS-1
+1a2e 8000 push 0000
+1a30 700c RS/2->PC |  | RS-1
+---------- see ----------
+1a32 19ec lfa
+1a34 7303 nfa 3
+1a36 6565 
+\ see cfa
+1a38 4820 call ' (1040)
+1a3a 45a3 call cr (0b46)
+1a3c 6081  | DS+1 | T->S
+1a3e 6c00 @ [T/2]
+1a40 426b call ?dup (04d6)
+1a42 f00c push 700c
+1a44 6503 xor | DS-1
+1a46 2d35 0branch  (1a6a)
+1a48 bfff push 3fff
+1a4a 6303 and | DS-1
+1a4c 8001 push 0001
+1a4e 6d03 << | DS-1
+1a50 4cf9 call >name (19f2)
+1a52 426b call ?dup (04d6)
+1a54 2d2e 0branch  (1a5c)
+1a56 457b call space (0af6)
+1a58 4b97 call .id (172e)
+1a5a 0d33 branch  (1a66)
+1a5c 6081  | DS+1 | T->S
+1a5e 6c00 @ [T/2]
+1a60 ffff push 7fff
+1a62 6303 and | DS-1
+1a64 45dc call u. (0bb8)
+1a66 43e6 call cell+ (07cc)
+1a68 0d1e branch  (1a3c)
+1a6a 02c6 branch 2drop (058c)
+---------- (words) ----------
+1a6c 1a34 lfa
+1a6e 2807 nfa 7
+1a70 6f77 
+1a72 6472 
+1a74 2973 
+\ (words) cfa
+1a76 45a3 call cr (0b46)
+1a78 6c00 @ [T/2]
+1a7a 426b call ?dup (04d6)
+1a7c 2d44 0branch  (1a88)
+1a7e 6081  | DS+1 | T->S
+1a80 4b97 call .id (172e)
+1a82 457b call space (0af6)
+1a84 43ec call cell- (07d8)
+1a86 0d3c branch  (1a78)
+1a88 700c RS/2->PC |  | RS-1
+---------- words ----------
+1a8a 1a6e lfa
+1a8c 7705 nfa 5
+1a8e 726f 
+1a90 7364 
+\ words cfa
+1a92 4bcf call get-order (179e)
+1a94 426b call ?dup (04d6)
+1a96 2d57 0branch  (1aae)
+1a98 6180 copy | T->S
+1a9a 45a3 call cr (0b46)
+1a9c 45a3 call cr (0b46)
+1a9e 45c1 call ."| (0b82)
+1aa0 3a01 0branch  (3402)
+1aa2 6081  | DS+1 | T->S
+1aa4 4bda call .wid (17b4)
+1aa6 45a3 call cr (0b46)
+1aa8 4d3b call (words) (1a76)
+1aaa 6a00 1-
+1aac 0d4a branch  (1a94)
+1aae 700c RS/2->PC |  | RS-1
+---------- ver ----------
+1ab0 1a8c lfa
+1ab2 7603 nfa 3
+1ab4 7265 
+\ ver cfa
+1ab6 8001 push 0001
+1ab8 8100 push 0100
+1aba 43c4 call * (0788)
+1abc 8004 push 0004
+1abe 720f RS/2->PC | + | DS-1 | RS-1
+---------- hi ----------
+1ac0 1ab2 lfa
+1ac2 6802 nfa 2
+1ac4 0069 
+\ hi cfa
+1ac6 45a3 call cr (0b46)
+1ac8 45c1 call ."| (0b82)
+1aca 650b xor | DS-1 | RS-2
+1acc 6f66 u< | DS-2 | RS+1 | T->Ret | ! S->[T/2]
+1ace 7472 RS/2->PC | or | DS-2 | T->Ret | ! S->[T/2]
+1ad0 2068 0branch  (00d0)
+1ad2 316a 0branch  (22d4)
+1ad4 7620 RS/2->PC | invert | ! S->[T/2]
+1ad6 be80 push 3e80
+1ad8 6c00 @ [T/2]
+1ada 44cb call hex (0996)
+1adc 4d5b call ver (1ab6)
+1ade 448d call <# (091a)
+1ae0 449f call # (093e)
+1ae2 449f call # (093e)
+1ae4 802e push 002e
+1ae6 4495 call hold (092a)
+1ae8 449f call # (093e)
+1aea 44b7 call #> (096e)
+1aec 4593 call type (0b26)
+1aee be80 push 3e80
+1af0 6023  | DS-1 | ! S->[T/2]
+1af2 6103 copy | DS-1
+1af4 05a3 branch cr (0b46)
+---------- cold ----------
+1af6 1ac2 lfa
+1af8 6304 nfa 4
+1afa 6c6f 
+1afc 0064 
+\ cold cfa
+1afe 8002 push 0002
+1b00 be80 push 3e80
+1b02 8042 push 0042
+1b04 45f0 call cmove (0be0)
+1b06 4808 call preset (1010)
+1b08 bea2 push 3ea2
+1b0a 6081  | DS+1 | T->S
+1b0c be90 push 3e90
+1b0e 6023  | DS-1 | ! S->[T/2]
+1b10 6103 copy | DS-1
+1b12 6081  | DS+1 | T->S
+1b14 bea8 push 3ea8
+1b16 4412 call 2! (0824)
+1b18 4acf call overt (159e)
+1b1a c000 push 4000
+1b1c 43e6 call cell+ (07cc)
+1b1e 6081  | DS+1 | T->S
+1b20 43ec call cell- (07d8)
+1b22 6c00 @ [T/2]
+1b24 47e2 call $eval (0fc4)
+1b26 beb4 push 3eb4
+1b28 4455 call @execute (08aa)
+1b2a 4811 call quit (1022)
+1b2c 0d7f branch cold (1afe)
+---------- border ----------
+1b2e 1af8 lfa
+1b30 6206 nfa 6
+1b32 726f 
+1b34 6564 
+1b36 0072 
+\ border cfa
+1b38 8ffa push 0ffa
+1b3a 760c RS/2->PC | invert | RS-1
+---------- rs232 ----------
+1b3c 1b30 lfa
+1b3e 7205 nfa 5
+1b40 3273 
+1b42 3233 
+\ rs232 cfa
+1b44 9b44 push 1b44

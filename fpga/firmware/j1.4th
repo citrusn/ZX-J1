@@ -115,7 +115,7 @@ a: literal
 
 variable tlast        ( point to the last name in the name dictionary
                       ( адрес NFA последнего слова в tflash )
-variable tuser        ( )
+variable tuser        ( содержит  адрес user области)
 
 0001 constant =ver    ( номер версии)
 0004 constant =ext    ( минорный номер версии)
@@ -135,16 +135,16 @@ variable tuser        ( )
   80 constant =us      ( user area size in cells)
 
 ( Memory allocation)
-(  0//code>--//--<name//up>--<sp//tib>--rp//em )
+( 0//code>--//--<name//up>--<sp//tib>--rp//em )
+( 0//=cold--2//=uzero>--80//=pick>--180//=code> )
+( --3E80//=up>--3F00//tib>--3FFF//=em)
 
-=em 100 - constant =tib ( terminal input buffer)
-=tib =us - constant =up ( start of user area )
-=cold =us + constant =pick (  )
-=pick 100 + constant =code  ( code dictionary)
+=em 100 - constant =tib ( =3F00  terminal input buffer)
+=tib =us - constant =up ( =3E80 start of user area )
+=cold =us + constant =pick ( =80  )
+=pick 100 + constant =code ( =180 code dictionary)
 
 ( список слов)
-
-
 : thead
   talign
   tlast @ t, ( la) 
@@ -179,7 +179,7 @@ variable tuser        ( )
 
 : safe? ( предыд. команда=АЛУ  )
   lookback e000 and 6000 = ( =alu)
-  lookback 004c and 0= and ( которая не изменяет RS)  ;
+  lookback 004c and 0= and ( и не изменяется RS)  ;
 
 ( общая команда alu & return)
 : alu>return 
@@ -209,13 +209,20 @@ variable tuser        ( )
   true if exit
        else [a] return then ;
 : u:
-  >in @ thead >in !
-  get-current >r target.1 set-current create
-  r> set-current talign tuser @ dup ,
-	[a] literal exit =cell tuser +! does> @ [a] literal ;
-: [u]
+  >in @ thead >in ! \ создать заголовок в tflash
+  get-current >r target.1 set-current create \ 
+  r> set-current  \ вернуть словарь
+  talign 
+  tuser @ \ адрес свободной ячейки
+  dup , 
+	[a] literal exit \ компилируем в tflash адрес ячейки и слово exit
+  =cell tuser +! \ следующая свободная ячейка в tuser
+  does> @ [a] literal ;
+: [u] \ 
   parse-word target.1 search-wordlist 0=
-    abort" [t]?" >body @ =up - =cell + ; immediate
+  abort" [t]?" 
+  >body @ \ адрес ячейки в tflash
+   =up - =cell + ; immediate
 : immediate    tlast @ tflash + dup c@ =imed or swap c! ; ( 7 бит =1)
 : compile-only tlast @ tflash + dup c@ =comp or swap c! ; ( 6 бит =1)
 
@@ -380,7 +387,7 @@ there constant =pickbody
 
 0 t,
 
-there constant =uzero ( начало user области)
+there constant =uzero ( =2 начало user области)
    =base t, ( base )
    0 t,     ( temp )
    0 t,     ( >in )
@@ -416,8 +423,9 @@ there constant =uzero ( начало user области)
    0 t,     ( 'overt )
    0 t,     ( '; )
    0 t,     ( 'create )
-there constant =ulast
-=ulast =uzero - constant =udiff
+there dup ." ulast=" . constant =ulast 
+( размер usr области )
+=ulast =uzero - constant =udiff 
 =code org ( =180)
 ( Слово в таргет словаре создается при исполнении кода )
 t: noop noop t;
@@ -473,9 +481,17 @@ t: um+ ( w w -- w cy )
    or 0< r> and invert 1+
   r> swap t;
 
-t: dovar ( -- a ) r> t; compile-only
+t: dovar ( -- a ) 
+  \ при вызове в стеке возврата находится адрес 
+  \ следующей ячейки, значение её это адрес,
+  \ по которому лежит значение переменной 
+  r> t; compile-only
+
 t: up ( Pointer to the user area )
+  \ при компиляции в словарь запишется значение константы =up,
+  \ адрес, которой затем при исполнении в стек положит dovar  
   dovar =up t, t;
+
 t: douser ( -- a ) 
   up @ r> @ + t; compile-only
 
@@ -736,7 +752,8 @@ t: parse ( c -- b u ; <string> )
    >in +! t;
 t: .( ( -- ) 29 literal parse type t; immediate
 t: ( ( -- ) 29 literal parse 2drop t; immediate
-t: <\> ( -- ) #tib @ >in ! t; immediate
+t: <\> ( -- )  \ начало ввода
+  #tib @ >in ! t; immediate 
 t: \ ( -- ) '\ @execute t; immediate
 t: word ( c -- a ; <string> ) parse here cell+ pack$ t;
 t: token ( -- a ; <string> ) bl word t;
@@ -841,7 +858,7 @@ t: eval ( -- )
   begin
     token dup c@
   while
-	  'eval @execute
+	  'eval @execute \ $interpret
   repeat drop .ok t;
 
 t: $eval ( a u -- )
@@ -849,14 +866,17 @@ t: $eval ( a u -- )
   [t] >in literal 0 literal swap !
   #tib ! tib ! eval r> tib ! r> #tib ! r> >in ! t; compile-only
 
-t: preset ( -- ) =tib literal #tib cell+ ! t;
+t: preset ( -- ) \ установка #tib
+  =tib literal
+  #tib cell+ ! t;
 
 t: quit ( -- )
   [ begin
 	  query eval
   again t;
 
-t: abort drop preset .ok quit t;
+t: abort
+  drop preset .ok quit t;
 
 t: ' ( -- ca ) ( CFA следующего в строке слова)
   token name? if exit then abort1 t;
@@ -1179,10 +1199,16 @@ t: hi ( -- ) ( = boot )
 	ver <# # # 2e literal hold # #> ( 2e .)
 	type base ! cr t;
 t: cold ( -- )
-   =uzero literal =up literal =udiff literal cmove
-   preset forth-wordlist dup context ! dup current 2! overt
-   4000 literal cell+ dup cell- @ $eval
-   'boot @execute
+   =uzero literal \ откуда 
+   =up literal    \ куда
+   =udiff literal \ сколько
+   cmove
+   preset \ #tib set
+   forth-wordlist dup context ! dup current 2! overt
+   4000 literal cell+ \ 4002
+   dup cell-  \ 4002 4000
+   @ $eval
+   'boot @execute \ "hi" word
    quit
    cold t;
 
@@ -1211,7 +1237,7 @@ save-hex    j1.hex
 \ save-label  j1.lbl
 \ twords
 tlast 
-meta.1 -order  
+\ meta.1 -order  
 s" last word address: " type @ . cr
  \ hd @ close-file throw
- \ bye
+\  bye
