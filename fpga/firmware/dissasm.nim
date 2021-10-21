@@ -106,8 +106,8 @@ proc buildNameTable(start: int, buffer: openArray[uint8],
     tbl[ca.int] = sourceLine(field: cfa, fw: w)
     st = la.int
 
-  echo "Total words:", cntWords
-  echo "Table of labels len:", tbl.len
+  echo "Total words: ", cntWords
+  echo "Table of labels len: ", tbl.len
   var w = forthWord( la:0, len:2.uint, name:"start", ca:0 )
   tbl[0] = sourceLine(field: cfa, fw: w)
   #echo repr tbl[0x1b44]
@@ -144,7 +144,7 @@ proc main =
   
   f=open("j1n.lst", fmWrite)
   var i=0
-  while i < (sz shr 1 - 1):
+  while i < (sz shr 1):
     var w= wdmem[i]
     if wordsTable.hasKey((i*2).int):
       var sl = wordsTable[(i*2).int]
@@ -163,8 +163,6 @@ proc main =
       of cfa:
         f.writeLine "\\ " & sl.fw.name & " cfa"
         f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
-      else:
-        echo "[htym"
     else:
         f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
     i=i+1
