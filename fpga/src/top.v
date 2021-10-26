@@ -6,14 +6,14 @@ module top(
 	output [2:0] vga_red,
 	output [2:0] vga_green,
 	output [2:0] vga_blue,
-	output 		vga_hsync_n,
-	output 		vga_vsync_n,
+	output       vga_hsync_n,
+	output 	     vga_vsync_n,
 	
 	// UART
-	input 		RS232_RX,
-	output 		RS232_TXD
+	input 	     RS232_RX,
+	output 	     RS232_TXD
 
-	// TV out
+   //  TV out
    //, output 		tvsync 
    //, tvrd, tvgrn, tvbl
 );
@@ -32,10 +32,11 @@ always @(posedge vga_clk) begin
 	end
 end 
 
+
 pll pll_inst (
 	//.areset ( areset_sig ),
 	.inclk0 ( clka ), // 50 MHz
-	.c0 ( vga_clk ),	// 33.33 MHz
+	.c0 ( vga_clk ),  // 33.33 MHz
 	.c1( tv_clk )     // 7 MHz
 );
 
@@ -72,12 +73,12 @@ wire scr;
 
 display_timings_480p #(.CORDW(11)) sync_video (
 	.clk_pix(vga_clk),
-	.rst(sys_rst_i),  	// wait for pixel clock lock,
+	.rst(sys_rst_i),     // wait for pixel clock lock,
 	.hsync(vga_hsync_n), // horizontal sync
 	.vsync(vga_vsync_n), // vertical sync
 	.de(de),
 	.screen(scr),
-	.sx(x),					// текущее положение 
+	.sx(x),	             // текущее положение 
 	.sy(y),
 	.yline(yline)
 );
@@ -134,7 +135,7 @@ begin
 		16'hf004: j1_io_din = clockuS[31:16];
 		16'hf005: j1_io_din = {5'd0, yline};
 	default:
-			j1_io_din = 16'h0945;
+		j1_io_din = 16'h0945;
 	endcase
 end
 
@@ -142,25 +143,25 @@ end
 // UART	
 wire j1_uart_wr = j1_io_wr & (j1_io_addr == 16'hf000) ; // TXD
 wire j1_uart_rd = j1_io_rd & ((j1_io_addr == 16'hf000)  // RXD
-										||(j1_io_addr == 16'hf001)) ;  // Status
+			     ||(j1_io_addr == 16'hf001)) ;  // Status
 wire [7:0] 	uart_data;
-wire 		 	uart_valid;
-wire 			uart_busy;
+wire 		uart_valid;
+wire 		uart_busy;
 	
 uart #(.FREQ(25_200_000), .SPEED(115_200)) 
   uart_inst (
-  // Outputs
+        // Outputs
 	.uart_busy_o(uart_busy), //High means UART is transmitting
-	.uart_tx		(RS232_TXD),
-	.uart_dat_o	(uart_data), // 8-bit from uart
-	.valid_o		(uart_valid),// has data = 1	
+	.uart_tx    (RS232_TXD),
+	.uart_dat_o (uart_data), // 8-bit from uart
+	.valid_o    (uart_valid),// has data = 1	
 	// Inputs
 	.sys_clk_i  (vga_clk),
 	.sys_rst_i  (sys_rst_i),
 	.uart_wr_i  (j1_uart_wr), // write strobe
 	.uart_dat_i (j1_io_dout), // 8-bit to uart
-	.uart_rx		(RS232_RX),   // UART recv wire
-	.uart_rd_i 	(j1_uart_rd)  // read strobe		
+	.uart_rx    (RS232_RX),   // UART recv wire
+	.uart_rd_i  (j1_uart_rd)  // read strobe		
 );
   
 

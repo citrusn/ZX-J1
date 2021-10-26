@@ -3,15 +3,15 @@ const
   DSsize: int8 = 31
 
 type
-  j1Cpu = ref j1CpuObj
+  j1Cpu* = ref j1CpuObj
   j1CpuObj = object
-    top : uint16    
-    ds: array[0..31, uint16]
-    rs: array[0..31, uint16]
-    dsp: int8
-    rsp: int8
-    pc: uint16
-    memory: array[0..0x3fff, uint16]  
+    top* : uint16    
+    ds*: array[0..31, uint16]
+    rs*: array[0..31, uint16]
+    dsp*: int8
+    rsp*: int8
+    pc*: uint16
+    memory*: array[0..0x3fff, uint16]  
 
 
 proc `<s` (u161, u162: uint16): bool =
@@ -130,4 +130,4 @@ proc main() =
   f.close()
   j1.execute(0)
 
-main()
+#main()

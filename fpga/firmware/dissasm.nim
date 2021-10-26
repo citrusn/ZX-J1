@@ -69,7 +69,7 @@ proc main() =
   var w : uint16
   for i in 0..(sz shr 1 - 1):
     w = memory[i]
-    echo fmt("{i:04x} {w:04x} ") & disassembled(w)
+    echo fmt("{i*2:04x} {w:04x} ") & disassembled(w)
 
 if isMainModule:
   main()

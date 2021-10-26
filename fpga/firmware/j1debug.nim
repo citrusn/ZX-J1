@@ -11,7 +11,7 @@ import resource/resource
 import wNim/[wApp, wFrame, wIcon, wStatusBar, wPanel, wTypes, 
      wStaticText, wMenuBar, wMenu, wTextCtrl, wFont]
 
-import j1emul
+import j1n
 
 const
   UseAutoLayout = not defined(legacy)
@@ -31,7 +31,7 @@ const style = wAlignCentre or wAlignMiddle or wBorderSimple
 const txtStyle = wVScroll or wBorderStatic or wTeMultiLine or wTeRich
 let font = Font(pointSize = 10.0, faceName = "Consolas" )
 
-let label1 = StaticText(panel, label="dump" ) #, style=nil")
+let label1 = StaticText(panel, label="Memory:" ) #, style=nil")
 let text1 = TextCtrl(panel, value="", style=txtStyle )
 text1.setFont(font)
 
@@ -255,7 +255,7 @@ proc dumpFile(f: string) =
   let sz = (df.getFileSize() shr 1 - 1) shr 3
   dumpTo(text1, sz, @buffer)
 
-proc displayCpu(cpu: J1Cpu ) = 
+proc displayCpu(cpu: j1Cpu ) = 
   var 
     h: string
   h =     fmt("top:{cpu.top:04x}\r\n")
@@ -275,7 +275,7 @@ proc helper (ctrl: wTextCtrl, dsp : int32, ar: openarray[uint16]) =
       ctrl.appendText h
     ctrl.showPosition 0
 
-proc dumpRegsMemory(cpu: J1Cpu ) =
+proc dumpRegsMemory(cpu: j1Cpu ) =
   let ctrl = text4
   let ar = cpu.ds
   let dsp = int32(cpu.dsp)-1
@@ -287,8 +287,8 @@ proc dumpRegsMemory(cpu: J1Cpu ) =
   
 dumpFile("j1.bin")
 
-var cpu: J1Cpu
-cpu = J1Cpu.new
+var cpu: j1Cpu
+cpu = j1Cpu.new
 cpu.top = 0x1234
 cpu.dsp = 0x4
 cpu.rsp = 0x5
