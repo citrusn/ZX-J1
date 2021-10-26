@@ -45,6 +45,7 @@ fpga/incremental_db
 *.su
 *.idb
 *.pdb
+*.log
 
 # Kernel Module Compile Results
 *.mod*
