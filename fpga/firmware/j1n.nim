@@ -7,16 +7,16 @@ const
 type
   j1Cpu* = ref j1CpuObj
   j1CpuObj = object
-    top : uint16    
-    ds: array[0..stackSz.int, uint16]
-    rs: array[0..stackSz.int, uint16]
-    dsp: int8
-    rsp: int8
-    pc: uint16
-    start: bool
-    memory: array[0..0x3fff, uint16]
-    getch: proc:uint16
-    putch: proc(c:uint16)
+    top* : uint16    
+    ds*: array[0..stackSz.int, uint16]
+    rs*: array[0..stackSz.int, uint16]
+    dsp*: int8
+    rsp*: int8
+    pc*: uint16
+    start*: bool
+    memory*: array[0..0x3fff, uint16]
+    getch*: proc:uint16
+    putch*: proc(c:uint16)
 
 proc `<s` (u161, u162: uint16): bool =
   if (u162 > 32767) and (u161 > 32767) : # < 0
@@ -109,10 +109,10 @@ proc executeCommand*(cpu: j1Cpu, insn: uint16) =
       raiseAssert "No correct INSN code"
     cpu.pc = pc
 
-proc getchar: uint16 =
+proc getchar*: uint16 =
   ord(getch()).uint16
 
-proc putchar(c: uint16) =
+proc putchar*(c: uint16) =
   stdout.write $(chr c and 0xff)
 
 proc execute (cpu: j1Cpu, entrypoint: uint16, logging: bool=false) =
@@ -130,7 +130,6 @@ proc execute (cpu: j1Cpu, entrypoint: uint16, logging: bool=false) =
   cpu.putch = putchar
   while cpu.start:    
     if logging:
-      #log.write( fmt("{cpu.pc:#d}-{insn:#d} {disasm(insn)}\r\n"))
       log.write( fmt("{cpu.pc:04x}({cpu.pc*2:04x}) {insn:04x} ") & disasm(insn) & "\r\n")
     cpu.pc = cpu.pc + 1
     executeCommand(cpu, insn)    

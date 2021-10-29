@@ -15,6 +15,11 @@ type
     field: TypeWordField
     fw: forthWord
 
+var
+  wordsTable* = newTable[int, sourceLine](900)
+  fn: string
+  lastWord: int
+
 proc disasmWithLabels (insn: uint16, 
                   tbl: TableRef[int, sourceLine]): string =
   var 
@@ -112,11 +117,6 @@ proc buildNameTable(start: int, buffer: openArray[uint8],
   tbl[0] = sourceLine(field: cfa, fw: w)
   #echo repr tbl[0x1b44]
   
-var
-  wordsTable* = newTable[int, sourceLine](900)
-  fn: string
-  lastWord: int
-
 proc disasm*(w: uint16) : string = 
   disasmWithLabels(w, wordsTable)
 
@@ -150,19 +150,19 @@ proc main =
       var sl = wordsTable[(i*2).int]
       case sl.field
       of lfa:         
-        f.writeLine "---------- " & sl.fw.name & " ----------"
-        f.writeLine fmt("{i*2:04x} {w:04x} ") & "lfa"
+        #f.writeLine "---------- " & sl.fw.name & " ----------"
+        f.writeLine fmt("{i*2:04x} {w:04x}\t\\ ") & sl.fw.name & " lfa"
       of nfa:
         var l = sl.fw.len.int        
-        f.writeLine fmt("{i*2:04x} {w:04x} nfa ") & $l
+        f.writeLine fmt("{i*2:04x} {w:04x}\t\\ nfa ") & $l
         l = (align(l)-1) shr 1
         for j in i+1..(i+l):
           w = wdmem[j]
           f.writeLine fmt("{j*2:04x} {w:04x} ")  
         i = i + l 
       of cfa:
-        f.writeLine "\\ " & sl.fw.name & " cfa"
-        f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
+        #f.writeLine "\\ " & sl.fw.name & " cfa"
+        f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w) &  "\t\\ " & sl.fw.name & " cfa"
     else:
         f.writeLine fmt("{i*2:04x} {w:04x} ") & disasm(w)
     i=i+1

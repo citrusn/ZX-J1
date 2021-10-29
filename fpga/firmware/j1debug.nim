@@ -1,24 +1,25 @@
 #====================================================================
 #
-#               wNim - Nim's Windows GUI Framework
-#                (c) Copyright 2017-2021 Ward
+#               j1Debug - Nim's J1 debugger
+#               (c) Copyright 2020-2021 Citrusn
 #
 #====================================================================
 
 import strformat
 import strutils
 import resource/resource
-import wNim/[wApp, wFrame, wIcon, wStatusBar, wPanel, wTypes, 
-     wStaticText, wMenuBar, wMenu, wTextCtrl, wFont]
+import wNim/[wApp, wFrame, wHotkeyCtrl, wIcon, wStatusBar, wPanel, wTypes, 
+            wStaticText, wMenuBar, wMenu, wTextCtrl, wFont]
 
 import j1n
+import dissasm
 
 const
   UseAutoLayout = not defined(legacy)
-  Title = if UseAutoLayout: "Autolayout Example 1" else: "Layout Example 1"
+  Title = if UseAutoLayout: "Autolayout J1 debugger" else: "J1 debugger"
 
 type
-  MenuID = enum idLayout1 = wIdUser, idLayout2, idLayout3, idExit
+  MenuID = enum idLayout1 = wIdUser, idLayout2, idLayout3, idStart, idExit
 
 let app = App(wSystemDpiAware)
 let frame = Frame(title=Title, size=(800, 500))
@@ -35,16 +36,26 @@ let label1 = StaticText(panel, label="Memory:" ) #, style=nil")
 let text1 = TextCtrl(panel, value="", style=txtStyle )
 text1.setFont(font)
 
-let text2 = StaticText(panel, label="Text3", style=style)
+let label2 = StaticText(panel, label="Code:" ) 
+let text2 = TextCtrl(panel, value="", style=txtStyle )
+text2.setFont(font)
 
+let label3 = StaticText(panel, label="CPU:" ) 
 let text3 = TextCtrl(panel, value="", style=txtStyle)
 text3.setFont(font)
 
+let label4 = StaticText(panel, label="Data stack:" ) 
 let text4 = TextCtrl(panel, value="", style=txtStyle)
 text4.setFont(font)
 
+let label5 = StaticText(panel, label="Return stack:" )
 let text5 = TextCtrl(panel, value="", style=txtStyle)
 text5.setFont(font)
+
+let termio = TextCtrl(panel, value="", style=txtStyle)
+termio.setFont(font)
+
+proc startCPU() 
 
 let menuBar = MenuBar(frame)
 let menu = Menu(menuBar, "Layout")
@@ -52,15 +63,20 @@ menu.appendRadioItem(idLayout1, "Layout1").check()
 menu.appendRadioItem(idLayout2, "Layout2")
 menu.appendRadioItem(idLayout3, "Layout3")
 menu.appendSeparator()
+menu.append(idStart, "Start CPU")
+menu.appendSeparator()
 menu.append(idExit, "Exit")
 
 proc layout1() =
   when UseAutoLayout:
     panel.autolayout """
       spacing: 8
-      H:|-[label1, text1..2]-[text3..5(text1/3)]-|
-      V:|[label1][text1]-[text2(text1)]-|
-      V:|-[text3(text4,text5)]-[text4]-[text5]-|
+      H:|-[col1]-[label3..5, text3..5(text1/3)]-|      
+      H:|-[termio]-|
+      V:|-[col1:[label1][text1]-[label2(label1)][text2(text1)]]-|
+      V:|-[col2:[label3][text3]-[label4][text4]-[label5(label1)][text5(text4)]]-|
+      V:|-[col1..2(70%)]-[termio]-|
+      
     """
 
   else:
@@ -210,6 +226,7 @@ proc layout() =
 frame.idLayout1 do (): layout()
 frame.idLayout2 do (): layout()
 frame.idLayout3 do (): layout()
+frame.idStart do (): startCPU()
 frame.idExit do (): frame.close()
 panel.wEvent_Size do (): layout()
 
@@ -227,14 +244,13 @@ proc Uint2Char(ui : uint16, nb: int) : char =
     else:
       '.'
   else:
-    raise newException(RangeError, "nb is wrong")
+    raise newException(RangeDefect, "nb is wrong")
     
-proc dumpTo(txtCtrl: wTextCtrl, buf_size: int64, buffer : seq[uint16]) =  
+proc dumpTo(txtCtrl: wTextCtrl, buf_size: int, buffer : seq[uint16]) =  
   var
     h: string
     s: string
     c1, c2: char
-
   for i in 0..(buf_size):
     h = h & fmt("{i*16:04x}:  ")
     s = ""
@@ -246,14 +262,19 @@ proc dumpTo(txtCtrl: wTextCtrl, buf_size: int64, buffer : seq[uint16]) =
     h = h & "  " & s & "\r\n"
   txtCtrl.value = h
 
-proc dumpFile(f: string) = 
+proc dumpFile(cpu: j1Cpu) = 
+  let sz = (0x4000 shr 1 - 1) shr 3
+  dumpTo(text1, sz, @(cpu.memory))
+
+proc putcharww(c: uint16) =
+  termio.appendText $(chr c and 0xff)
+
+proc initCpuMem(cpu: j1Cpu, prg: string) = 
   var
-    df: File
-    buffer: array[0..0x3fff, uint16]
-  assert df.open("j1.bin"), "File " & f & " not found"
-  assert df.readBuffer(buffer[0].addr, 0x4000) == df.getFilesize
-  let sz = (df.getFileSize() shr 1 - 1) shr 3
-  dumpTo(text1, sz, @buffer)
+    df: File    
+  assert df.open(prg), "File " & prg & " not found"
+  defer: df.close()
+  assert df.readBuffer(cpu.memory[0].addr, 0x4000) == df.getFilesize  
 
 proc displayCpu(cpu: j1Cpu ) = 
   var 
@@ -264,10 +285,16 @@ proc displayCpu(cpu: j1Cpu ) =
   h = h & fmt(" pc:{cpu.pc:04x}\r\n")
   text3.value = h
 
+proc showAsm(lst: string ) = 
+  var 
+    buf: string  
+  buf = readFile(lst)
+  text2.value = buf
 
 proc helper (ctrl: wTextCtrl, dsp : int32, ar: openarray[uint16]) =
-    var h: string      
-    for i in 0..ar.len-1:    
+    var h: string
+    ctrl.value = ""
+    for i in 0..ar.len-1:
       h = fmt("{i+1:02d}  {ar[i]:04x}\r\n")
       if i <= dsp:
         ctrl.setFormat(font=nil, fgColor= -1, bgColor = wMediumGoldenrod)
@@ -276,26 +303,44 @@ proc helper (ctrl: wTextCtrl, dsp : int32, ar: openarray[uint16]) =
     ctrl.showPosition 0
 
 proc dumpRegsMemory(cpu: j1Cpu ) =
-  let ctrl = text4
-  let ar = cpu.ds
-  let dsp = int32(cpu.dsp)-1
+  var ctrl = text4
+  var ar = cpu.ds
+  var dsp = int32(cpu.dsp)-1
   helper(ctrl, dsp, ar)
-  let ctrl1 = text5
-  let ar1 = cpu.rs
-  let rsp = int32(cpu.rsp)-1
-  helper(ctrl1, rsp, ar1)
-  
-dumpFile("j1.bin")
 
-var cpu: j1Cpu
+  ctrl = text5
+  ar = cpu.rs
+  dsp = int32(cpu.rsp)-1
+  helper(ctrl, dsp, ar)
+
+var 
+  cpu: j1Cpu
+  insn: uint16
+
+proc startCPU() =
+  #while cpu.start:
+  for i in 0..5000:
+    cpu.pc = cpu.pc + 1
+    cpu.executeCommand(insn)     
+    app.setMessageLoopWait()
+    insn = cpu.memory[cpu.pc]
+  displayCpu(cpu)
+  dumpRegsMemory(cpu)
+
 cpu = j1Cpu.new
-cpu.top = 0x1234
-cpu.dsp = 0x4
-cpu.rsp = 0x5
-cpu.pc  = 0x102
+cpu.top = 0x0
+cpu.dsp = 0x0
+cpu.rsp = 0x0
+cpu.pc  = 0x0
+cpu.start = true
+cpu.putch = putcharww
+cpu.getch = j1n.getchar
+insn = 0
 
-displayCpu(cpu)
-dumpRegsMemory(cpu)
+initCpuMem(cpu, "j1.bin")
+dumpFile(cpu)
+initDissasm("j1.bin", 0x1b3e)
+showAsm("j1n.lst")
 
 layout()
 frame.center()
